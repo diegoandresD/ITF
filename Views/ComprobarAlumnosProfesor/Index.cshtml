@@ -1,0 +1,170 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+
+
+@Styles.Render("~/Content/css")
+<link rel="stylesheet" href="~/Css/ComprobarAlumnosProfesor.css">
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#event">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo.jpg" style="width:100%" class="imglog d-block " id="logo">
+            </div>
+            <div class="nav row rounded-top align-items-strech justify-content-between" style="margin-bottom:1%">
+                <div class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h5>            ITF Federación  </h5>
+                    <i style="font-size:30px" class="fas fa-globe-americas"></i>
+                    <h5>   ONT 2020</h5>
+                </div>
+        </div>
+            </div>
+    </header>
+    
+
+    <main>
+        <div class="container">
+            <!-- Seccion portafolio -->
+            <div class="row portafolio">
+                <div class="col">
+                    <h2 class="titulo">Comprobación de Alumnos</h2>
+
+                    <div class="row" style="margin-top:1%">
+                        <div class="row galeria justify-content-center">
+                            <!-- Centrar en dispositivos moviles  -->
+                           
+                           
+                            <div class="input-group">
+                                <h2 style="color:#1B3280">  Ingrese el Rut del Alumno a Comprobar:    </h2>
+                                <input type="text" name="" id="buscar" class="form-control" placeholder="Rut">
+                                <div class="input-group-append" style="margin-left:5%">                       
+                                    <button class="btn btn-danger">Aceptar</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Seccion Acerca de -->
+            <div class="row acerca-de align-items-center">
+                <div class="col-12">
+                    <h2 class="titulo" style="text-align:center">Información del Alumno</h2>
+                </div>
+                <div class="col-12 col-lg-4 foto">
+                    <img src="~/img/foto.jpg" class="rounded-circle img-fluid" alt="">  <!--  Para que la imagen este redondeada y abarque el 100% de la col -->
+                    <h4>Nombre Alumno:</h4>
+                    <h4>Javier Lillo</h4>
+                </div>
+                <div class="row mt-3">
+                    <div class="col">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre" readonly> 
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pass">Escuela Proveniente</label>
+                                <input type="password" class="form-control" placeholder="Escuela" name="escuela" id="escuela" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pass">Maestro Anterior</label>
+                                <input type="password" class="form-control" placeholder="Anterior" name="maestroan" id="maestroan" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pass">Maestro Actual</label>
+                                <input type="password" class="form-control" placeholder="Actual" name="maestroac" id="maestroac" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nombre">Grado Actual</label>
+                                <input type="password" class="form-control" placeholder="Grado" name="grado" id="grado" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pais">Pais</label>
+                                <select name="pais" id="pais" class="form-control" disabled>
+                                    <option value="mexico">Mexico</option>
+                                    <option value="espana">España</option>
+                                    <option value="colombia">Colombia</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-check-label " disabled>
+                                    <input type="radio" name="sexo" id="hombre" class="form-check-input mr-2" disabled>Hombre
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-check-label"disabled>
+                                    <input type="radio" name="sexo" id="mujer" class="form-check-input mr-2" disabled>Mujer
+                                </label>
+                            </div>
+
+                        </form>
+                    </div>
+                   
+                </div>
+                
+            </div>
+            <button class="btn btn-primary" type="submit">Volver</button>
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="container">
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- CTRL + UK Alinea todo-->
+    @Scripts.Render("~/Bundles/js")
+
+    @*<script src="~/js/jquery-3.4.1.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/scripts.js"></script>
+        <script src="~/js/popper.min.js"></script>*@
+</body>
+

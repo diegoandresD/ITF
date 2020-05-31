@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITF" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ITFEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ITF_ACADEMIAS" EntityType="ITF.ITF_ACADEMIAS" />
+    <EntitySet Name="ITF_AHORRO_REGISTROS" EntityType="ITF.ITF_AHORRO_REGISTROS" />
+    <EntitySet Name="ITF_AHORRO_TIPO_REGISTROS" EntityType="ITF.ITF_AHORRO_TIPO_REGISTROS" />
+    <EntitySet Name="ITF_AHORROS" EntityType="ITF.ITF_AHORROS" />
+    <EntitySet Name="ITF_ARANCELES" EntityType="ITF.ITF_ARANCELES" />
+    <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="ITF.ITF_EXAMEN_REALIZADOS" />
+    <EntitySet Name="ITF_GENEROS" EntityType="ITF.ITF_GENEROS" />
+    <EntitySet Name="ITF_INDICADORES" EntityType="ITF.ITF_INDICADORES" />
+    <EntitySet Name="ITF_MATRICULAS" EntityType="ITF.ITF_MATRICULAS" />
+    <EntitySet Name="ITF_PAGOS" EntityType="ITF.ITF_PAGOS" />
+    <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="ITF.ITF_TIPO_USUARIOS" />
+    <EntitySet Name="ITF_USUARIOS" EntityType="ITF.ITF_USUARIOS" />
+  </EntityContainer>
+  <EntityType Name="ITF_ACADEMIAS">
+    <Key>
+      <PropertyRef Name="ID_ACADEMIA" />
+    </Key>
+    <Property Name="ID_ACADEMIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_ACADEMIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COD_MAESTRO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITF_AHORRO_REGISTROS">
+    <Key>
+      <PropertyRef Name="ID_REGISTRO_AHORRO" />
+    </Key>
+    <Property Name="ID_REGISTRO_AHORRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="COD_TIPO_REGISTRO" Type="Int32" />
+    <Property Name="MONTO" Type="Int64" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITF_AHORRO_TIPO_REGISTROS">
+    <Key>
+      <PropertyRef Name="ID_TIPO_REGISTRO_AHORRO" />
+    </Key>
+    <Property Name="ID_TIPO_REGISTRO_AHORRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_TIPO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITF_AHORROS">
+    <Key>
+      <PropertyRef Name="ID_AHORRO" />
+    </Key>
+    <Property Name="ID_AHORRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MONTO" Type="Int64" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+    <Property Name="FECHA_ULTIMO_AHORRO" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ITF_ARANCELES">
+    <Key>
+      <PropertyRef Name="ID_ARANCEL" />
+    </Key>
+    <Property Name="ID_ARANCEL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VALOR_ANUAL" Type="Int64" />
+    <Property Name="VALOR_MENSUAL" Type="Int32" />
+    <Property Name="TITULO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ITF_EXAMEN_REALIZADOS">
+    <Key>
+      <PropertyRef Name="ID_EXAMEN" />
+    </Key>
+    <Property Name="ID_EXAMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_EXAMEN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FORMA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EJERCICIOS_F_F_F" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ATAQUE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DEFENSA_PERSONAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ROTURA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TEORIA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_REALIZACION" Type="DateTime" Precision="3" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITF_GENEROS">
+    <Key>
+      <PropertyRef Name="ID_GENERO" />
+    </Key>
+    <Property Name="ID_GENERO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_GENERO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITF_INDICADORES">
+    <Key>
+      <PropertyRef Name="ID_INDICADOR" />
+    </Key>
+    <Property Name="ID_INDICADOR" Type="Int32" Nullable="false" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+    <Property Name="PESO" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="COD_GRADO" Type="Int32" />
+    <Property Name="ESTATURA" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="ITF_MATRICULAS">
+    <Key>
+      <PropertyRef Name="ID_MATRICULA" />
+    </Key>
+    <Property Name="ID_MATRICULA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_ARANCEL" Type="Int32" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <Property Name="MONTO" Type="Int64" />
+  </EntityType>
+  <EntityType Name="ITF_PAGOS">
+    <Key>
+      <PropertyRef Name="ID_PAGO" />
+    </Key>
+    <Property Name="ID_PAGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA_PAGO" Type="DateTime" Precision="3" />
+    <Property Name="MES" Type="Int32" />
+    <Property Name="ANO" Type="Int32" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+    <Property Name="MONTO" Type="Int64" />
+  </EntityType>
+  <EntityType Name="ITF_TIPO_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_TIPO_USUARIO" />
+    </Key>
+    <Property Name="ID_TIPO_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_TIPO_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ITF_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RUT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NOMBRE_SOCIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_NACIMIENTO" Type="DateTime" Precision="0" />
+    <Property Name="COD_GENERO" Type="Int32" />
+    <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRASENA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONO_CONTACTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COD_ACADEMIA_ANTERIOR" Type="Int32" />
+    <Property Name="COD_ADADEMIA_ACTUAL" Type="Int32" />
+    <Property Name="COD_TIPO_USUARIO" Type="Int32" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,144 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+
+@Styles.Render("~/Content/css")
+<link rel="stylesheet" href="~/Css/Contacto.css">
+
+@*<link rel="stylesheet" href="~/Css/bootstrap.min.css">*@
+
+
+@*<link href="~/fontawesome-free-5.13.0-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/fontawesome-free-5.13.0-web/css/brands.css" rel="stylesheet" />
+    <link href="~/fontawesome-free-5.13.0-web/css/solid.css" rel="stylesheet" />*@
+
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#event">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo.jpg" style="width:100%" class="imglog d-block " id="logo">
+            </div>
+            <div class="nav row rounded-top align-items-strech justify-content-between" style="margin-bottom:1%">
+                <div class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h5>            ITF Federación  </h5>
+                    <i style="font-size:30px" class="fas fa-globe-americas"></i>
+                    <h5>   ONT 2020</h5>
+                </div>
+
+                <nav class="c-1  d-flex align-items-center">
+                    <!-- Este nav abarca automaticamente solo lo q necesite -->
+                    <!-- align-items-stretch sirve para que las 3 cajas midan lo mismo y ocupen el 100% del menu y flex-wrap sirve para que cuando este pequeño ocupe el 100% del espacio y cuando este en grande uso flex-sm-nowrap para que este uno al lado del otro -->
+                    <button class="btn btn-flat btn-danger">
+                        <span>Ingreso funcionario</span><br />
+                        <i style="font-size:25px" class="fas fa-user-tie"></i>
+                    </button>&nbsp;
+                    <button class="btn btn-flat-primary btn-primary">
+                        <span>Ingreso maestros</span><br />
+                        <i style="font-size:25px" class="fas fa-user-injured"></i>
+                    </button>&nbsp;
+                    <button class="btn btn-flat btn-info">
+                        <span>Ingreso alumnos</span><br />
+                        <i style="font-size:25px" class="fas fa-users"></i>
+                    </button>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Seccion portafolio -->
+            <div class="row portafolio">
+                <div class="col">
+                    <h2 class="titulo">Contacto</h2>
+                  
+
+            <!-- Seccion de Contacto -->
+                    <div class="row contacto justify-content-center">
+                        <div class="col seba">
+                            <br />
+                            <span>
+                                Tel: +56 988888 9668<br />
+                                E-mail: <strong><a>presidente.fechitat@gmail.com</a></strong><br />
+                                __________________________________<br />
+                                Centro Nacional de Entrenamiento Olímpico<br />
+                                Ramón Cruz Montt #1176<br />
+                                Ñuñoa, Región Metropolitana, Chile<br />
+                                __________________________________
+                            </span>
+                        </div>
+
+                    <div class="col-12 col-lg-8">
+                    <form action="" class="formulario">
+                    <div class="form-group row">
+                    <div class="col-12 col-md-6">
+                    <input type="text" name="" id="" placeholder="Nombre">
+                            </div>
+                    <div class="col-12 col-md-6">
+                    <input type="text" name="" id="" placeholder="Correo">
+                            </div>
+                        </div>
+                    <textarea name="" id="" placeholder="Mensaje"></textarea>
+                    <div class="form-group d-flex justify-content-center">
+                    <input id="Guardar" type="button" class="boton" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13303.538192109685!2d-70.62815264207428!3d-33.53038721551296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1590106105748!5m2!1ses!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+       </div>
+    </main>
+
+    <footer>
+
+        <div class="container">
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- CTRL + UK Alinea todo-->
+    @Scripts.Render("~/Bundles/js")
+
+    @*<script src="~/js/jquery-3.4.1.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/scripts.js"></script>
+        <script src="~/js/popper.min.js"></script>*@
+</body>

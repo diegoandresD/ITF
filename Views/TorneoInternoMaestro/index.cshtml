@@ -1,0 +1,228 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+
+@Styles.Render("~/Content/css")
+<link rel="stylesheet" href="~/Css/TorneoInternoMaestro.css">
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mis Alumnos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mis Productos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Pedidos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Torneos Internos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mensualidades</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Seccion portafolio -->
+            <div class="row portafolio" style="margin-top:10%">
+                <div class="col">
+                    <h2 class="titulo">Mis Alumnos</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <!-- .table-dark Nos permite cambiar los colores de la tabla a oscuro -->
+                                <!-- .table-striped Nos permite alternar colores entre cada fila -->
+                                <!-- .table-bordered Nos permite agregarle bordes a la tabla -->
+                                <!-- .table-hover Nos permite agregarle un hover a las filas -->
+                                <!-- .table-sm Nos permite hacer la tabla mas pequeña eliminando paddings -->
+                                <!-- .table-responsive-xx Nos permite adaptar nuestra tabla a dispositivos moviles -->
+                                <table class="table table-sm table-hover table-bordered table-responsive-lg">
+                                    <!-- responsive sirve para ajutar la tabla segun el dispositivo -->
+                                    <thead>
+                                        <!-- Encabezado de tabla -->
+                                        <tr class="table-warning">
+                                            <th>Nombre</th>
+                                            <th>Grado</th>
+                                            <th>Edad</th>
+                                            <th>Peso</th>
+                                            <th>Completar</th>
+                                            <th>Completar</th>
+                                            <th>Etc..</th>
+                                        </tr>
+                                    </thead>
+
+                                    <!-- .table-active -->
+                                    <!-- .table-success -->
+                                    <!-- .table-warning -->
+                                    <!-- .table-danger -->
+                                    <!-- .table-info -->
+                                    <tr>
+                                        <td>Carlos</td>
+                                        <td>Cinturon Rojo</td>
+                                        <td>21</td>
+                                    </tr>
+
+                                    <!-- .bg-primary -->
+                                    <!-- .bg-success -->
+                                    <!-- .bg-warning -->
+                                    <!-- .bg-danger -->
+                                    <!-- .bg-info -->
+                                    <tr>
+                                        <td>Alejandro</td>
+                                        <td>Cinturon Azul</td>
+                                        <td>34</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cesar</td>
+                                        <td>Cinturon Negro</td>
+                                        <td>37</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <button class="btn btn-Danger btn-lg">Generar Torneo</button>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="container">
+            <!-- Seccion portafolio -->
+            <div class="row portafolio" style="margin-top:10%">
+                <div class="col">
+                    <h2 class="titulo">Llaves del torneo</h2>
+                    <div class="container">
+                        <img src="~/img/LlaveTorneo.png" />
+
+                    </div>
+                    <div class="row justify-content-center">
+                        <button class="btn btn-Danger btn-lg">Calcular Resultados</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- Seccion portafolio -->
+                <div class="row portafolio" style="margin-top:10%">
+                    <div class="col">
+                        <h2 class="titulo">Resultados del torneo</h2>
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col">
+                                    <!-- .table-dark Nos permite cambiar los colores de la tabla a oscuro -->
+                                    <!-- .table-striped Nos permite alternar colores entre cada fila -->
+                                    <!-- .table-bordered Nos permite agregarle bordes a la tabla -->
+                                    <!-- .table-hover Nos permite agregarle un hover a las filas -->
+                                    <!-- .table-sm Nos permite hacer la tabla mas pequeña eliminando paddings -->
+                                    <!-- .table-responsive-xx Nos permite adaptar nuestra tabla a dispositivos moviles -->
+                                    <table class="table table-sm table-hover table-bordered table-responsive-lg">
+                                        <!-- responsive sirve para ajutar la tabla segun el dispositivo -->
+                                        <thead>
+                                            <!-- Encabezado de tabla -->
+                                            <tr class="table-warning">
+                                                <th> </th>
+                                                <th>Nombre</th>
+                                                <th>Grado</th>
+                                                <th>Edad</th>
+                                                <th>Peso</th>
+                                                <th>Categoria</th>
+                                                <th>Completar</th>
+                                                <th>Etc..</th>
+                                            </tr>
+                                        </thead>
+
+                                        <!-- .table-active -->
+                                        <!-- .table-success -->
+                                        <!-- .table-warning -->
+                                        <!-- .table-danger -->
+                                        <!-- .table-info -->
+                                        <tr>
+
+                                            <td>Primer Lugar</td>
+                                            <td>Sebastián Venegas</td>
+                                            <td>Cinturón Azul</td>
+                                        </tr>
+
+                                        <!-- .bg-primary -->
+                                        <!-- .bg-success -->
+                                        <!-- .bg-warning -->
+                                        <!-- .bg-danger -->
+                                        <!-- .bg-info -->
+                                        <tr>
+                                            <td>Segundo Lugar</td>
+                                            <td>Alvaro Leiva</td>
+                                            <td>Cinturon Rosado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tercer Lugar</td>
+                                            <td>Joel Leiva</td>
+                                            <td>Cinturon Negro</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+
+                            </div>
+                            <div class="row justify-content-center">
+                                <button class="btn btn-Danger btn-lg">Guardar Resultados</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+    </main>
+
+
+
+
+
+    <footer>
+
+        <div class="container">
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/Bundles/js")
+
+
+</body>

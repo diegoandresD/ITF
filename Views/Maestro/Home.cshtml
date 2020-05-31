@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light text-center" style="background-color: white;">
+
+
+    <div class="collapse navbar-collapse text-center" id="navbarColor03">
+        <ul class="navbar-nav mr-auto" style="font-size:22px;font-weight: bold">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><i class="fas fa-home"></i> Home |</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-user"></i> Mis alumnos |</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i> Mis productos |</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-shipping-fast"></i> Pedidos |</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-calendar-alt"></i> Torneos internos |</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-money-bill-wave"></i> Mensualidades </a>
+            </li>
+        </ul>
+        @*<form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>*@
+    </div>
+</nav>
+<div class="alrazy-title" data-splitting>Bienvenido maestro Sebastian!</div>
+<script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+<script>Splitting();</script>
+<br />
+<h2 class="titulo">Novedades</h2>
+
+<div class="row portafolio">
+    <div class="col">
+        <div class="row" style="margin-top:3%">
+            <div class="row galeria justify-content-center">
+                <!-- Centrar en dispositivos moviles  -->
+                <div class="contenedor-imagen col-6 col-lg-6">
+                    <a href="#" data-toggle="modal" data-target="#modal">
+                        <img src="~/img/img-11.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                    </a>
+                </div>
+                <div class="contenedor-imagen col-12 col-lg-6">
+                    <a href="#" data-toggle="modal" data-target="#modal">
+                        <img src="~/img/img-22.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                    </a>
+                </div>
+                <div class="contenedor-imagen col-12 col-lg-8">
+                    <a href="#" data-toggle="modal" data-target="#modal">
+                        <img src="~/img/img-33.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                    </a>
+                </div>
+                <div class="contenedor-imagen col-6 col-lg-4">
+                    <a href="#" data-toggle="modal" data-target="#modal">
+                        <img src="~/img/img-44.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                    </a>
+                </div>
+                <div class="contenedor-imagen col-6 col-lg-4">
+                    <a href="#" data-toggle="modal" data-target="#modal">
+                        <img src="~/img/img-55.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                    </a>
+                </div>
+                <div class="contenedor-imagen col-6 col-lg-4">
+                    <a href="#" data-toggle="modal" data-target="#modal">
+                        <img src="~/img/img-66.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                    </a>
+                </div>
+                <div class="contenedor-imagen col-6 col-lg-4">
+                    <a href="#" data-toggle="modal" data-target="#modal">
+                        <img src="~/img/img-77.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                    </a>
+                </div>
+
+                <!-- Ventana Modal -->
+                <div class="modal fade" id="modal">
+                    <div class="modal-dialog d-flex justify-content-center align-items-center">
+                        <div class="modal-content">
+                            <img src="img/img-1.jpg" alt="" id="imagen-modal" class="">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
+
+    html, body {
+        background: #fff;
+        font-family: Calibri;
+        color: #007bff; 
+    }
+
+    html {
+        height: 100%;
+        display: flex;
+    }
+
+    body {
+        margin: auto;
+    }
+
+    .alrazy-title {
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 6vw;
+        font-size: calc( 100vw / var(--char-total) );
+        position: relative;
+        padding: 0.4em 0;
+        overflow: hidden;
+    }
+
+        .alrazy-title:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-bottom: solid 0.2em;
+            -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+    @@-webkit-keyframes underline {
+        from {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    }
+
+    @@keyframes underline {
+        from {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    }
+
+    .alrazy-title .word {
+        display: inline-block;
+        -webkit-animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+        animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-delay: calc( .5s + (.1s * var(--word-index)) );
+        animation-delay: calc( .5s + (.1s * var(--word-index)) );
+    }
+
+    @@-webkit-keyframes slide-up {
+        from {
+            -webkit-transform: translateY(125%);
+            transform: translateY(125%);
+        }
+    }
+
+    @@keyframes slide-up {
+        from {
+            -webkit-transform: translateY(125%);
+            transform: translateY(125%);
+        }
+    }
+
+    .splitting-mark {
+        color: #FFF !important;
+    }
+</style>

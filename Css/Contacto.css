@@ -1,0 +1,206 @@
+﻿
+body{
+	background: #f2f2f2;
+    font-family: 'Cooper Black';
+}
+
+.imglog {
+    border: solid 8px black !important;
+    margin-top: 8%;
+}
+
+header {
+	margin-top: 30px;
+}
+
+
+
+div .seba {
+    color:#1B3280;
+    font-size: 20px;
+
+}
+
+header .logo .icono { color:#bfbfbf; } 
+
+header .logo p { color: #777777; }
+/* --- MENU --- */
+header .menu {
+	padding: 0;
+}
+
+header .menu a {
+	display: block;  /*Para poder poner padding*/
+	padding: 0 30px; /* 0 arriba y abajo 30 a los lados*/
+	text-decoration: none;
+	color: #fff;
+}
+
+header .menu a div span {  /*Texto en otro tamaño de fuente*/
+	font-weight: 600;
+}
+
+header .menu .c-1 { background: #CC0000; }
+header .menu .c-2 { background: #005385; }
+header .menu .c-3 { background: #3da5e2; }
+
+
+header .menu .c-1:hover { background: #610B0B; }
+header .menu .c-2:hover { background: #0B0B3B; }
+header .menu .c-3:hover { background: #002d44; }
+
+
+
+
+
+.portafolio .titulo {
+	padding: 40px 0;
+	text-align: center;
+	color: #1B3280;
+	font-family: 'Cooper Black', sans-serif;
+	font-weight: 300;
+    border-top: 10px solid #1B3280;
+}
+
+
+
+/* --- CONTACTO --- */
+.contacto {
+	padding: 70px 0; 
+	border-bottom: 10px solid #1B3280;
+}
+
+
+.contacto .form-group {
+	margin-bottom: 0;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario textarea {
+	padding: 15px;
+	border: none;
+	width: 100%;
+	font-family: 'Trade Winds', sans-serif;
+	margin-bottom: 30px;
+    border: solid 4px #1B3280 !important;
+}
+
+.formulario textarea {
+	height: 150px;
+	min-height: 150px;
+	max-height: 250px;
+    border: solid 4px #1B3280 !important;
+}
+
+.formulario .boton {
+	background: #1B3280;
+	border: none;
+	padding: 7px 30px;
+	color: #f2f2f2;
+	font-family: 'Trade Winds', sans-serif;
+	cursor: pointer; 					/*Cambia el puntero para darle un mejor estilo*/
+	width: auto;
+	border-radius: 3px;
+    margin-bottom: 30px;
+}
+
+.formulario .boton:hover {
+	background: #CC0000;
+}
+
+/* --- FOOTER --- */
+.redes-sociales {
+	padding: 40px 0;
+	margin-bottom: 10px;
+}
+
+.redes-sociales .icono {
+	width: 100px;
+	height: 100px;
+	font-size: 40px;
+	line-height: 100px;
+	color: #fff;
+	text-align: center;
+	background: #cbcbcb;
+	display: inline-block;
+	margin: 0px 20px;
+	text-decoration: none;
+	border-radius: 100px;
+	transition: all .3s ease;
+}
+
+.redes-sociales .twitter {background: #1da1f2;}
+.redes-sociales .instagram {background: #833ab4;}
+.redes-sociales .facebook {background: #3b5998;}
+.redes-sociales .youtube {background: rgba(204, 0, 0, 0.90)}
+
+.redes-sociales .icono:hover {
+	background: #000;
+}
+
+
+/* --- MEDIAQUERIES ---  */
+
+/* Dispositivo xl */
+
+@media (min-width: 1200px)
+{
+     #logo{
+        margin-top:8%
+
+    }
+}
+@media (min-width: 360px)
+{
+     #logo{
+        margin-top:100px
+
+    }
+}
+@media screen and (max-width:1199px) {
+     
+}
+
+/* Dispositivo lg */
+@media screen and (max-width:991px) {
+   
+	.logo {
+		height: 76px;
+	}
+
+	.menu {
+		min-height: 76px;
+	}
+
+	.menu a {
+		width: 100%;   /*Ancho del 100% al enlace*/
+	}
+	
+	.menu a div {
+		width: 100%;
+	}
+	
+
+}
+
+/* Dispositivo md */
+@media screen and (max-width:767px) {}
+
+/* Dispositivo sm */
+@media screen and (max-width:575px) {
+	header {
+		margin-top: 0;          /*AL poner la pagina pequeña eliminara el margen superior */
+	}
+    
+
+	header .logo h2, 
+	header .logo p {
+		font-size: 12px;       /*Si esta mas pequeño el tamaño de texto va a ser mas pequeño igual*/
+	}
+}
+
+
+
+
+

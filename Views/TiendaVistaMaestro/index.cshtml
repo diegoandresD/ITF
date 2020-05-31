@@ -1,0 +1,437 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+
+@Styles.Render("~/Content/css")
+<link rel="stylesheet" href="~/Css/TiendaMaestro.css">
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mis Alumnos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#event">Mis Productos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Pedidos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Torneos Internos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mensualidades</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Seccion portafolio -->
+            <div class="row portafolio" style="margin-top:5%">
+                <div class="col">
+
+                    <div class="linea">
+                        <h2 class="titulo">Articulos de Combate</h2>
+                    </div>
+                    
+                    <div class="row" style="margin-top:1%; margin-bottom:5%">
+                        <div class="row galeria justify-content-center">
+                            <!-- Centrar en dispositivos moviles  -->
+                            <div class="contenedor-imagen col-6 col-lg-3">
+                                
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                <img src="~/img/Articulo1.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo2.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo3.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo4.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo1.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo2.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo3.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo4.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+                                <h2 class="titulo">Dobok </h2>
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo1.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo2.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo3.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo4.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo1.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo2.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo3.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo4.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+                                <h2 class="titulo">Entrenamiento en casa </h2>
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo1.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo2.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo3.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo4.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo1.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo2.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo3.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="contenedor-imagen col-6 col-lg-3">
+
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/Articulo4.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                                <h6 class='text-center'>Cabezal Basico</h6>
+                                <input type="text" class="form-control" placeholder="Precio" name="Precio" id="Precio" readonly>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="add_to_cart" class="btn btn-success " value="Editar" />
+                                </div>
+
+                            </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                 
+            </div>
+        
+
+    </main>
+
+    <nav>
+        <ul class="pagination d-flex justify-content-center">
+            <!-- Paginación al final -->
+            <li class="page-item disabled">
+                <span class="page-link" aria-hidden="true">&laquo; Anterior</span>
+            </li>
+            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item"><a href="#" class="page-link">3</a></li>
+            <li class="page-item"><a href="#" class="page-link">4</a></li>
+            <li class="page-item">
+                <a href="#" class="page-link">
+                    <span aria-hidden="true">Siguiente &raquo; </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+            
+
+    <footer>
+
+        <div class="container">
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- CTRL + UK Alinea todo-->
+    @Scripts.Render("~/Bundles/js")
+
+    @*<script src="~/js/jquery-3.4.1.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/scripts.js"></script>
+        <script src="~/js/popper.min.js"></script>*@
+</body>

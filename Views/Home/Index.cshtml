@@ -1,0 +1,301 @@
+﻿
+@{
+    
+    ViewBag.Title = "Index";
+}
+
+
+@Styles.Render("~/Content/css")
+<link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
+
+@*<link rel="stylesheet" href="~/Css/bootstrap.min.css">*@
+
+
+@*<link href="~/fontawesome-free-5.13.0-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/fontawesome-free-5.13.0-web/css/brands.css" rel="stylesheet" />
+    <link href="~/fontawesome-free-5.13.0-web/css/solid.css" rel="stylesheet" />*@
+
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#event">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo.jpg" style="width:100%" class="imglog d-block " id="logo">
+            </div>
+            <div class="nav row rounded-top align-items-strech justify-content-between" style="margin-bottom:1%">
+                <div class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h5>            ITF Federación  </h5>
+                    <i style="font-size:30px" class="fas fa-globe-americas"></i>
+                    <h5>   ONT 2020</h5>
+                </div>
+
+                <nav class="c-1  d-flex align-items-center">
+                    <!-- Este nav abarca automaticamente solo lo q necesite -->
+                    <!-- align-items-stretch sirve para que las 3 cajas midan lo mismo y ocupen el 100% del menu y flex-wrap sirve para que cuando este pequeño ocupe el 100% del espacio y cuando este en grande uso flex-sm-nowrap para que este uno al lado del otro -->
+                    <button class="btn btn-flat btn-danger">
+                        <span>Ingreso funcionario</span><br />
+                        <i style="font-size:25px" class="fas fa-user-tie"></i>
+                    </button>&nbsp;
+                    <button class="btn btn-flat-primary btn-primary">
+                        <span>Ingreso maestros</span><br />
+                        <i style="font-size:25px" class="fas fa-user-injured"></i>
+                    </button>&nbsp;
+                    <button class="btn btn-flat btn-info">
+                        <span>Ingreso alumnos</span><br />
+                        <i style="font-size:25px" class="fas fa-users"></i>
+                    </button>
+                    @*<a href="#" class="c-1 d-flex align-items-center">
+                            <!-- Asi nos aserguramos que este en forma vertical y centrado -->
+                            <div class="d-flex flex-column text-center">
+                                <!-- flex-colum para que el icono y el texto se centren uno arriba del otro -->
+                                <span class="row">Ingreso funcionario</span>
+                                <i style="font-size:22px" class="fas fa-user-tie"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="c-2 d-flex align-items-center">
+                            <!-- Asi nos aserguramos que este en forma vertical y centrado -->
+                            <div class="d-flex flex-column text-center">
+                                <!-- flex-colum para que el icono y el texto se centren uno arriba del otro -->
+                                <span>Ingreso maestros </span>
+                                <i style="font-size:22px" class="fas fa-user-injured"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="c-3 d-flex align-items-center">
+                            <!-- Asi nos aserguramos que este en forma vertical y centrado -->
+                            <div class="d-flex flex-column text-center">
+                                <!-- flex-colum para que el icono y el texto se centren uno arriba del otro -->
+                                <span>Ingreso alumnos</span>
+                                <i style="font-size:22px" class="fas fa-users"></i>
+                            </div>
+                        </a>*@
+                </nav>
+
+            </div>
+
+
+
+
+            <!-- Slider -->
+            <div class="row slider">
+                <div class="col">
+                    <div class="carousel slide" id="slider" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider" data-slide-to="1"></li>
+                            <li data-target="#slider" data-slide-to="2"></li>
+                            <li data-target="#slider" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <!-- Definir la clase que estara al cargar la pagina -->
+                                <img src="~/img/slide1.jpg" alt="Slide #1" class="d-block img-fluid"> <!-- d block lo transforma en bloque y img flui le asigna el 100% -->
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/slide2.jpg" alt="Slide #2" class="d-block img-fluid">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/slide3.jpg" alt="Slide #3" class="d-block img-fluid">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="~/img/slide4.jpg" alt="Slide #4" class="d-block img-fluid">
+                            </div>
+                        </div>
+
+                        <a href="#slider" class="carousel-control-prev" data-slide="prev">
+                            <!-- Este enlace sera la flecha de anterior -->
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span> <!-- Este es para las tablet de lectura -->
+                        </a>
+                        <a href="#slider" class="carousel-control-next" data-slide="next">
+                            <!-- Este enlace sera la flecha de adelantar -->
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Seccion portafolio -->
+            <div class="row portafolio">
+                <div class="col">
+                    <h2 class="titulo">Publicidad</h2>
+                    <div class="row">
+                        <iframe style="width:100%;height:500px" src="https://www.youtube.com/embed/TpbCKzw4k60" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p></p>
+                        <!-- https://www.youtube.com/watch?v=Ab3PWC4T7G0-->
+                    </div>
+                    <div class="row" style="margin-top:1%">
+                        <div class="row galeria justify-content-center">
+                            <!-- Centrar en dispositivos moviles  -->
+                            <div class="contenedor-imagen col-6 col-lg-6">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/img-11.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                            </div>
+                            <div class="contenedor-imagen col-12 col-lg-6">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/img-22.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                            </div>
+                            <div class="contenedor-imagen col-12 col-lg-8">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/img-33.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                            </div>
+                            <div class="contenedor-imagen col-6 col-lg-4">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/img-44.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                            </div>
+                            <div class="contenedor-imagen col-6 col-lg-4">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/img-55.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                            </div>
+                            <div class="contenedor-imagen col-6 col-lg-4">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/img-66.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                            </div>
+                            <div class="contenedor-imagen col-6 col-lg-4">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/img-77.jpg" class="img-fluid imagen" alt="">  <!-- img-fluid abarca el 100% -->
+                                </a>
+                            </div>
+
+                            <!-- Ventana Modal -->
+                            <div class="modal fade" id="modal">
+                                <div class="modal-dialog d-flex justify-content-center align-items-center">
+                                    <div class="modal-content">
+                                        <img src="img/img-1.jpg" alt="" id="imagen-modal" class="">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Seccion Acerca de -->
+            <div class="row acerca-de align-items-center">
+                <div class="col-12 col-lg-4 foto">
+                    <img src="~/img/foto.jpg" class="rounded-circle img-fluid" alt="">  <!--  Para que la imagen este redondeada y abarque el 100% de la col -->
+                    <p class="nombre">Presidente</p>
+                    <p class="nombre">Javier Lillo</p>
+                </div>
+                <div class="col-12 col-lg-8 info">
+                    <h2 class="titulo">¿Quiénes Somos?</h2>
+                    <p class="resumen">
+                        Una Federación  respaldada por la INTERNATIONAL TAEKWON-DO
+                        FEDERATION, donde respetamos la independencia de cada uno de
+                        los instructores, pero sabemos que juntos logramos hacer
+                        grandes cosas y así representamos a Chile con el mejor nivel
+                        técnico de taekwondo.
+                    </p>
+                    <p class="resumen">
+                        Creemos en los 5 principios de este arte marcial: Cortesía,
+                        integridad, perseverancia, autocontrol y espíritu indómito
+                        y buscamos darles el mejor servicio a nuestros a alumnos,
+                        tanto en el nivel técnico como humano.
+
+
+                    </p>
+
+                    <p class="label">Compromiso</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:100%;">100%</div>
+                    </div>
+
+                    <p class="label">Disciplina</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:100%;">100%</div>
+                    </div>
+
+                    <p class="label">Auto Control</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:100%;">100%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seccion de Contacto -->
+            <div class="row contacto justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <h2 class="titulo">Contacto</h2>
+                    <form action="" class="formulario">
+                        <div class="form-group row">
+                            <div class="col-12 col-md-6">
+                                <input type="text" name="" id="" placeholder="Nombre">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <input type="text" name="" id="" placeholder="Correo">
+                            </div>
+                        </div>
+                        <textarea name="" id="" placeholder="Mensaje"></textarea>
+                        <div class="form-group d-flex justify-content-center">
+                            <input id="Guardar" type="button" class="boton" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="container">
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- CTRL + UK Alinea todo-->
+    @Scripts.Render("~/Bundles/js")
+
+    @*<script src="~/js/jquery-3.4.1.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/js/scripts.js"></script>
+        <script src="~/js/popper.min.js"></script>*@
+</body>

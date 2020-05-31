@@ -1,0 +1,108 @@
+﻿.titulo {
+    border-top: 5px solid #000000;
+    border-bottom: 5px solid #000000;
+}
+
+    .titulo h2 {
+        text-align: center;
+    }
+   
+ 
+/* Academia*/
+.academia {
+    background: #fff;
+    padding: 10px 20px;
+}
+
+
+    .academia .galeria .contenedor .contenedor-imagen {
+        margin-bottom: 40px;
+        max-height: 230px;
+        overflow: hidden;
+    }
+
+    .academia .galeria .contenedor-imagen a {
+        background: #3da5e2;
+        display: inline-block;
+        margin: auto;
+    }
+
+        .academia .galeria .contenedor-imagen:hover img {
+            opacity: .3;
+        }
+
+    .academia .galeria .contenedor .contenedor-texto  p{
+        text-align:left;
+        padding:0px;
+    }
+        /* Footer*/
+        .redes-sociales {
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+    .redes-sociales .icono {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        line-height: 100px;
+        color: #fff;
+        text-align: center;
+        background: #cbcbcb;
+        display: inline-block;
+        margin: 0px 20px;
+        text-decoration: none;
+        border-radius: 100px;
+        transition: all .3s ease;
+    }
+
+    .redes-sociales .twitter {
+        background: #1da1f2
+    }
+
+    .redes-sociales .instagram {
+        background: #833ab4
+    }
+
+    .redes-sociales .facebook {
+        background: #3b5998
+    }
+
+/* mediaqueries*/
+/* Dsipositivos xl*/
+@media screen and (max-width: 1199px) {
+}
+/* Dsipositivos lg*/
+@media screen and (max-width: 991px) {
+    .logo {
+        height: 76px;
+    }
+
+    .menu {
+        min-height: 76px;
+    }
+
+        .menu a {
+            width: 100%;
+        }
+
+            .menu a div {
+                width: 100%;
+            }
+
+   
+}
+/* Dsipositivos md*/
+@media screen and (max-width: 767px) {
+}
+/* Dsipositivos sm*/
+@media screen and (max-width: 575px) {
+    header {
+        margin-top: 0;
+    }
+
+        header .logo h2,
+        header .logo p {
+            font-size: 12px;
+        }
+}

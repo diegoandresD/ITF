@@ -1,0 +1,226 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @Styles.Render("~/Content/cssformulario")
+    @Styles.Render("~/Content/csslistartorneos")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/js")
+
+    <link rel="stylesheet" href="~/Css/FormularioInscripcionAlumno.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mi progresion</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#event">Articulos Marciales</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Examenes</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mensualidades</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo.jpg" style="width:100%" class="imglog d-block " id="logo">
+            </div>
+            <div class="nav row rounded-top align-items-strech justify-content-between" style="margin-bottom:1%">
+                <div class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h5>            ITF Federación  </h5>
+                    <i style="font-size:30px" class="fas fa-globe-americas"></i>
+                    <h5>   ONT 2020</h5>
+                </div>
+                <nav class="c-1  d-flex align-items-center">
+                    <div class="btn btn-flat btn-danger">
+                        <span>Alumno</span><br />
+                        <i style="font-size:25px" class="fas fa-user-tie"></i>
+                    </div>&nbsp;
+                    <button class="btn btn-flat-primary btn-primary">
+                        <span>Cerrar Sesion</span><br />
+                        <i style="font-size:25px" class="fas  fa-user-times"></i>
+                    </button>&nbsp;
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="titulo col-7 mx-auto "><h2>Porximos Torneos</h2></div>
+        <div class="wrapper">
+            <div class="inner">
+                <div class="image-holder">
+                    <img src="~/img/imagen-prueba.jpg" alt="">
+                </div>
+                <form class="formulario" action="">
+                    <h3>Datos del Evento</h3>
+                    <div class="form-row mx-auto">
+                        <div class="name">Nombre del Evento</div>
+                        <input type="text" class="input--style-5  " name="nombreEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Direccion</div>
+                        <input type="text" class="input--style-5" name="direccionEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Fecha</div>
+                        <input type="text" class="input--style-5 col-6" name="fechaEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Fecha de Inscripcion</div>
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" name="fechaInicio">
+                                    <label class="label--desc">Desde</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" name="fechaFinal">
+                                    <label class="label--desc">Hasta</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value">
+                        <div class="row row-space mx-auto">
+                            <div>
+                                <button class="boton " type="submit">Inscribirse</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="inner">
+                <div class="image-holder">
+                    <img src="~/img/imagen-prueba.jpg" alt="">
+                </div>
+                <form class="formulario" action="">
+                    <h3>Datos del Evento</h3>
+                    <div class="form-row mx-auto">
+                        <div class="name">Nombre del Evento</div>
+                        <input type="text" class="input--style-5  " name="nombreEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Direccion</div>
+                        <input type="text" class="input--style-5" name="direccionEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Fecha</div>
+                        <input type="text" class="input--style-5 col-6" name="fechaEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Fecha de Inscripcion</div>
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" name="fechaInicio">
+                                    <label class="label--desc">Desde</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" name="fechaFinal">
+                                    <label class="label--desc">Hasta</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value">
+                        <div class="row row-space mx-auto">
+                            <div>
+                                <button class="boton " type="submit">Inscribirse</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="inner">
+                <div class="image-holder">
+                    <img src="~/img/imagen-prueba.jpg" alt="">
+                </div>
+                <form class="formulario" action="">
+                    <h3>Datos del Evento</h3>
+                    <div class="form-row mx-auto">
+                        <div class="name">Nombre del Evento</div>
+                        <input type="text" class="input--style-5  " name="nombreEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Direccion</div>
+                        <input type="text" class="input--style-5" name="direccionEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Fecha</div>
+                        <input type="text" class="input--style-5 col-6" name="fechaEvento">
+                    </div>
+                    <div class="form-row  mx-auto">
+                        <div class="name">Fecha de Inscripcion</div>
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" name="fechaInicio">
+                                    <label class="label--desc">Desde</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group-desc">
+                                    <input class="input--style-5" type="text" name="fechaFinal">
+                                    <label class="label--desc">Hasta</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value">
+                        <div class="row row-space mx-auto">
+                            <div>
+                                <button class="boton " type="submit">Inscribirse</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jsformulario")
+    @Scripts.Render("~/Bundles/js")
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITF.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ITF_ACADEMIAS">
+    <Key>
+      <PropertyRef Name="ID_ACADEMIA" />
+    </Key>
+    <Property Name="ID_ACADEMIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_ACADEMIA" Type="varchar" MaxLength="50" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="50" />
+    <Property Name="CORREO_ELECTRONICO" Type="varchar" MaxLength="50" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="50" />
+    <Property Name="COD_MAESTRO" Type="int" />
+  </EntityType>
+  <EntityType Name="ITF_AHORRO_REGISTROS">
+    <Key>
+      <PropertyRef Name="ID_REGISTRO_AHORRO" />
+    </Key>
+    <Property Name="ID_REGISTRO_AHORRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+    <Property Name="COD_TIPO_REGISTRO" Type="int" />
+    <Property Name="MONTO" Type="bigint" />
+    <Property Name="COD_USUARIO" Type="int" />
+  </EntityType>
+  <EntityType Name="ITF_AHORRO_TIPO_REGISTROS">
+    <Key>
+      <PropertyRef Name="ID_TIPO_REGISTRO_AHORRO" />
+    </Key>
+    <Property Name="ID_TIPO_REGISTRO_AHORRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_TIPO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ITF_AHORROS">
+    <Key>
+      <PropertyRef Name="ID_AHORRO" />
+    </Key>
+    <Property Name="ID_AHORRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MONTO" Type="bigint" />
+    <Property Name="COD_USUARIO" Type="int" />
+    <Property Name="FECHA_ULTIMO_AHORRO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ITF_ARANCELES">
+    <Key>
+      <PropertyRef Name="ID_ARANCEL" />
+    </Key>
+    <Property Name="ID_ARANCEL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VALOR_ANUAL" Type="bigint" />
+    <Property Name="VALOR_MENSUAL" Type="int" />
+    <Property Name="TITULO" Type="varchar" MaxLength="50" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
+    <Property Name="ESTADO" Type="bit" />
+  </EntityType>
+  <EntityType Name="ITF_EXAMEN_REALIZADOS">
+    <Key>
+      <PropertyRef Name="ID_EXAMEN" />
+    </Key>
+    <Property Name="ID_EXAMEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_EXAMEN" Type="varchar" MaxLength="30" />
+    <Property Name="FORMA" Type="varchar" MaxLength="30" />
+    <Property Name="EJERCICIOS_F_F_F" Type="varchar" MaxLength="1000" />
+    <Property Name="ATAQUE" Type="varchar" MaxLength="1000" />
+    <Property Name="DEFENSA_PERSONAL" Type="varchar" MaxLength="1000" />
+    <Property Name="ROTURA" Type="varchar" MaxLength="1000" />
+    <Property Name="TEORIA" Type="varchar" MaxLength="1000" />
+    <Property Name="FECHA_REALIZACION" Type="datetime" />
+    <Property Name="COD_USUARIO" Type="int" />
+  </EntityType>
+  <EntityType Name="ITF_GENEROS">
+    <Key>
+      <PropertyRef Name="ID_GENERO" />
+    </Key>
+    <Property Name="ID_GENERO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_GENERO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ITF_INDICADORES">
+    <Key>
+      <PropertyRef Name="ID_INDICADOR" />
+    </Key>
+    <Property Name="ID_INDICADOR" Type="int" Nullable="false" />
+    <Property Name="COD_USUARIO" Type="int" />
+    <Property Name="PESO" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="COD_GRADO" Type="int" />
+    <Property Name="ESTATURA" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="ITF_MATRICULAS">
+    <Key>
+      <PropertyRef Name="ID_MATRICULA" />
+    </Key>
+    <Property Name="ID_MATRICULA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COD_ARANCEL" Type="int" />
+    <Property Name="COD_USUARIO" Type="int" />
+    <Property Name="FECHA" Type="datetime" />
+    <Property Name="MONTO" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ITF_PAGOS">
+    <Key>
+      <PropertyRef Name="ID_PAGO" />
+    </Key>
+    <Property Name="ID_PAGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA_PAGO" Type="datetime" />
+    <Property Name="MES" Type="int" />
+    <Property Name="ANO" Type="int" />
+    <Property Name="COD_USUARIO" Type="int" />
+    <Property Name="MONTO" Type="bigint" />
+  </EntityType>
+  <EntityType Name="ITF_TIPO_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_TIPO_USUARIO" />
+    </Key>
+    <Property Name="ID_TIPO_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_TIPO_USUARIO" Type="varchar" MaxLength="50" />
+    <Property Name="ESTADO" Type="bit" />
+  </EntityType>
+  <EntityType Name="ITF_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RUT" Type="varchar" MaxLength="20" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="APELLIDO_PATERNO" Type="varchar" MaxLength="100" />
+    <Property Name="APELLIDO_MATERNO" Type="varchar" MaxLength="100" />
+    <Property Name="NOMBRE_SOCIAL" Type="varchar" MaxLength="100" />
+    <Property Name="FECHA_NACIMIENTO" Type="date" />
+    <Property Name="COD_GENERO" Type="int" />
+    <Property Name="NOMBRE_USUARIO" Type="varchar" MaxLength="20" />
+    <Property Name="CONTRASENA" Type="varchar" MaxLength="20" />
+    <Property Name="CORREO_ELECTRONICO" Type="varchar" MaxLength="50" />
+    <Property Name="TELEFONO" Type="varchar" MaxLength="20" />
+    <Property Name="TELEFONO_CONTACTO" Type="varchar" MaxLength="20" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="100" />
+    <Property Name="COD_ACADEMIA_ANTERIOR" Type="int" />
+    <Property Name="COD_ADADEMIA_ACTUAL" Type="int" />
+    <Property Name="COD_TIPO_USUARIO" Type="int" />
+  </EntityType>
+  <EntityContainer Name="ITFStoreContainer">
+    <EntitySet Name="ITF_ACADEMIAS" EntityType="Self.ITF_ACADEMIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_AHORRO_REGISTROS" EntityType="Self.ITF_AHORRO_REGISTROS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_AHORRO_TIPO_REGISTROS" EntityType="Self.ITF_AHORRO_TIPO_REGISTROS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_AHORROS" EntityType="Self.ITF_AHORROS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_ARANCELES" EntityType="Self.ITF_ARANCELES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="Self.ITF_EXAMEN_REALIZADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_GENEROS" EntityType="Self.ITF_GENEROS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_INDICADORES" EntityType="Self.ITF_INDICADORES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_MATRICULAS" EntityType="Self.ITF_MATRICULAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_PAGOS" EntityType="Self.ITF_PAGOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="Self.ITF_TIPO_USUARIOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_USUARIOS" EntityType="Self.ITF_USUARIOS" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

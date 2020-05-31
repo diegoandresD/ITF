@@ -1,0 +1,261 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    @Styles.Render("~/Content/cssformulario")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/js")
+    <link rel="stylesheet" href="~/Css/FormularioInscripcionAlumno.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mi progresion</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#event">Articulos Marciales</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Examenes</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mensualidades</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo.jpg" style="width:100%" class="imglog d-block " id="logo">
+            </div>
+            <div class="nav row rounded-top align-items-strech justify-content-between" style="margin-bottom:1%">
+                <div class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
+                    <h5>            ITF Federación  </h5>
+                    <i style="font-size:30px" class="fas fa-globe-americas"></i>
+                    <h5>   ONT 2020</h5>
+                </div>
+                <nav class="c-1  d-flex align-items-center">
+                    <div class="btn btn-flat btn-danger">
+                        <span>Alumno</span><br />
+                        <i style="font-size:25px" class="fas fa-user-tie"></i>
+                    </div>&nbsp;
+                    <button class="btn btn-flat-primary btn-primary">
+                        <span>Cerrar Sesion</span><br />
+                        <i style="font-size:25px" class="fas  fa-user-times"></i>
+                    </button>&nbsp;
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="page-wrapper bg-gra-03 p-t-0 p-b-0">
+            <div class="wrapper wrapper--w790">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Datos del Torneo</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            <div class="form-row ">
+                                <div class="name">Nombre del Torneo</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="nombreTorneo" value="" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Direccion</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="direccionTorneo" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Fecha del Torneo</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="date" name="fechaTorneo" value="" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Fecha de Inscripcion</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-6">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="fechaInicio" readonly>
+                                                <label class="label--desc">Desde</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="fechaFinal" readonly>
+                                                <label class="label--desc">Hasta</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper bg-gra-03 p-t-0 p-b-50">
+            <div class="wrapper wrapper--w790">
+                <div class="card card-5">
+                    <div class="card-heading">
+                        <h2 class="title">Formulario de Inscripcion</h2>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" class="formulario">
+                            <div class="form-row ">
+                                <div class="name">Rut</div>
+                                <div class="value col-4">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="rut">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Nombre</div>
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-6">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="nombre">
+                                                <label class="label--desc">Nombre</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="apellido">
+                                                <label class="label--desc">Apellido</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Fecha de Nacimiento</div>
+                                <div class="value col-4">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="date" name="fecha-nacimiento">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Genero</div>
+                                <div class="value col-4">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="genero">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Grado</div>
+                                <div class="value col-4">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="grado">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Peso</div>
+                                <div class="value col-4">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="peso">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Estatura</div>
+                                <div class="value col-4">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="estatura">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Email</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="email" name="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Direccion</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="direccion">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">Telefono</div>
+                                <div class="value col-4">
+                                    <div class="input-group">
+                                        <input class="input--style-5" type="text" name="telefono">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+
+                                <div class="value">
+                                    <div class="row row-space">
+                                        <div class="col-6">
+                                            <button class=" boton" type="submit">Inscribirse</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class=" boton" type="submit">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jsformulario")
+    @Scripts.Render("~/Bundles/js")
+
+</body>
+</html>

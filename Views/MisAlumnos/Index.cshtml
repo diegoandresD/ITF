@@ -1,0 +1,146 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+
+@Styles.Render("~/Content/css")
+<link rel="stylesheet" href="~/Css/MisAlumnos.css">
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mis Alumnos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mis Productos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Pedidos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Torneos Internos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Mensualidades</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <div>
+            <!-- Seccion portafolio -->
+            <div class="row portafolio" style="margin-top:10%">
+                <div class="col">
+                    <h2 class="titulo">Mis Alumnos</h2>
+                    <div>
+                        <div class="row">
+                            <div class="col">
+                                <!-- .table-dark Nos permite cambiar los colores de la tabla a oscuro -->
+                                <!-- .table-striped Nos permite alternar colores entre cada fila -->
+                                <!-- .table-bordered Nos permite agregarle bordes a la tabla -->
+                                <!-- .table-hover Nos permite agregarle un hover a las filas -->
+                                <!-- .table-sm Nos permite hacer la tabla mas pequeña eliminando paddings -->
+                                <!-- .table-responsive-xx Nos permite adaptar nuestra tabla a dispositivos moviles -->
+                                <table class="table table-sm table-hover table-bordered table-responsive-lg">
+                                    <!-- responsive sirve para ajutar la tabla segun el dispositivo -->
+                                    <thead>
+                                        <!-- Encabezado de tabla -->
+                                        <tr class="table-warning">
+                                            <th>Rut Alumno</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Fecha de Nacimiento</th>
+                                            <th>Genero</th>
+                                            <th>Username</th>
+                                            <th>Password</th>
+                                            <th>RPassword</th>
+                                            <th>Edad</th>
+                                            <th>Peso</th>
+                                            <th>Grado</th>
+                                            <th>Estatura</th>
+                                            <th>Correo Electronico</th>
+                                            <th>Academia Actual</th>
+                                            <th>Academia Anterior</th>
+                                            <th>Dirección</th>
+                                            <th>Maestro</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td>12316556-8</td>
+                                        <td>Diego </td>
+                                        <td>Fernandez</td>
+                                        <td>20/05/1990</td>
+                                        <td>Masculino</td>
+                                        <td>Diego90</td>
+                                        <td>123</td>
+                                        <td>123</td>
+                                        <td>22</td>
+                                        <td>70 KG</td>
+                                        <td>Verde</td>
+                                        <td>1,70</td>
+                                        <td>Diego@diego.cl</td>
+                                        <td>Chilito</td>
+                                        <td>argento</td>
+                                        <td>malaquias 346</td>
+                                        <td>John Cena</td>
+
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="text-center" style="margin-bottom:50px">
+                            <button class="btn btn-primary">Agregar Alumno</button>
+                            <button class="btn btn-warning">Editar Alumno</button>
+                            <button class="btn btn-danger">Eliminar Alumno</button>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+
+
+
+
+
+    <footer>
+
+        <div class="container">
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/Bundles/js")
+
+
+</body>

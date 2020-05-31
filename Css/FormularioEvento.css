@@ -1,0 +1,194 @@
+﻿body {
+    background: #f2f2f2;
+    font-family: 'Cooper Black';
+}
+
+.imglog {
+    border: solid 8px black !important;
+    margin-top: 8%;
+}
+
+header {
+    margin-top: 30px;
+}
+
+
+    /* --- LOGO --- */
+    header .logo h2,
+    header .logo span,
+    header .logo p {
+        display: inline-block; /*Elementos uno al lado de otro*/
+        margin: 0;
+    }
+
+
+    header .logo h2 {
+        font-weight: 800;
+        text-transform: uppercase; /*Todo el texto en mayuscula*/
+    }
+
+    header .logo .icono {
+        color: #bfbfbf;
+    }
+
+    header .logo p {
+        color: #777777;
+    }
+
+    /* --- MENU --- */
+    header .menu {
+        padding: 0;
+    }
+
+.usuario {
+    background: #CC0000;
+}
+
+header .menu a {
+    display: block; /*Para poder poner padding*/
+    padding: 0 30px; /* 0 arriba y abajo 30 a los lados*/
+    text-decoration: none;
+    color: #fff;
+}
+
+    header .menu a div span { /*Texto en otro tamaño de fuente*/
+        font-weight: 600;
+    }
+
+header .menu .c-1 {
+    background: #CC0000;
+}
+
+header .menu .c-2 {
+    background: #005385;
+}
+
+header .men u .c-3 {
+    background: #3da5e2;
+}
+
+
+header .menu .c-1:hover {
+    background: #610B0B;
+}
+
+header .menu .c-2:hover {
+    background: #0B0B3B;
+}
+
+header .menu .c-3:hover {
+    background: #002d44;
+}
+
+
+
+/* --- FOOTER --- */
+.redes-sociales {
+    border-top: 3px solid black;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+
+    .redes-sociales .icono {
+        width: 70px;
+        height: 70px;
+        font-size: 40px;
+        line-height: 70px;
+        color: #fff;
+        text-align: center;
+        background: #cbcbcb;
+        display: inline-block;
+        margin: 0px 20px;
+        text-decoration: none;
+        border-radius: 70px;
+        transition: all .3s ease;
+    }
+
+    .redes-sociales .twitter {
+        background: #1da1f2;
+    }
+
+    .redes-sociales .instagram {
+        background: #833ab4;
+    }
+
+    .redes-sociales .facebook {
+        background: #3b5998;
+    }
+
+    .redes-sociales .youtube {
+        background: rgba(204, 0, 0, 0.90)
+    }
+
+    .redes-sociales .icono:hover {
+        background: #000;
+    }
+
+/*formulario*/
+.formulario .boton {
+    background: #3da5e2;
+    border: none;
+    padding: 7px 30px;
+    color: #fff;
+    font-family: 'Trade Winds', sans-serif;
+    cursor: pointer;
+    width: auto;
+    border-radius: 3px;
+}
+
+
+
+@media screen and (max-width:991px) {
+
+    .logo {
+        height: 76px;
+    }
+
+    .menu {
+        min-height: 76px;
+    }
+
+        .menu a {
+            width: 100%; /*Ancho del 100% al enlace*/
+        }
+
+            .menu a div {
+                width: 100%;
+            }
+
+    .portafolio .galeria .contenedor-imagen:nth-child(1) {
+        order: 1;
+    }
+
+    .portafolio .galeria .contenedor-imagen:nth-child(2) {
+        order: 3;
+    }
+
+    .portafolio .galeria .contenedor-imagen:nth-child(3) {
+        order: 6;
+    }
+
+    .portafolio .galeria .contenedor-imagen:nth-child(4) {
+        order: 2;
+    }
+
+    .portafolio .galeria .contenedor-imagen:nth-child(5) {
+        order: 5;
+    }
+
+    .portafolio .galeria .contenedor-imagen:nth-child(6) {
+        order: 4;
+    }
+
+    .portafolio .galeria .contenedor-imagen:nth-child(7) {
+        order: 7;
+    }
+
+    .modal .modal-dialog {
+        width: 90%;
+    }
+
+        .modal .modal-dialog .modal-content img { /*  Si en un dispositivo pequeño la imagen queda muy grande mantenemos el largo de la imagen con esta clase*/
+            width: 100%;
+        }
+}
