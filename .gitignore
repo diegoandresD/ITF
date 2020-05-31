@@ -358,3 +358,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+.vs/ITF/v16/.suo
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/ITF.csprojAssemblyReference.cache
