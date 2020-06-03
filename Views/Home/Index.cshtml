@@ -1,6 +1,5 @@
 ﻿
 @{
-    
     ViewBag.Title = "Index";
 }
 
@@ -8,91 +7,160 @@
 @Styles.Render("~/Content/css")
 <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
 
-@*<link rel="stylesheet" href="~/Css/bootstrap.min.css">*@
+<style>
+    @@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
 
+    html, body {
+        background: #fff;
+        font-family: Calibri;
+        color: #007bff;
+    }
 
-@*<link href="~/fontawesome-free-5.13.0-web/css/fontawesome.css" rel="stylesheet" />
-    <link href="~/fontawesome-free-5.13.0-web/css/brands.css" rel="stylesheet" />
-    <link href="~/fontawesome-free-5.13.0-web/css/solid.css" rel="stylesheet" />*@
+    html {
+        height: 100%;
+        display: flex;
+    }
+
+    body {
+        margin: auto;
+    }
+
+    .alrazy-title {
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 25px;
+        position: relative;
+        padding: 0.4em 0;
+        overflow: hidden;
+    }
+
+        .alrazy-title:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-bottom: solid 0.2em;
+            -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+    @@-webkit-keyframes underline {
+        from {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    }
+
+    @@keyframes underline {
+        from {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    }
+
+    .alrazy-title .word {
+        display: inline-block;
+        -webkit-animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+        animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-delay: calc( .5s + (.1s * var(--word-index)) );
+        animation-delay: calc( .5s + (.1s * var(--word-index)) );
+    }
+
+    @@-webkit-keyframes slide-up {
+        from {
+            -webkit-transform: translateY(125%);
+            transform: translateY(125%);
+        }
+    }
+
+    @@keyframes slide-up {
+        from {
+            -webkit-transform: translateY(125%);
+            transform: translateY(125%);
+        }
+    }
+
+    .splitting-mark {
+        color: #FFF !important;
+    }
+</style>
 
 
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:black">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
-                        aria-expanded="false" aria-label="toggle navigation">
-                    <span class="navbar-toggler-icon">
-                    </span> <span class="badge badge-pill badge-info">Menú</span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarresponsive">
-                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link text-white" href="#about">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#">Academias</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#event">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#">Reglamento</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#">Eventos</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-
-
         <div class="container">
-            <div class="col-lg-12 text-center">
-                <img src="~/img/logo.jpg" style="width:100%" class="imglog d-block " id="logo">
-            </div>
-            <div class="nav row rounded-top align-items-strech justify-content-between" style="margin-bottom:1%">
-                <div class="col-md-12 col-lg logo d-flex align-items-center justify-content-center justify-content-lg-start">
-                    <h5>            ITF Federación  </h5>
-                    <i style="font-size:30px" class="fas fa-globe-americas"></i>
-                    <h5>   ONT 2020</h5>
+
+            <div class="nav rounded-top align-items-end" style="margin-bottom:1%">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="">
+                                <div class="alrazy-title" data-splitting>ITF Federación FECHITAT 2020</div>
+                                <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+                                <script>Splitting();</script>
+                                <br />
+                                @*<h5>            ITF Federación  </h5>
+                                    <i style="font-size:30px" class="fas fa-globe-americas"></i>
+                                    <h5>   ONT 2020</h5>*@
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <nav class="c-1 d-flex align-items-end d-flex justify-content-end">
+                                <!-- Este nav abarca automaticamente solo lo q necesite -->
+                                <!-- align-items-stretch sirve para que las 3 cajas midan lo mismo y ocupen el 100% del menu y flex-wrap sirve para que cuando este pequeño ocupe el 100% del espacio y cuando este en grande uso flex-sm-nowrap para que este uno al lado del otro -->
+
+
+                                <button class="btn btn-flat btn-danger">
+                                    <span>Ingreso funcionario</span><br />
+                                    <i style="font-size:25px" class="fas fa-user-tie"></i>
+                                </button>&nbsp;
+                                <button class="btn btn-flat-primary btn-primary">
+                                    <span>Ingreso maestros</span><br />
+                                    <i style="font-size:25px" class="fas fa-user-injured"></i>
+                                </button>&nbsp;
+                                <button class="btn btn-flat btn-info">
+                                    <span>Ingreso alumnos</span><br />
+                                    <i style="font-size:25px" class="fas fa-users"></i>
+                                </button>
+                                @*<a href="#" class="c-1 d-flex align-items-center">
+                                         Asi nos aserguramos que este en forma vertical y centrado
+                                        <div class="d-flex flex-column text-center">
+                                             flex-colum para que el icono y el texto se centren uno arriba del otro
+                                            <span class="row">Ingreso funcionario</span>
+                                            <i style="font-size:22px" class="fas fa-user-tie"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="c-2 d-flex align-items-center">
+                                         Asi nos aserguramos que este en forma vertical y centrado
+                                        <div class="d-flex flex-column text-center">
+                                             flex-colum para que el icono y el texto se centren uno arriba del otro
+                                            <span>Ingreso maestros </span>
+                                            <i style="font-size:22px" class="fas fa-user-injured"></i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="c-3 d-flex align-items-center">
+                                         Asi nos aserguramos que este en forma vertical y centrado
+                                        <div class="d-flex flex-column text-center">
+                                             flex-colum para que el icono y el texto se centren uno arriba del otro
+                                            <span>Ingreso alumnos</span>
+                                            <i style="font-size:22px" class="fas fa-users"></i>
+                                        </div>
+                                    </a>*@
+                            </nav>
+                        </div>
+                    </div>
+
+
                 </div>
 
-                <nav class="c-1  d-flex align-items-center">
-                    <!-- Este nav abarca automaticamente solo lo q necesite -->
-                    <!-- align-items-stretch sirve para que las 3 cajas midan lo mismo y ocupen el 100% del menu y flex-wrap sirve para que cuando este pequeño ocupe el 100% del espacio y cuando este en grande uso flex-sm-nowrap para que este uno al lado del otro -->
-                    <button class="btn btn-flat btn-danger">
-                        <span>Ingreso funcionario</span><br />
-                        <i style="font-size:25px" class="fas fa-user-tie"></i>
-                    </button>&nbsp;
-                    <button class="btn btn-flat-primary btn-primary">
-                        <span>Ingreso maestros</span><br />
-                        <i style="font-size:25px" class="fas fa-user-injured"></i>
-                    </button>&nbsp;
-                    <button class="btn btn-flat btn-info">
-                        <span>Ingreso alumnos</span><br />
-                        <i style="font-size:25px" class="fas fa-users"></i>
-                    </button>
-                    @*<a href="#" class="c-1 d-flex align-items-center">
-                            <!-- Asi nos aserguramos que este en forma vertical y centrado -->
-                            <div class="d-flex flex-column text-center">
-                                <!-- flex-colum para que el icono y el texto se centren uno arriba del otro -->
-                                <span class="row">Ingreso funcionario</span>
-                                <i style="font-size:22px" class="fas fa-user-tie"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="c-2 d-flex align-items-center">
-                            <!-- Asi nos aserguramos que este en forma vertical y centrado -->
-                            <div class="d-flex flex-column text-center">
-                                <!-- flex-colum para que el icono y el texto se centren uno arriba del otro -->
-                                <span>Ingreso maestros </span>
-                                <i style="font-size:22px" class="fas fa-user-injured"></i>
-                            </div>
-                        </a>
-                        <a href="#" class="c-3 d-flex align-items-center">
-                            <!-- Asi nos aserguramos que este en forma vertical y centrado -->
-                            <div class="d-flex flex-column text-center">
-                                <!-- flex-colum para que el icono y el texto se centren uno arriba del otro -->
-                                <span>Ingreso alumnos</span>
-                                <i style="font-size:22px" class="fas fa-users"></i>
-                            </div>
-                        </a>*@
-                </nav>
 
             </div>
 
@@ -255,19 +323,19 @@
             <!-- Seccion de Contacto -->
             <div class="row contacto justify-content-center">
                 <div class="col-12 col-lg-8">
-                    <h2 class="titulo">Contacto</h2>
+                    <h2 class="titulo">Contácto</h2>
                     <form action="" class="formulario">
                         <div class="form-group row">
                             <div class="col-12 col-md-6">
-                                <input type="text" name="" id="" placeholder="Nombre">
+                                <input type="text" name="" id="" placeholder="Nombre" style="border:1px solid dimgray">
                             </div>
                             <div class="col-12 col-md-6">
-                                <input type="text" name="" id="" placeholder="Correo">
+                                <input type="text" name="" id="" placeholder="Correo" style="border:1px solid dimgray">
                             </div>
                         </div>
-                        <textarea name="" id="" placeholder="Mensaje"></textarea>
+                        <textarea name="" id="" placeholder="Mensaje" style="border:1px solid dimgray"></textarea>
                         <div class="form-group d-flex justify-content-center">
-                            <input id="Guardar" type="button" class="boton" value="Enviar">
+                            <input id="Guardar" type="button" class="boton" value="Enviar" >
                         </div>
                     </form>
                 </div>
@@ -275,20 +343,7 @@
         </div>
     </main>
 
-    <footer>
 
-        <div class="container">
-            <div class="row redes-sociales justify-content-center">
-                <div class="col-auto">
-                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
-                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
-                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
-                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
-                </div>
-            </div>
-
-        </div>
-    </footer>
 
 
     <!-- CTRL + UK Alinea todo-->

@@ -171,6 +171,9 @@
     <Compile Include="Models\ITF_ARANCELES.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITF_CATEGORIAS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ITF_EXAMEN_REALIZADOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
@@ -184,6 +187,9 @@
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_PAGOS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_PRODUCTOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_TIPO_USUARIOS.cs">
@@ -211,6 +217,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
     <Content Include="bin\EntityFramework.dll" />
@@ -1961,6 +1968,7 @@
     <Content Include="formulario\vendor\select2\select2.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="hola.txt" />
     <Content Include="img\foto.jpg" />
     <Content Include="img\img-1.jpg" />
     <Content Include="img\img-11.jpg" />
@@ -2481,6 +2489,7 @@
     <Content Include="packages\Newtonsoft.Json.12.0.2\Newtonsoft.Json.12.0.2.nupkg" />
     <Content Include="packages\WebGrease.1.6.0\.signature.p7s" />
     <Content Include="packages\WebGrease.1.6.0\WebGrease.1.6.0.nupkg" />
+    <Content Include="README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2531,6 +2540,13 @@
     <Content Include="Views\TorneoInternoMaestro\index.cshtml" />
     <Content Include="Views\Maestro\Home.cshtml" />
     <Content Include="Views\Maestro\Alumnos.cshtml" />
+    <Content Include="Views\Shared\_NavMaestro.cshtml" />
+    <Content Include="Views\Shared\_NavAlumno.cshtml" />
+    <Content Include="Views\Maestro\MisProductos.cshtml" />
+    <Content Include="Views\Maestro\Pedidos.cshtml" />
+    <Content Include="Views\Maestro\Mensualidades.cshtml" />
+    <Content Include="Views\Home\Contacto.cshtml" />
+    <Content Include="Views\Home\Academias.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

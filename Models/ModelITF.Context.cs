@@ -37,5 +37,7 @@ namespace ITF.Models
         public virtual DbSet<ITF_PAGOS> ITF_PAGOS { get; set; }
         public virtual DbSet<ITF_TIPO_USUARIOS> ITF_TIPO_USUARIOS { get; set; }
         public virtual DbSet<ITF_USUARIOS> ITF_USUARIOS { get; set; }
+        public virtual DbSet<ITF_CATEGORIAS> ITF_CATEGORIAS { get; set; }
+        public virtual DbSet<ITF_PRODUCTOS> ITF_PRODUCTOS { get; set; }
     }
 }

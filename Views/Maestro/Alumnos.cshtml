@@ -3,36 +3,6 @@
     ViewBag.Title = "Alumnos";
 }
 
-<nav class="navbar navbar-expand-lg navbar-light text-center" style="background-color: white;">
-
-
-    <div class="collapse navbar-collapse text-center" id="navbarColor03">
-        <ul class="navbar-nav mr-auto" style="font-size:22px;font-weight: bold">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-home"></i> Home |</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> Mis alumnos |</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i> Mis productos |</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-shipping-fast"></i> Pedidos |</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-calendar-alt"></i> Torneos internos |</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-money-bill-wave"></i> Mensualidades </a>
-            </li>
-        </ul>
-        @*<form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-            </form>*@
-    </div>
-</nav>
 <div class="alrazy-title" data-splitting>
     Mi lista de alumnos
 </div>
@@ -40,6 +10,113 @@
 <script>Splitting();</script>
 <br />
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="card">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    Agregar alumno
+                    <button type="button" title="Agregar pago" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fas fa-plus-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar alumno</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Rut</label>
+                        <p><input type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <label>Nombres</label>
+                        <p><input type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Apellido paterno</label>
+                        <p><input type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Apellido materno</label>
+                        <p><input type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Fecha nacimiento</label>
+                        <p><input type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Genero</label>
+                        <p>
+                            <select class="form-control">
+                                <option value="0">--Seleccione--</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Femenino</option>
+                                <option value="3">Otro</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Nombre usuario</label>
+                        <p><input type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Correo electronico</label>
+                        <p><input type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Telefono</label>
+                        <p><input type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtTelefonoContacto">Telefono contácto</label>
+                        <p><input type="text" class="form-control" id="txtTelefonoContacto" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="txtDireccion">Direccion</label>
+                        <p><input type="text" class="form-control" id="txtDireccion" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Academia anterior</label>
+                        <p>
+                            <select class="form-control">
+                                <option value="0">--Seleccione--</option>
+                            </select>
+                        </p>
+                    </div>
+                   
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div>
     <div class="row">
@@ -86,7 +163,7 @@
         </table>
     </div>
     <div class="text-center" style="margin-bottom:50px">
-        
+
     </div>
 
 

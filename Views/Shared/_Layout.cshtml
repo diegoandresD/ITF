@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
+
+
     <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
+
 </head>
 <body>
     <header>
@@ -27,7 +30,16 @@
                         <li class="nav-item"><a class="nav-link text-black" href="#">Eventos</a></li>
                         <li class="nav-item"><a class="nav-link text-black" href="#">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-black" href="#" title="mi carrito">
+                                | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i> 
+                            </a>
+                        </li>
+
                     </ul>
+
+
+
                 </div>
             </div>
         </nav>
@@ -38,6 +50,17 @@
                 <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
             </div>
 
+            <!--Nav maestros (accesos directos)-->
+            @if (false)
+            {
+                @Html.Partial("_NavMaestro");
+
+            }
+            @*else
+            {
+                @Html.Partial("_NavAlumno");
+            }*@
+
             <!-- Slider -->
 
 
@@ -46,29 +69,33 @@
     </header>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-      
+
     </div>
 
     <footer>
-        <div class="container">
+        <div class="">
+
             <div class="row redes-sociales justify-content-center">
                 <div class="col-auto">
                     <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
                     <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
                     <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
-                    <i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>
+                    @*<i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>*@
                 </div>
-                <p>
+
+
+            </div>
+            <div class="justify-content-center">
+                <label>
                     &copy; @DateTime.Now.Year - FEDERACION CHILENA DE TAEKWON-DO TRADICIONAL.
 
                     © Virtual Artes - 2018
-                </p>
-
+                </label>
             </div>
-
+            
         </div>
     </footer>
     @Scripts.Render("~/Bundles/js")
+
 </body>
 </html>

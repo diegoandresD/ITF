@@ -49,6 +49,14 @@
     <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
     <Property Name="ESTADO" Type="bit" />
   </EntityType>
+  <EntityType Name="ITF_CATEGORIAS">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_CATEGORIA" Type="varchar" MaxLength="50" />
+    <Property Name="ESTADO" Type="bit" />
+  </EntityType>
   <EntityType Name="ITF_EXAMEN_REALIZADOS">
     <Key>
       <PropertyRef Name="ID_EXAMEN" />
@@ -102,6 +110,21 @@
     <Property Name="COD_USUARIO" Type="int" />
     <Property Name="MONTO" Type="bigint" />
   </EntityType>
+  <EntityType Name="ITF_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+    <Property Name="COD_PRODUCTO" Type="varchar" MaxLength="100" />
+    <Property Name="COD_CATEGORIA" Type="int" />
+    <Property Name="NOMBRE_PRODUCTO" Type="varchar" MaxLength="50" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="500" />
+    <Property Name="PRECIO_TIENDA" Type="int" />
+    <Property Name="PRECIO_INTERNET" Type="int" />
+    <Property Name="STOCK" Type="int" />
+    <Property Name="ESTADO" Type="bit" />
+    <Property Name="URL_IMAGEN" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="ITF_TIPO_USUARIOS">
     <Key>
       <PropertyRef Name="ID_TIPO_USUARIO" />
@@ -138,11 +161,13 @@
     <EntitySet Name="ITF_AHORRO_TIPO_REGISTROS" EntityType="Self.ITF_AHORRO_TIPO_REGISTROS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_AHORROS" EntityType="Self.ITF_AHORROS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_ARANCELES" EntityType="Self.ITF_ARANCELES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_CATEGORIAS" EntityType="Self.ITF_CATEGORIAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="Self.ITF_EXAMEN_REALIZADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_GENEROS" EntityType="Self.ITF_GENEROS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_INDICADORES" EntityType="Self.ITF_INDICADORES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_MATRICULAS" EntityType="Self.ITF_MATRICULAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_PAGOS" EntityType="Self.ITF_PAGOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_PRODUCTOS" EntityType="Self.ITF_PRODUCTOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="Self.ITF_TIPO_USUARIOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_USUARIOS" EntityType="Self.ITF_USUARIOS" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

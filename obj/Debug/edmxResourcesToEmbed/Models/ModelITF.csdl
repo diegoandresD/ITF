@@ -13,6 +13,8 @@
     <EntitySet Name="ITF_PAGOS" EntityType="ITF.ITF_PAGOS" />
     <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="ITF.ITF_TIPO_USUARIOS" />
     <EntitySet Name="ITF_USUARIOS" EntityType="ITF.ITF_USUARIOS" />
+    <EntitySet Name="ITF_CATEGORIAS" EntityType="ITF.ITF_CATEGORIAS" />
+    <EntitySet Name="ITF_PRODUCTOS" EntityType="ITF.ITF_PRODUCTOS" />
   </EntityContainer>
   <EntityType Name="ITF_ACADEMIAS">
     <Key>
@@ -145,5 +147,28 @@
     <Property Name="COD_ACADEMIA_ANTERIOR" Type="Int32" />
     <Property Name="COD_ADADEMIA_ACTUAL" Type="Int32" />
     <Property Name="COD_TIPO_USUARIO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITF_CATEGORIAS">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_CATEGORIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ITF_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="COD_PRODUCTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COD_CATEGORIA" Type="Int32" />
+    <Property Name="NOMBRE_PRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PRECIO_TIENDA" Type="Int32" />
+    <Property Name="PRECIO_INTERNET" Type="Int32" />
+    <Property Name="STOCK" Type="Int32" />
+    <Property Name="ESTADO" Type="Boolean" />
+    <Property Name="URL_IMAGEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

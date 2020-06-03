@@ -8,7 +8,19 @@ namespace ITF.Controllers
 {
     public class HomeController : Controller
     {
+        //Menú
         public ActionResult Index()
+        {
+            return View();
+        }
+        
+        public ActionResult Academias()
+        {
+            return View();
+        }
+
+        //Contácto
+        public ActionResult Contacto()
         {
             return View();
         }

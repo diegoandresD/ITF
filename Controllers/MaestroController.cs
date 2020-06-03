@@ -21,5 +21,20 @@ namespace ITF.Controllers
         {
             return View();
         }
+
+        public ActionResult MisProductos()
+        {
+            return View();
+        }
+
+        public ActionResult Pedidos()
+        {
+            return View();
+        }
+
+        public ActionResult Mensualidades()
+        {
+            return View();
+        }
     }
 }

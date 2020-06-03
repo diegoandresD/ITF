@@ -54,6 +54,14 @@
           <Property Name="DESCRIPCION" Type="varchar" MaxLength="50" />
           <Property Name="ESTADO" Type="bit" />
         </EntityType>
+        <EntityType Name="ITF_CATEGORIAS">
+          <Key>
+            <PropertyRef Name="ID_CATEGORIA" />
+          </Key>
+          <Property Name="ID_CATEGORIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_CATEGORIA" Type="varchar" MaxLength="50" />
+          <Property Name="ESTADO" Type="bit" />
+        </EntityType>
         <EntityType Name="ITF_EXAMEN_REALIZADOS">
           <Key>
             <PropertyRef Name="ID_EXAMEN" />
@@ -107,6 +115,21 @@
           <Property Name="COD_USUARIO" Type="int" />
           <Property Name="MONTO" Type="bigint" />
         </EntityType>
+        <EntityType Name="ITF_PRODUCTOS">
+          <Key>
+            <PropertyRef Name="ID_PRODUCTO" />
+          </Key>
+          <Property Name="ID_PRODUCTO" Type="int" Nullable="false" />
+          <Property Name="COD_PRODUCTO" Type="varchar" MaxLength="100" />
+          <Property Name="COD_CATEGORIA" Type="int" />
+          <Property Name="NOMBRE_PRODUCTO" Type="varchar" MaxLength="50" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="500" />
+          <Property Name="PRECIO_TIENDA" Type="int" />
+          <Property Name="PRECIO_INTERNET" Type="int" />
+          <Property Name="STOCK" Type="int" />
+          <Property Name="ESTADO" Type="bit" />
+          <Property Name="URL_IMAGEN" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="ITF_TIPO_USUARIOS">
           <Key>
             <PropertyRef Name="ID_TIPO_USUARIO" />
@@ -143,11 +166,13 @@
           <EntitySet Name="ITF_AHORRO_TIPO_REGISTROS" EntityType="Self.ITF_AHORRO_TIPO_REGISTROS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_AHORROS" EntityType="Self.ITF_AHORROS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_ARANCELES" EntityType="Self.ITF_ARANCELES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_CATEGORIAS" EntityType="Self.ITF_CATEGORIAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="Self.ITF_EXAMEN_REALIZADOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_GENEROS" EntityType="Self.ITF_GENEROS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_INDICADORES" EntityType="Self.ITF_INDICADORES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_MATRICULAS" EntityType="Self.ITF_MATRICULAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_PAGOS" EntityType="Self.ITF_PAGOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_PRODUCTOS" EntityType="Self.ITF_PRODUCTOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="Self.ITF_TIPO_USUARIOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_USUARIOS" EntityType="Self.ITF_USUARIOS" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -168,6 +193,8 @@
           <EntitySet Name="ITF_PAGOS" EntityType="ITF.ITF_PAGOS" />
           <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="ITF.ITF_TIPO_USUARIOS" />
           <EntitySet Name="ITF_USUARIOS" EntityType="ITF.ITF_USUARIOS" />
+          <EntitySet Name="ITF_CATEGORIAS" EntityType="ITF.ITF_CATEGORIAS" />
+          <EntitySet Name="ITF_PRODUCTOS" EntityType="ITF.ITF_PRODUCTOS" />
         </EntityContainer>
         <EntityType Name="ITF_ACADEMIAS">
           <Key>
@@ -300,6 +327,29 @@
           <Property Name="COD_ACADEMIA_ANTERIOR" Type="Int32" />
           <Property Name="COD_ADADEMIA_ACTUAL" Type="Int32" />
           <Property Name="COD_TIPO_USUARIO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ITF_CATEGORIAS">
+          <Key>
+            <PropertyRef Name="ID_CATEGORIA" />
+          </Key>
+          <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_CATEGORIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ITF_PRODUCTOS">
+          <Key>
+            <PropertyRef Name="ID_PRODUCTO" />
+          </Key>
+          <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+          <Property Name="COD_PRODUCTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COD_CATEGORIA" Type="Int32" />
+          <Property Name="NOMBRE_PRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PRECIO_TIENDA" Type="Int32" />
+          <Property Name="PRECIO_INTERNET" Type="Int32" />
+          <Property Name="STOCK" Type="Int32" />
+          <Property Name="ESTADO" Type="Boolean" />
+          <Property Name="URL_IMAGEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -448,6 +498,31 @@
                 <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
                 <ScalarProperty Name="RUT" ColumnName="RUT" />
                 <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_CATEGORIAS">
+            <EntityTypeMapping TypeName="ITF.ITF_CATEGORIAS">
+              <MappingFragment StoreEntitySet="ITF_CATEGORIAS">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+                <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_PRODUCTOS">
+            <EntityTypeMapping TypeName="ITF.ITF_PRODUCTOS">
+              <MappingFragment StoreEntitySet="ITF_PRODUCTOS">
+                <ScalarProperty Name="URL_IMAGEN" ColumnName="URL_IMAGEN" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+                <ScalarProperty Name="PRECIO_INTERNET" ColumnName="PRECIO_INTERNET" />
+                <ScalarProperty Name="PRECIO_TIENDA" ColumnName="PRECIO_TIENDA" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="NOMBRE_PRODUCTO" ColumnName="NOMBRE_PRODUCTO" />
+                <ScalarProperty Name="COD_CATEGORIA" ColumnName="COD_CATEGORIA" />
+                <ScalarProperty Name="COD_PRODUCTO" ColumnName="COD_PRODUCTO" />
+                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
