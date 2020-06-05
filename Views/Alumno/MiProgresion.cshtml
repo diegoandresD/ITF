@@ -1,10 +1,11 @@
 ﻿
 @{
-    ViewBag.Title = "Pedidos";
+    ViewBag.Title = "MiProgresion";
 }
 
-<div class="alrazy-title title-maestro" data-splitting>
-    Pedidos
+
+<div class="alrazy-title title-alumno" data-splitting>
+    Mi Progresión
 </div>
 <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
 <script>Splitting();</script>
@@ -19,10 +20,14 @@
                 <!-- Encabezado de tabla -->
                 <tr class="table bg-primary text-white">
                     <th>Id</th>
-                    <th>Cliente</th>
+                    <th>Alumno</th>
+                    <th>Grado</th>
+                    <th>Forma</th>
                     <th>Fecha</th>
-                    <th>Monto total</th>
-                    <th>Estado</th>
+                    <th>Tipo movimiento</th>
+                    <th>Descripción</th>
+                    <th>Ejercicios F.F.F</th>
+                    <th>Rutura</th>
                     <th colspan="3">Acciones</th>
                 </tr>
             </thead>
@@ -32,23 +37,16 @@
                 <td>Fernandez</td>
                 <td>20/05/1990</td>
                 <td>Masculino</td>
+                <td>Masculino</td>
+                <td>Masculino</td>
+                <td>Masculino</td>
+                <td>Masculino</td>
                 <td colspan="3">
                     <button class="btn btn-sm btn-primary" title="Ver"><i class="fa fa-eye"></i></button>
                     <button class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
                 </td>
             </tr>
-            <tr>
-                <td>12316556-8</td>
-                <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
-                <td>Fernandez</td>
-                <td>20/05/1990</td>
-                <td>Masculino</td>
-                <td colspan="3">
-                    <button class="btn btn-sm btn-primary" title="Ver detalle pedido"><i class="fa fa-eye"></i></button>
-                    <button class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
-                </td>
 
-            </tr>
 
 
         </table>
@@ -60,4 +58,6 @@
 
 
 </div>
+
+
 

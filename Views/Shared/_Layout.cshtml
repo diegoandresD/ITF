@@ -9,7 +9,7 @@
 
 
     <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
-
+    
 </head>
 <body>
     <header>
@@ -29,12 +29,12 @@
                         <li class="nav-item"><a class="nav-link text-black" href="#">Reglamento</a></li>
                         <li class="nav-item"><a class="nav-link text-black" href="#">Eventos</a></li>
                         <li class="nav-item"><a class="nav-link text-black" href="#">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>
-                        <li class="nav-item">
+                        @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
+                        @*<li class="nav-item">
                             <a class="nav-link active text-black" href="#" title="mi carrito">
                                 | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i> 
                             </a>
-                        </li>
+                        </li>*@
 
                     </ul>
 
@@ -51,15 +51,15 @@
             </div>
 
             <!--Nav maestros (accesos directos)-->
-            @if (false)
+            @if (true)
             {
                 @Html.Partial("_NavMaestro");
 
             }
-            @*else
+            else
             {
                 @Html.Partial("_NavAlumno");
-            }*@
+            }
 
             <!-- Slider -->
 

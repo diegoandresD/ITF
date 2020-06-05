@@ -1,26 +1,127 @@
-﻿
+﻿<style>
+    .nav-link-alumno {
+        color: rgba(255,0,0,1);
+        display: block;
+        padding: .5rem 1rem;
+        text-decoration: none;
+    }
+
+        .nav-link-alumno:hover {
+            color: black;
+            padding: .5rem 1rem;
+            text-decoration: none;
+        }
+</style>
+<style>
+
+    @@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
+
+    html, body {
+        background: #fff;
+        font-family: Calibri;
+    }
+
+    html {
+        height: 100%;
+        display: flex;
+    }
+
+    body {
+        margin: auto;
+    }
+
+    .alrazy-title {
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 25px;
+        position: relative;
+        padding: 0.4em 0;
+        overflow: hidden;
+    }
+
+    .title-alumno {
+        color: red !important;
+    }
+
+    .alrazy-title:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-bottom: solid 0.2em;
+        -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+        animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
+
+    @@-webkit-keyframes underline {
+        from {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    }
+
+    @@keyframes underline {
+        from {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    }
+
+    .alrazy-title .word {
+        display: inline-block;
+        -webkit-animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+        animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-delay: calc( .5s + (.1s * var(--word-index)) );
+        animation-delay: calc( .5s + (.1s * var(--word-index)) );
+    }
+
+    @@-webkit-keyframes slide-up {
+        from {
+            -webkit-transform: translateY(125%);
+            transform: translateY(125%);
+        }
+    }
+
+    @@keyframes slide-up {
+        from {
+            -webkit-transform: translateY(125%);
+            transform: translateY(125%);
+        }
+    }
+
+    .splitting-mark {
+        color: #FFF !important;
+    }
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-light text-center" style="background-color: white;">
 
 
     <div class="collapse navbar-collapse text-center" id="navbarColor03">
         <ul class="navbar-nav mr-auto" style="font-size:22px;font-weight: bold">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-home"></i> Home |</a>
-            </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> Mis datos |</a>
+                <a class="nav-link-alumno" href="@Url.Action("Home", "Alumno")"><i class="fas fa-home"></i> Home |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-shopping-basket"></i> Mis productos |</a>
+                <a class="nav-link-alumno" href="@Url.Action("MiProgresion","Alumno")"><i class="fas fa-chart-line"></i> Mi Progresión |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-shipping-fast"></i> Pedidos |</a>
+                <a class="nav-link-alumno" href="@Url.Action("Tienda","Alumno")"><i class="fas fa-shopping-basket"></i> Artículos Marciales |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-calendar-alt"></i> Torneos internos |</a>
+                <a class="nav-link-alumno" href="@Url.Action("Examenes","Alumno")"><i class="fas fa-trophy"></i> Examenes |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-money-bill-wave"></i> Mensualidades </a>
+                <a class="nav-link-alumno" href="@Url.Action("Eventos","Alumno")"><i class="fas fa-calendar-alt"></i> Eventos |</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link-alumno" href="@Url.Action("Ahorros","Alumno")"><i class="fas fa-hand-holding-usd"></i> Mi Cartera </a>
             </li>
         </ul>
         @*<form class="form-inline">
