@@ -1,15 +1,26 @@
 ﻿
 @{
-    
+    Layout = null;
     ViewBag.Title = "Academias";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+
+
+    <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
     <style>
+
         @@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
 
         html, body {
             background: #fff;
             font-family: Calibri;
-            color: #007bff;
         }
 
         html {
@@ -30,19 +41,23 @@
             overflow: hidden;
         }
 
-            .alrazy-title:after {
-                content: '';
-                display: block;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                border-bottom: solid 0.2em;
-                -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
-                animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
-                -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-            }
+        .title-alumno {
+            color: red !important;
+        }
+
+        .alrazy-title:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-bottom: solid 0.2em;
+            -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
 
         @@-webkit-keyframes underline {
             from {
@@ -86,97 +101,264 @@
             color: #FFF !important;
         }
     </style>
+</head>
+<body style="background-color:white !important">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:#fff;">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link active text-black" target="_blank" href="@Url.Action("Index", "Home")">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Academias", "Home")">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+                        @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
+                        @*<li class="nav-item">
+                                <a class="nav-link active text-black" href="#" title="mi carrito">
+                                    | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i>
+                                </a>
+                            </li>*@
 
-<div class="alrazy-title" data-splitting>Academias</div>
-<script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
-<script>Splitting();</script>
-<br />
-<div class="col-lg-12">
-    <div class="">
+                    </ul>
 
-        <div class="row text-center">
 
-            <div class="contenedor col-lg-4">
-                <div class="contenedor-texto">
-                    <p>BAEKJUL BOOL GOOL</p>
+
                 </div>
-                <div class="contenedor-imagen  align-items-center ">
-                    <a href="#" data-toggle="modal" data-target="#modal">
-                        <img src="~/img/academia1.jpg" class="img-fluid imagen" alt="">
+            </div>
+        </nav>
 
-                    </a>
-                </div>
 
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
             </div>
 
-            <div class="contenedor col-lg-4">
-                <div class="contenedor-texto ">
-                    <p class="">LOYOLA TAEKWON-DO</p>
-                </div>
-                <div class="contenedor-imagen ">
-                    <a href="#" data-toggle="modal" data-target="#modal">
-                        <img src="~/img/academia2.jpg" class="img-fluid imagen" alt="">
-
-                    </a>
-                </div>
-
-            </div>
-            <div class="contenedor col-lg-4">
-                <div class="contenedor-texto">
-                    <p>DIAZ MUÑOZ TKD</p>
-                </div>
-                <div class="contenedor-imagen ">
-                    <a href="#" data-toggle="modal" data-target="#modal">
-                        <img src="~/img/academia3.jpg" class="img-fluid imagen" alt="">
-
-                    </a>
-                </div>
-
-            </div>
-            <div class="contenedor col-lg-4">
-                <div class="contenedor-texto">
-                    <p>TAEKWON-DO PABLO SABALAIN</p>
-                </div>
-                <div class="contenedor-imagen ">
-                    <a href="#" data-toggle="modal" data-target="#modal">
-                        <img src="~/img/academia4.jpg" class="img-fluid imagen" alt="">
-
-                    </a>
-                </div>
-
-            </div>
-            <div class="contenedor col-lg-4">
-                <div class="contenedor-texto">
-                    <p>OVIEDO TKD</p>
-                </div>
-                <div class="contenedor-imagen ">
-                    <a href="#" data-toggle="modal" data-target="#modal">
-                        <img src="~/img/academia5.jpg" class="img-fluid imagen" alt="">
-
-                    </a>
-                </div>
-
-            </div>
-            <div class="contenedor col-lg-4">
-                <div class="contenedor-texto">
-                    <p>JORQUERA TAEKWON-DO</p>
-                </div>
-                <div class="contenedor-imagen ">
-                    <a href="#" data-toggle="modal" data-target="#modal">
-                        <img src="~/img/academia6.jpg" class="img-fluid imagen" alt="">
-
-                    </a>
-                </div>
-
-            </div>
-
+            
 
 
         </div>
 
+    </header>
+    <div class="container body-content">
+        <div class="alrazy-title" data-splitting>Academias</div>
+        <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+        <script>Splitting();</script>
+        <br />
+        <div class="container body-content">
+            <div class="col-lg-12">
+                <div class="">
+
+                    <div class="row text-center">
+
+                        <div class="contenedor col-lg-4">
+                            <div class="contenedor-texto">
+                                <p>BAEKJUL BOOL GOOL</p>
+                            </div>
+                            <div class="contenedor-imagen  align-items-center ">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/academia1.jpg" class="img-fluid imagen" alt="">
+
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="contenedor col-lg-4">
+                            <div class="contenedor-texto ">
+                                <p class="">LOYOLA TAEKWON-DO</p>
+                            </div>
+                            <div class="contenedor-imagen ">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/academia2.jpg" class="img-fluid imagen" alt="">
+
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="contenedor col-lg-4">
+                            <div class="contenedor-texto">
+                                <p>DIAZ MUÑOZ TKD</p>
+                            </div>
+                            <div class="contenedor-imagen ">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/academia3.jpg" class="img-fluid imagen" alt="">
+
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="contenedor col-lg-4">
+                            <div class="contenedor-texto">
+                                <p>TAEKWON-DO PABLO SABALAIN</p>
+                            </div>
+                            <div class="contenedor-imagen ">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/academia4.jpg" class="img-fluid imagen" alt="">
+
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="contenedor col-lg-4">
+                            <div class="contenedor-texto">
+                                <p>OVIEDO TKD</p>
+                            </div>
+                            <div class="contenedor-imagen ">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/academia5.jpg" class="img-fluid imagen" alt="">
+
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="contenedor col-lg-4">
+                            <div class="contenedor-texto">
+                                <p>JORQUERA TAEKWON-DO</p>
+                            </div>
+                            <div class="contenedor-imagen ">
+                                <a href="#" data-toggle="modal" data-target="#modal">
+                                    <img src="~/img/academia6.jpg" class="img-fluid imagen" alt="">
+
+                                </a>
+                            </div>
+
+                        </div>
 
 
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
 
     </div>
-</div>
 
+    <footer>
+        <div class="">
+
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    @*<i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>*@
+                </div>
+
+
+            </div>
+            <div class="justify-content-center">
+                <label>
+                    &copy; @DateTime.Now.Year - FEDERACION CHILENA DE TAEKWON-DO TRADICIONAL.
+
+                    © Virtual Artes - 2018
+                </label>
+            </div>
+
+        </div>
+    </footer>
+    @Scripts.Render("~/Bundles/js")
+
+</body>
+</html>
+
+
+<style>
+    @@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
+
+    html, body {
+        background: #fff;
+        font-family: Calibri;
+        color: #007bff;
+    }
+
+    html {
+        height: 100%;
+        display: flex;
+    }
+
+    body {
+        margin: auto;
+    }
+
+    .alrazy-title {
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 25px;
+        position: relative;
+        padding: 0.4em 0;
+        overflow: hidden;
+    }
+
+        .alrazy-title:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-bottom: solid 0.2em;
+            -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+    @@-webkit-keyframes underline {
+        from {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    }
+
+    @@keyframes underline {
+        from {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+        }
+    }
+
+    .alrazy-title .word {
+        display: inline-block;
+        -webkit-animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+        animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-delay: calc( .5s + (.1s * var(--word-index)) );
+        animation-delay: calc( .5s + (.1s * var(--word-index)) );
+    }
+
+    @@-webkit-keyframes slide-up {
+        from {
+            -webkit-transform: translateY(125%);
+            transform: translateY(125%);
+        }
+    }
+
+    @@keyframes slide-up {
+        from {
+            -webkit-transform: translateY(125%);
+            transform: translateY(125%);
+        }
+    }
+
+    .splitting-mark {
+        color: #FFF !important;
+    }
+</style>
+<link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
+
+
+
+@Scripts.Render("~/Bundles/js")

@@ -72,7 +72,7 @@ header .menu .c-3:hover { background: #002d44; }
 /* --- PORTAFOLIO --- */
 .portafolio {
 	background: #fff;
-	border-top: 5px solid #3da5e2;
+	/*border-top: 5px solid #3da5e2;*/
 	padding: 0 20px;
 }
 
@@ -97,7 +97,7 @@ header .menu .c-3:hover { background: #002d44; }
 }
 
 .portafolio .galeria .contenedor-imagen a {
-	background: #3da5e2;
+	/*background: #3da5e2;*/
 	display: inline-block; /* para colocar las cajas en horizontal respetando el ancho y largo que le defini antes*/
 }
 
