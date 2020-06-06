@@ -362,3 +362,10 @@ FodyWeavers.xsd
 .vs/ITF/v16/.suo
 obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 obj/Debug/ITF.csprojAssemblyReference.cache
+
+ITF.csproj
+bin/ITF.dll
+bin/ITF.pdb
+obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+obj/Debug/ITF.dll
+obj/Debug/ITF.pdb
