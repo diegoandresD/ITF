@@ -1,131 +1,136 @@
 ﻿
 @{
+    Layout = null;
     ViewBag.Title = "Contacto";
+
 }
 
 
-<style>
-
-.alrazy-title {
-            font-family: 'Open Sans', Helvetica, sans-serif;
-            font-weight: 700;
-            font-size: 25px;
-            position: relative;
-            padding: 0.4em 0;
-            overflow: hidden;
-            color: #54AAFF !important;
- }
-
- .alrazy-title:after {
-                content: '';
-                display: block;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                border-bottom: solid 0.2em #54AAFF;
-                -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
-                animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
-                -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
-                
- }
-
-div .seba {
-    color:#54AAFF;
-    font-size: 20px;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
 
 
+    <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
 
-.formulario input[type="text"],
-.formulario input[type="email"],
-.formulario textarea {
-	padding: 15px;
-	border: none;
-	width: 100%;
-	font-family: 'Trade Winds', sans-serif;
-	margin-bottom: 30px;
-    border: solid 4px #54AAFF !important;
-}
+</head>
+<body style="background-color:white;">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:#fff;">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link active text-black" target="_blank" href="@Url.Action("Index", "Home")">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Academias", "Home")">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+                        @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
+                        @*<li class="nav-item">
+                                <a class="nav-link active text-black" href="#" title="mi carrito">
+                                    | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i>
+                                </a>
+                            </li>*@
 
-.formulario textarea {
-	height: 150px;
-	min-height: 150px;
-	max-height: 250px;
-    border: solid 4px #54AAFF !important;
-}
-
-.formulario .boton {
-	background: #54AAFF;
-	border: none;
-	padding: 7px 30px;
-	color: black;
-	font-family: 'Trade Winds', sans-serif;
-	cursor: pointer; 					/*Cambia el puntero para darle un mejor estilo*/
-	width: auto;
-	border-radius: 3px;
-    margin-bottom: 30px;
-}
-
-.formulario .boton:hover {
-	background: blue;
-}
+                    </ul>
 
 
-</style>
 
-<div class="alrazy-title" data-splitting>Contacto</div>
-<script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
-<script>Splitting();</script>
-<br />
-
-
-<main>
-    <div class="container">
-        <!-- Seccion portafolio -->
-        <div class="row">
-            <div class="col">
-                <!-- Seccion de Contacto -->
-                <div class="row contacto justify-content-center">
-                    <div class="col seba">
-                        <br />
-                        <span>
-                            Tel: +56 988888 9668<br />
-                            E-mail: <strong><a>presidente.fechitat@gmail.com</a></strong><br />
-                            __________________________________<br />
-                            Centro Nacional de Entrenamiento Olímpico<br />
-                            Ramón Cruz Montt #1176<br />
-                            Ñuñoa, Región Metropolitana, Chile<br />
-                            __________________________________
-                        </span>
-                    </div>
-
-                    <div class="col-12 col-lg-8">
-                        <form action="" class="formulario">
-                            <div class="form-group row">
-                                <div class="col-12 col-md-6">
-                                    <input type="text" name="" id="" placeholder="Nombre">
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <input type="text" name="" id="" placeholder="Correo">
-                                </div>
-                            </div>
-                            <textarea name="" id="" placeholder="Mensaje"></textarea>
-                            <div class="form-group d-flex justify-content-center">
-                                <input id="Guardar" type="button" class="boton" value="Enviar">
-                            </div>
-                        </form>
-                    </div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13303.538192109685!2d-70.62815264207428!3d-33.53038721551296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1590106105748!5m2!1ses!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
+        </nav>
+
+
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
+            </div>
+
+
+
         </div>
+
+    </header>
+    <div class="container body-content">
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="row contacto justify-content-center">
+                            <div class="col seba">
+                                <br />
+                                <span>
+                                    Tel: +56 988888 9668<br />
+                                    E-mail: <strong><a>presidente.fechitat@gmail.com</a></strong><br />
+                                    __________________________________<br />
+                                    Centro Nacional de Entrenamiento Olímpico<br />
+                                    Ramón Cruz Montt #1176<br />
+                                    Ñuñoa, Región Metropolitana, Chile<br />
+                                    __________________________________
+                                </span>
+                            </div>
+
+                            <div class="col-12 col-lg-8">
+                                <form action="" class="formulario">
+                                    <div class="form-group row">
+                                        <div class="col-12 col-md-6">
+                                            <input type="text" name="" id="" placeholder="Nombre">
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <input type="text" name="" id="" placeholder="Correo">
+                                        </div>
+                                    </div>
+                                    <textarea name="" id="" placeholder="Mensaje"></textarea>
+                                    <div class="form-group d-flex justify-content-center">
+                                        <input id="Guardar" type="button" class="boton" value="Enviar">
+                                    </div>
+                                </form>
+                            </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13303.538192109685!2d-70.62815264207428!3d-33.53038721551296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1590106105748!5m2!1ses!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
     </div>
-</main>
+
+    <footer>
+        <div class="">
+
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    @*<i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>*@
+                </div>
 
 
+            </div>
+            <div class="justify-content-center">
+                <label>
+                    &copy; @DateTime.Now.Year - FEDERACION CHILENA DE TAEKWON-DO TRADICIONAL.
 
+                    © Virtual Artes - 2018
+                </label>
+            </div>
 
-<!-- CTRL + UK Alinea todo-->
-@Scripts.Render("~/Bundles/js")
+        </div>
+    </footer>
+    @Scripts.Render("~/Bundles/js")
+
+</body>
+</html>
