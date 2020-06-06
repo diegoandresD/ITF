@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AcademiasController.cs" />
+    <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\ComprobarAlumnosProfesorController.cs" />
     <Compile Include="Controllers\ContactoController.cs" />
     <Compile Include="Controllers\ExamenesController.cs" />
@@ -2533,7 +2534,7 @@
     <Content Include="Views\ListaTorneosAlumno\index.cshtml" />
     <Content Include="Views\Mensualidades\index.cshtml" />
     <Content Include="Views\ProgresionAlumno\index.cshtml" />
-    <Content Include="Views\ProgresionAlumnoFuncionario\index.cshtml" />
+    <Content Include="Views\ProgresionAlumno\ProgresionAlumnoFuncionario\index.cshtml" />
     <Content Include="Views\PublicarEvento\index.cshtml" />
     <Content Include="Views\Reglamento\index.cshtml" />
     <Content Include="Views\TiendaVistaMaestro\index.cshtml" />
@@ -2547,6 +2548,15 @@
     <Content Include="Views\Maestro\Mensualidades.cshtml" />
     <Content Include="Views\Home\Contacto.cshtml" />
     <Content Include="Views\Home\Academias.cshtml" />
+    <Content Include="Views\Alumno\Tienda.cshtml" />
+    <Content Include="Views\Alumno\MiProgresion.cshtml" />
+    <Content Include="Views\Alumno\Home.cshtml" />
+    <Content Include="Views\Alumno\Examenes.cshtml" />
+    <Content Include="Views\Alumno\Eventos.cshtml" />
+    <Content Include="Views\Alumno\Ahorros.cshtml" />
+    <Content Include="Views\Home\Eventos.cshtml" />
+    <Content Include="Views\Home\Galeria.cshtml" />
+    <Content Include="Views\Home\Reglamento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
