@@ -10,14 +10,27 @@ namespace ITF.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
+            ViewBag.TIPO = id;
+            if(id == "Alumno")
+            {
+                ViewBag.CLASE = "btn-success alumno";
+                ViewBag.TITULO = "text-success";
+            }
+            else if(id == "Directivo")
+            {
+                ViewBag.CLASE = "btn-danger directivo";
+                ViewBag.TITULO = "text-danger";
+            }
+            else if(id == "Maestro")
+            {
+                ViewBag.CLASE = "btn-primary maestro";
+                ViewBag.TITULO = "text-primary";
+            }
             return View();
         }
-        [HttpPost]
-        public JsonResult InicioSesion(string user, string pass)
-        {
-            return Json(login.InicioSesion(user, pass), JsonRequestBehavior.AllowGet);
-        }
+
+        public ActionResult InicioSesion(string user, string pass, int tipo) => Json(login.InicioSesion(user, pass, tipo), JsonRequestBehavior.AllowGet);
     }
 }

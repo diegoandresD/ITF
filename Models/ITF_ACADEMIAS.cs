@@ -20,5 +20,6 @@ namespace ITF.Models
         public string CORREO_ELECTRONICO { get; set; }
         public string DIRECCION { get; set; }
         public Nullable<int> COD_MAESTRO { get; set; }
+        public string HORARIOS { get; set; }
     }
 }

@@ -20,5 +20,6 @@ namespace ITF.Models
         public Nullable<int> ANO { get; set; }
         public Nullable<int> COD_USUARIO { get; set; }
         public Nullable<long> MONTO { get; set; }
+        public string ESTADO { get; set; }
     }
 }

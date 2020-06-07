@@ -7,18 +7,22 @@
       <Diagram DiagramId="88a1bfecf4a1476aa6b2654ba66f457a" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="ITF.ITF_ACADEMIAS" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="ITF.ITF_AHORRO_REGISTROS" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ITF.ITF_AHORRO_TIPO_REGISTROS" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="ITF.ITF_AHORROS" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="ITF.ITF_ARANCELES" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ITF.ITF_EXAMEN_REALIZADOS" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="ITF.ITF_GENEROS" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ITF.ITF_INDICADORES" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="ITF.ITF_MATRICULAS" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ITF.ITF_AHORRO_TIPO_REGISTROS" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ITF.ITF_AHORROS" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ITF.ITF_ARANCELES" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ITF.ITF_CATEGORIAS" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ITF.ITF_EXAMEN_REALIZADOS" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ITF.ITF_GENEROS" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ITF.ITF_INDICADORES" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ITF.ITF_MATRICULAS" Width="1.5" PointX="4.75" PointY="6.75" />
         <EntityTypeShape EntityType="ITF.ITF_PAGOS" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="ITF.ITF_TIPO_USUARIOS" Width="1.5" PointX="2.75" PointY="7.75" />
-        <EntityTypeShape EntityType="ITF.ITF_USUARIOS" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ITF.ITF_CATEGORIAS" Width="1.5" PointX="5.375" PointY="9.75" />
-        <EntityTypeShape EntityType="ITF.ITF_PRODUCTOS" Width="1.5" PointX="9.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ITF.ITF_PEDIDOS" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ITF.ITF_PRODUCTOS" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ITF.ITF_PROVEEDORES" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ITF.ITF_TIPO_USUARIOS" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ITF.ITF_USUARIOS" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ITF.ITF_VENTA" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ITF.ITF_VENTA_DETALLE" Width="1.5" PointX="10.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

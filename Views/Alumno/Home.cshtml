@@ -4,13 +4,18 @@
 }
 
 
-<div class="alrazy-title title-alumno" data-splitting>Bienvenido alumno Sebastian!</div>
+@if (Session["Name"] != null)
+{
+    <div class="alrazy-title title-Alumno" data-splitting>Bienvenido alumno @Session["Name"].ToString()!</div>
+}
+
+
 <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
 <script>Splitting();</script>
 <br />
-<h2 class="titulo">Novedades</h2>
+<h2 class="title-Alumno">Novedades</h2>
 
-<div class="row portafolio" style="border-top:3px solid;border-bottom:3px solid">
+<div class="row portafolio title-Alumno" style="border-bottom:5px solid">
     <div class="col">
         <div class="row" style="margin-top:3%">
             <div class="row galeria justify-content-center">

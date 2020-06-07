@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
+    <link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+    <link href="~/plugins/noty/lib/themes/relax.css" rel="stylesheet" />
+    <link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
 
 
     <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
-    
+
 </head>
 <body>
     <header>
@@ -29,12 +32,37 @@
                         <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
                         <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
                         <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+                        @if (Session["NAME"] != null)
+                        {
+                            if (Session["TIPO"] != null)
+                            {
+                                string clase = "";
+                                if (Session["TIPO"].ToString() == "1")
+                                {
+                                    clase = "success";
+                                }
+                                else if (Session["TIPO"].ToString() == "2")
+                                {
+                                    clase = "info";
+                                }
+                                else if (Session["TIPO"].ToString() == "3")
+                                {
+                                    clase = "danger";
+                                }
+                                <li class="nav-item"><a class="nav-link text-@clase" href="#"><strong>Hola @Session["NAME"].ToString()</strong></a></li>
+
+                                <li class="nav-item"><button class="btn-sm btn-@clase nav-link text-white" target="_blank" id="LogOut"><i class="fas fa-sign-out-alt"></i></button></li>
+
+                            }
+                        }
+
+
                         @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
                         @*<li class="nav-item">
-                            <a class="nav-link active text-black" href="#" title="mi carrito">
-                                | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i> 
-                            </a>
-                        </li>*@
+            <a class="nav-link active text-black" href="#" title="mi carrito">
+                | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i>
+            </a>
+        </li>*@
 
                     </ul>
 
@@ -50,17 +78,31 @@
                 <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
             </div>
 
-            <!--Nav maestros (accesos directos)-->
-            @if (true)
+            @if (Session["TIPO"] != null)
             {
-                @Html.Partial("_NavMaestro");
+                if (Session["TIPO"].ToString() == "1")
+                {
+                    @Html.Partial("_NavAlumno");
 
+                }
+                else if (Session["TIPO"].ToString() == "2")
+                {
+                    @Html.Partial("_NavMaestro");
+                }
+                else if (Session["TIPO"].ToString() == "3")
+                {
+                    @Html.Partial("_NavFuncionario");
+                }
             }
             else
             {
-                @Html.Partial("_NavAlumno");
+                <script>
+                    setTimeout(() => {
+                        window.location.href = "../Error/SessionCaducada";
+                    }, 500);
+                </script>
             }
-
+            <!--Nav maestros (accesos directos)-->
             <!-- Slider -->
 
 
@@ -92,10 +134,12 @@
                     © Virtual Artes - 2018
                 </label>
             </div>
-            
+
         </div>
     </footer>
-    @Scripts.Render("~/Bundles/js")
+    <script src="~/plugins/noty/lib/noty.js"></script>
 
+    @Scripts.Render("~/Bundles/js")
+    <script src="~/js/Layoult/Cerrarsesion.js"></script>
 </body>
 </html>

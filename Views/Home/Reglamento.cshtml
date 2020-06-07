@@ -1,90 +1,196 @@
 ﻿
 @{
+    Layout = null;
     ViewBag.Title = "Reglamento";
 }
-
     
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
 
-<main>
-    <div>
-        <div class="row mt-3">
-            <div class="col">
-                <div id="accordion">
-                    <!-- CARD #1 -->
-                    <div class="card">
-                        <div class="card-header" id="heading1">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                    2013 – ITF REGLAMENTO CAMPEONATO MUNDIAL JUVENIL Y ADULTOS EN VIGOR DEL 1 DE ENERO ,2013
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapse1" class="collapse show" arial-labelledby="heading1" data-parent="#accordion">
-                            <div class="card-body">
-                                <a href="https://www.taekwondoitf.org/wp-content/uploads/2014/10/2013-Reglamento-del-Campeonato-Mundial-Juvenil-y-Adultos-de-la-ITF-%C3%8Dndice.pdf">2013 Reglamento del Campeonato Mundial Juvenil y Adultos de la ITF – Índice</a>
-                                <span class="badge badge-primary"><i class="fas fa-2x fa-file-pdf"></i></span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- CARD #2 -->
-                    <div class="card">
-                        <div class="card-header" id="heading2">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                                    2013 – ITF REGLAMENTO JUECES Y ÁRBITROS EN VIGOR DESDE EL 1 DE ENERO,2013
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapse2" class="collapse" arial-labelledby="heading2" data-parent="#accordion">
-                            <div class="card-body">
-                                <a href="https://www.taekwondoitf.org/wp-content/uploads/2014/10/2013-Reglamento-del-Campeonato-Mundial-Juvenil-y-Adultos-de-la-ITF-%C3%8Dndice.pdf">2013 Reglamento del Campeonato Mundial Juvenil y Adultos de la ITF – Índice</a>
-                                <span class="badge badge-primary"><i class="fas fa-2x fa-file-pdf"></i></span>
-                            </div>
-                        </div>
-                    </div>
+    <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
 
-                    <!-- CARD #3 -->
-                    <div class="card">
-                        <div class="card-header" id="heading3">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
-                                    2017 – ITF REGLAMENTO ÁRBITROS APÉNDICES 1 A 9 ( FEBRERO 3, 2017)
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapse3" class="collapse" arial-labelledby="heading3" data-parent="#accordion">
-                            <div class="card-body">
-                                <a href="https://www.taekwondoitf.org/wp-content/uploads/2014/10/2013-Reglamento-del-Campeonato-Mundial-Juvenil-y-Adultos-de-la-ITF-%C3%8Dndice.pdf">2013 Reglamento del Campeonato Mundial Juvenil y Adultos de la ITF – Índice</a>
-                                <span class="badge badge-primary"><i class="fas fa-2x fa-file-pdf"></i></span>
-                            </div>
-                        </div>
-                    </div>
+</head>
+<body style="background-color:white !important">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:#fff;">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link active text-black" target="_blank" href="@Url.Action("Index", "Home")">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Academias", "Home")">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+                        @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
+                        @*<li class="nav-item">
+                                <a class="nav-link active text-black" href="#" title="mi carrito">
+                                    | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i>
+                                </a>
+                            </li>*@
 
-                    <!-- CARD #4 -->
-                    <div class="card">
-                        <div class="card-header" id="heading4">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
-                                    2019- ITF WORLD CHAMPIONSHIP APLICACIÓN PARA ÁRBITRO, INZELL, ALEMANIA
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapse4" class="collapse" arial-labelledby="heading4" data-parent="#accordion">
-                            <div class="card-body">
-                                <a href="https://www.taekwondoitf.org/wp-content/uploads/2014/10/2019-ITF-world-Championship-Umpire-Registration-Form-Inzell-Germany-Revised-2-.xls">2013 Reglamento del Campeonato Mundial Juvenil y Adultos de la ITF – Índice</a>
-                                <span class="badge badge-primary"><i class="fas fa-2x fa-file-pdf"></i></span>
-                            </div>
-                        </div>
-                    </div>
+                    </ul>
+
+
 
                 </div>
             </div>
+        </nav>
+
+
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
+            </div>
+
+
+
+        </div>
+
+    </header>
+    <div class="container body-content">
+        <div class="container">
+            <div class="row portafolio">
+                <div class="col">
+                    <div id="accordion">
+                        <!-- CARD #1 -->
+
+                        <div class="card" style="border:1px solid #007bff">
+                            <div class="card-header" style="background-color:#007bff;" id="heading1">
+                                <div class="row text-white">
+                                    <div class="col-10">
+                                        <button class="btn text-white" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                            2013 – ITF REGLAMENTO CAMPEONATO MUNDIAL JUVENIL Y ADULTOS EN VIGOR DEL 1 DE ENERO ,2013
+                                        </button>
+                                    </div>
+                                    <div class="col-2 text-right">
+                                        <i class="fas fa-arrow-circle-down"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div id="collapse1" class="collapse show" arial-labelledby="heading1" data-parent="#accordion">
+                                <div class="card-body">
+                                    <span class="badge badge-primary"><i class="fas fa-file-pdf"></i></span> <a href="https://www.taekwondoitf.org/wp-content/uploads/2014/10/2013-Reglamento-del-Campeonato-Mundial-Juvenil-y-Adultos-de-la-ITF-%C3%8Dndice.pdf">- 2013 Reglamento del Campeonato Mundial Juvenil y Adultos de la ITF – Índice</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+
+                        <!-- CARD #2 -->
+                        <div class="card" style="border:1px solid #007bff">
+                            <div class="card-header" style="background-color:#007bff;" id="heading2">
+                                <div class="row text-white">
+                                    <div class="col-10 text-left">
+                                        <button class="btn text-white" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                            2013 – ITF REGLAMENTO JUECES Y ÁRBITROS EN VIGOR DESDE EL 1 DE ENERO,2013
+                                        </button>
+                                    </div>
+                                    <div class="col-2 text-right">
+                                        <i class="fas fa-arrow-circle-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse2" class="collapse" arial-labelledby="heading2" data-parent="#accordion">
+                                <div class="card-body">
+                                    <a href="https://www.taekwondoitf.org/wp-content/uploads/2014/10/2013-Reglamento-del-Campeonato-Mundial-Juvenil-y-Adultos-de-la-ITF-%C3%8Dndice.pdf">2013 Reglamento del Campeonato Mundial Juvenil y Adultos de la ITF – Índice</a>
+                                    <span class="badge badge-primary"><i class="fas fa-2x fa-file-pdf"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <!-- CARD #3 -->
+                        <div class="card" style="border:1px solid #007bff">
+                            <div class="card-header" style="background-color:#007bff;" id="heading3">
+                                <div class="row text-white">
+                                    <div class="col-10 text-left">
+                                        <button class="btn text-white" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                            2017 – ITF REGLAMENTO ÁRBITROS APÉNDICES 1 A 9 ( FEBRERO 3, 2017)
+                                        </button>
+                                    </div>
+                                    <div class="col-2 text-right">
+                                        <i class="fas fa-arrow-circle-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse3" class="collapse" arial-labelledby="heading3" data-parent="#accordion">
+                                <div class="card-body">
+                                    <a href="https://www.taekwondoitf.org/wp-content/uploads/2014/10/2013-Reglamento-del-Campeonato-Mundial-Juvenil-y-Adultos-de-la-ITF-%C3%8Dndice.pdf">2013 Reglamento del Campeonato Mundial Juvenil y Adultos de la ITF – Índice</a>
+                                    <span class="badge badge-primary"><i class="fas fa-2x fa-file-pdf"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <!-- CARD #4 -->
+                        <div class="card" style="border:1px solid #007bff">
+                            <div class="card-header" style="background-color:#007bff;" id="heading4">
+                                <div class="row text-white">
+                                    <div class="col-10 text-left">
+                                        <button class="btn text-white" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                                            2019- ITF WORLD CHAMPIONSHIP APLICACIÓN PARA ÁRBITRO, INZELL, ALEMANIA
+                                        </button>
+                                    </div>
+                                    <div class="col-2 text-right">
+                                        <i class="fas fa-arrow-circle-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse4" class="collapse" arial-labelledby="heading4" data-parent="#accordion">
+                                <div class="card-body">
+                                    <a href="https://www.taekwondoitf.org/wp-content/uploads/2014/10/2019-ITF-world-Championship-Umpire-Registration-Form-Inzell-Germany-Revised-2-.xls">2013 Reglamento del Campeonato Mundial Juvenil y Adultos de la ITF – Índice</a>
+                                    <span class="badge badge-primary"><i class="fas fa-2x fa-file-pdf"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
         </div>
 
     </div>
+    <footer>
+        <div class="">
+
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    @*<i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>*@
+                </div>
 
 
-        
+            </div>
+            @*<div class="justify-content-center">
+                <label>
+                    &copy; @DateTime.Now.Year - FEDERACION CHILENA DE TAEKWON-DO TRADICIONAL.
 
-    </main>
+                    © Virtual Artes - 2018
+                </label>
+            </div>*@
+
+        </div>
+    </footer>
+    @Scripts.Render("~/Bundles/js")
+
+</body>
+</html>
+
+
