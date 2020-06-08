@@ -15,7 +15,93 @@
 
 
     <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
+    <style>
 
+        @@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
+
+        html, body {
+            background: #fff;
+            font-family: Calibri;
+        }
+
+        html {
+            height: 100%;
+            display: flex;
+        }
+
+        body {
+            margin: auto;
+        }
+
+        .alrazy-title {
+            font-family: 'Open Sans', Helvetica, sans-serif;
+            font-weight: 700;
+            font-size: 25px;
+            position: relative;
+            padding: 0.4em 0;
+            overflow: hidden;
+        }
+
+        .title-maestro {
+            color: #007bff !important;
+        }
+
+        .alrazy-title:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-bottom: solid 0.2em;
+            -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @@-webkit-keyframes underline {
+            from {
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+            }
+        }
+
+        @@keyframes underline {
+            from {
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+            }
+        }
+
+        .alrazy-title .word {
+            display: inline-block;
+            -webkit-animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+            animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-delay: calc( .5s + (.1s * var(--word-index)) );
+            animation-delay: calc( .5s + (.1s * var(--word-index)) );
+        }
+
+        @@-webkit-keyframes slide-up {
+            from {
+                -webkit-transform: translateY(125%);
+                transform: translateY(125%);
+            }
+        }
+
+        @@keyframes slide-up {
+            from {
+                -webkit-transform: translateY(125%);
+                transform: translateY(125%);
+            }
+        }
+
+        .splitting-mark {
+            color: #FFF !important;
+        }
+    </style>
 </head>
 <body style="background-color:white !important">
     <header>
@@ -29,12 +115,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarresponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link active text-black" target="_blank" href="@Url.Action("Index", "Home")">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Academias", "Home")">Academias</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Index", "Home")">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Academias", "Home")">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link active text-black" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
                         @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
                         @*<li class="nav-item">
                                 <a class="nav-link active text-black" href="#" title="mi carrito">
@@ -61,6 +147,10 @@
         </div>
 
     </header>
+    <div class="alrazy-title title-maestro" data-splitting>Reglamento</div>
+    <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+    <script>Splitting();</script>
+    <br />
     <div class="container body-content">
         <div class="container">
             <div class="row portafolio">
@@ -161,11 +251,11 @@
                     </div>
                 </div>
             </div>
-            
-        </div>
 
+        </div>
+        <br />
     </div>
-    <footer>
+    <footer style="border-top:5px solid #007bff !important">
         <div class="">
 
             <div class="row redes-sociales justify-content-center">
@@ -179,12 +269,12 @@
 
             </div>
             @*<div class="justify-content-center">
-                <label>
-                    &copy; @DateTime.Now.Year - FEDERACION CHILENA DE TAEKWON-DO TRADICIONAL.
+                    <label>
+                        &copy; @DateTime.Now.Year - FEDERACION CHILENA DE TAEKWON-DO TRADICIONAL.
 
-                    © Virtual Artes - 2018
-                </label>
-            </div>*@
+                        © Virtual Artes - 2018
+                    </label>
+                </div>*@
 
         </div>
     </footer>

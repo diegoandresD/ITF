@@ -172,13 +172,12 @@ header .menu .c-3:hover { background: #002d44; }
 /* --- CONTACTO --- */
 .contacto {
 	padding: 40px 0; 
-	border-top: 1px solid #cbcbcb;
-	border-bottom: 1px solid #cbcbcb;
+	/*border-top: 1px solid #cbcbcb;
+	border-bottom: 1px solid #cbcbcb;*/
 	margin-bottom: 40px;
 }
 
 .contacto .titulo {
-	color: #003855;
 	font-family: 'Trade Winds', sans-serif;
 	font-weight: 300;
 	font-size: 40px;

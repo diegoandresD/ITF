@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
     <style>
-
         @@import url("https://fonts.googleapis.com/css?family=Open+Sans:700");
 
         html, body {
@@ -100,6 +99,8 @@
         .splitting-mark {
             color: #FFF !important;
         }
+
+
     </style>
 </head>
 <body style="background-color:white !important">
@@ -114,12 +115,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarresponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link active text-black" target="_blank" href="@Url.Action("Index", "Home")">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Academias", "Home")">Academias</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Index", "Home")">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active text-black" href="@Url.Action("Academias", "Home")">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
                         @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
                         @*<li class="nav-item">
                                 <a class="nav-link active text-black" href="#" title="mi carrito">
@@ -141,19 +142,20 @@
                 <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
             </div>
 
-            
+
 
 
         </div>
 
     </header>
     <div class="container body-content">
+
         <div class="alrazy-title" data-splitting>Academias</div>
         <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
         <script>Splitting();</script>
         <br />
-        <div class="container body-content">
-            <div class="col-lg-12">
+        <div class="container body-content" style="border-bottom:5px solid;">
+            <div class="col-lg-12" style="margin-bottom:2%">
                 <div class="">
 
                     <div class="row text-center">
@@ -162,8 +164,8 @@
                             <div class="contenedor-texto">
                                 <p>BAEKJUL BOOL GOOL</p>
                             </div>
-                            <div class="contenedor-imagen  align-items-center ">
-                                <a href="#" data-toggle="modal" data-target="#modal">
+                            <div class="contenedor-imagen  align-items-center" onclick="OpenModal('BAEKJUL BOOL GOOL','/img/academia1.jpg')">
+                                <a href="#">
                                     <img src="~/img/academia1.jpg" class="img-fluid imagen" alt="">
 
                                 </a>
@@ -175,7 +177,7 @@
                             <div class="contenedor-texto ">
                                 <p class="">LOYOLA TAEKWON-DO</p>
                             </div>
-                            <div class="contenedor-imagen ">
+                            <div class="contenedor-imagen " onclick="OpenModal('LOYOLA TAEKWON-DO','/img/academia2.jpg')">
                                 <a href="#" data-toggle="modal" data-target="#modal">
                                     <img src="~/img/academia2.jpg" class="img-fluid imagen" alt="">
 
@@ -183,11 +185,12 @@
                             </div>
 
                         </div>
+
                         <div class="contenedor col-lg-4">
                             <div class="contenedor-texto">
                                 <p>DIAZ MUÑOZ TKD</p>
                             </div>
-                            <div class="contenedor-imagen ">
+                            <div class="contenedor-imagen " onclick="OpenModal('DIAZ MUÑOZ TKD','/img/academia3.jpg')">
                                 <a href="#" data-toggle="modal" data-target="#modal">
                                     <img src="~/img/academia3.jpg" class="img-fluid imagen" alt="">
 
@@ -199,7 +202,7 @@
                             <div class="contenedor-texto">
                                 <p>TAEKWON-DO PABLO SABALAIN</p>
                             </div>
-                            <div class="contenedor-imagen ">
+                            <div class="contenedor-imagen " onclick="OpenModal('TAEKWON-DO PABLO SABALAIN','/img/academia4.jpg')">
                                 <a href="#" data-toggle="modal" data-target="#modal">
                                     <img src="~/img/academia4.jpg" class="img-fluid imagen" alt="">
 
@@ -211,7 +214,7 @@
                             <div class="contenedor-texto">
                                 <p>OVIEDO TKD</p>
                             </div>
-                            <div class="contenedor-imagen ">
+                            <div class="contenedor-imagen " onclick="OpenModal('OVIEDO TKD','/img/academia5.jpg')">
                                 <a href="#" data-toggle="modal" data-target="#modal">
                                     <img src="~/img/academia5.jpg" class="img-fluid imagen" alt="">
 
@@ -223,7 +226,7 @@
                             <div class="contenedor-texto">
                                 <p>JORQUERA TAEKWON-DO</p>
                             </div>
-                            <div class="contenedor-imagen ">
+                            <div class="contenedor-imagen " onclick="OpenModal('JORQUERA TAEKWON-DO','/img/academia6.jpg')">
                                 <a href="#" data-toggle="modal" data-target="#modal">
                                     <img src="~/img/academia6.jpg" class="img-fluid imagen" alt="">
 
@@ -244,11 +247,10 @@
         </div>
 
     </div>
-
     <footer>
         <div class="">
 
-            <div class="row redes-sociales justify-content-center">
+            <div class="row redes-sociales justify-content-center" style="margin-top:1%">
                 <div class="col-auto">
                     <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
                     <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
@@ -268,6 +270,56 @@
 
         </div>
     </footer>
+
+
+
+
+
+    <div class="modal fade" id="Detalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">BAEKJUL BOOL GOOL</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
+                            <img src="#" id="URlImagen" class="img-fluid imagen" alt="">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                            <h2 id="Titulo">
+                                
+                            </h2>
+                            <p>
+                                Dirección Centro de Entrenamiento Olímpico CEO:
+
+                                Ramón Cruz Montt #1176 - Ñuñoa
+
+                                Horario:
+
+                                Martes, Vueves y Viernes- 20:00 - 22:00 hrs
+                                <hr />
+                            </p>
+                            <p>
+                                Teléfono: +56 9 74203512
+
+                                Sabum Nim Osvaldo Rojas - VI Dan
+                            </p>
+                        </div>
+                    </div>
+                 
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     @Scripts.Render("~/Bundles/js")
 
 </body>
@@ -357,8 +409,18 @@
         color: #FFF !important;
     }
 </style>
-<link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
 
 
+<script>
+    const OpenModal = (titulo, url) => {
+
+        document.getElementById('Titulo').innerHTML = "";
+        document.getElementById('Titulo').appendChild(document.createTextNode(titulo));
+
+        document.getElementById('URlImagen').setAttribute('src', url);
+        $('#Detalle').modal('show');
+
+    };
+</script>
 
 @Scripts.Render("~/Bundles/js")

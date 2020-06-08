@@ -116,12 +116,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarresponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link active text-black" target="_blank" href="@Url.Action("Index", "Home")">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Academias", "Home")">Academias</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Index", "Home")">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Academias", "Home")">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link active text-black" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
                         @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
                         @*<li class="nav-item">
                                 <a class="nav-link active text-black" href="#" title="mi carrito">
@@ -143,22 +143,25 @@
                 <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
             </div>
 
-          
+
 
         </div>
 
     </header>
+    <div class="alrazy-title title-maestro" data-splitting>Galeria</div>
+    <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+    <script>Splitting();</script>
+    <br />
     <div class="container body-content">
-        <div class="container">
-            <!-- Seccion portafolio -->
-            <div class="row portafolio">
-                <div class="col">
-                    <div class="alrazy-title title-maestro" data-splitting>Galeria</div>
-                    <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
-                    <script>Splitting();</script>
-                    <br />
 
-                    <div class="row" style="margin-top:1%">
+        <div class="container">
+
+            <!-- Seccion portafolio -->
+            <div class="row portafolio" style="border-bottom:5px solid #007bff !important">
+                <div class="col">
+
+
+                    <div class="row" style="margin-top:1%;">
                         <div class="row galeria justify-content-center">
                             <!-- Centrar en dispositivos moviles  -->
                             <div class="contenedor-imagen col-6 col-lg-4">

@@ -97,44 +97,44 @@
 <body>
     <header>
 
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:#fff;">
-                <div class="container">
-                    <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
-                            aria-expanded="false" aria-label="toggle navigation">
-                        <span class="navbar-toggler-icon">
-                        </span> <span class="badge badge-pill badge-info">Menú</span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarresponsive">
-                        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                            <li class="nav-item"><a class="nav-link active text-black" href="@Url.Action("Index", "Home")">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Academias", "Home")">Academias</a></li>
-                            <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
-                            <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
-                            <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
-                            <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
-                            @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
-                            @*<li class="nav-item">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainnav" style="background-color:#fff;">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#contact" style="color:white">ONT <i class="fas fa-globe-americas"></i></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarresponsive" aria-controls="navbarresponsive"
+                        aria-expanded="false" aria-label="toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span> <span class="badge badge-pill badge-info">Menú</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarresponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link active text-black" href="@Url.Action("Index", "Home")">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Academias", "Home")">Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+                        @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
+                        @*<li class="nav-item">
                                 <a class="nav-link active text-black" href="#" title="mi carrito">
                                     | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i>
                                 </a>
                             </li>*@
 
-                        </ul>
+                    </ul>
 
 
 
-                    </div>
                 </div>
-            </nav>
-
-
-            <div class="container">
-                <div class="col-lg-12 text-center">
-                    <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
-                </div>
-
             </div>
+        </nav>
+
+
+        <div class="container">
+            <div class="col-lg-12 text-center">
+                <img src="~/img/logo-fechitat.jpg" style="width:100%" class="imglog d-block " id="logo">
+            </div>
+
+        </div>
 
 
 
@@ -256,7 +256,7 @@
     </header>
 
     <main>
-        <div class="container">
+        <div class="container" style="border-bottom:5px solid;border-top:5px solid">
             <!-- Seccion portafolio -->
             <div class="row portafolio">
                 <div class="col">
@@ -322,7 +322,7 @@
 
 
             <!-- Seccion Acerca de -->
-            <div class="row acerca-de align-items-center">
+            <div class="row acerca-de align-items-center" style="border-bottom:5px solid;border-top:5px solid">
                 <div class="col-12 col-lg-4 foto">
                     <img src="~/img/foto.jpg" class="rounded-circle img-fluid" alt="">  <!--  Para que la imagen este redondeada y abarque el 100% de la col -->
                     <p class="nombre">Presidente</p>
@@ -378,7 +378,7 @@
                         </div>
                         <textarea name="" id="" placeholder="Mensaje" style="border:1px solid dimgray"></textarea>
                         <div class="form-group d-flex justify-content-center">
-                            <input id="Guardar" type="button" class="boton" value="Enviar" >
+                            <input id="Guardar" type="button" class="boton" value="Enviar">
                         </div>
                     </form>
                 </div>
@@ -386,7 +386,29 @@
         </div>
     </main>
 
+    <footer>
+        <div class="">
 
+            <div class="row redes-sociales justify-content-center">
+                <div class="col-auto">
+                    <i class="fab fa-twitter fa-circle fa-5x icono twitter"></i>
+                    <i class="fab fa-instagram fa-circle fa-5x icono instagram"></i>
+                    <i class="fab fa-facebook fa-circle fa-5x icono facebook"></i>
+                    @*<i class="fab fa-youtube fa-circle fa-5x icono youtube"></i>*@
+                </div>
+
+
+            </div>
+            <div class="justify-content-center">
+                <label>
+                    &copy; @DateTime.Now.Year - FEDERACION CHILENA DE TAEKWON-DO TRADICIONAL.
+
+                    © Virtual Artes - 2018
+                </label>
+            </div>
+
+        </div>
+    </footer>
 
 
     <!-- CTRL + UK Alinea todo-->
