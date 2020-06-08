@@ -141,6 +141,10 @@
           <Property Name="ESTADO" Type="bit" />
           <Property Name="URL_IMAGEN" Type="varchar" MaxLength="100" />
           <Property Name="COD_PROVEEDOR" Type="int" />
+          <Property Name="MARCA" Type="varchar" MaxLength="50" />
+          <Property Name="COD_ENTREGA" Type="int" />
+          <Property Name="RESPONSABLE_ENTREGA" Type="int" />
+          <Property Name="COD_SUCURSAL" Type="int" />
         </EntityType>
         <EntityType Name="ITF_PROVEEDORES">
           <Key>
@@ -383,6 +387,10 @@
           <Property Name="ESTADO" Type="Boolean" />
           <Property Name="URL_IMAGEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="COD_PROVEEDOR" Type="Int32" />
+          <Property Name="MARCA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COD_ENTREGA" Type="Int32" />
+          <Property Name="RESPONSABLE_ENTREGA" Type="Int32" />
+          <Property Name="COD_SUCURSAL" Type="Int32" />
         </EntityType>
         <EntityType Name="ITF_PROVEEDORES">
           <Key>
@@ -445,7 +453,7 @@
           <Property Name="MONTO" Type="Int32" />
           <Property Name="MONTO_TOTAL" Type="Int32" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -587,6 +595,10 @@
           <EntitySetMapping Name="ITF_PRODUCTOS">
             <EntityTypeMapping TypeName="ITF.ITF_PRODUCTOS">
               <MappingFragment StoreEntitySet="ITF_PRODUCTOS">
+                <ScalarProperty Name="COD_SUCURSAL" ColumnName="COD_SUCURSAL" />
+                <ScalarProperty Name="RESPONSABLE_ENTREGA" ColumnName="RESPONSABLE_ENTREGA" />
+                <ScalarProperty Name="COD_ENTREGA" ColumnName="COD_ENTREGA" />
+                <ScalarProperty Name="MARCA" ColumnName="MARCA" />
                 <ScalarProperty Name="COD_PROVEEDOR" ColumnName="COD_PROVEEDOR" />
                 <ScalarProperty Name="URL_IMAGEN" ColumnName="URL_IMAGEN" />
                 <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />

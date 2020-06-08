@@ -19,7 +19,7 @@ namespace ITF.Controllers
             return View();
         }
         //Listado de academias + progresión de exámenes.
-        public ActionResult ProgresionAlumnos()
+        public ActionResult Progresion()
         {
             return View();
         }

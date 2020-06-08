@@ -25,5 +25,9 @@ namespace ITF.Models
         public Nullable<bool> ESTADO { get; set; }
         public string URL_IMAGEN { get; set; }
         public Nullable<int> COD_PROVEEDOR { get; set; }
+        public string MARCA { get; set; }
+        public Nullable<int> COD_ENTREGA { get; set; }
+        public Nullable<int> RESPONSABLE_ENTREGA { get; set; }
+        public Nullable<int> COD_SUCURSAL { get; set; }
     }
 }

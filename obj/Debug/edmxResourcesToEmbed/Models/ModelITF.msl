@@ -4,6 +4,7 @@
     <EntitySetMapping Name="ITF_ACADEMIAS">
       <EntityTypeMapping TypeName="ITF.ITF_ACADEMIAS">
         <MappingFragment StoreEntitySet="ITF_ACADEMIAS">
+          <ScalarProperty Name="HORARIOS" ColumnName="HORARIOS" />
           <ScalarProperty Name="COD_MAESTRO" ColumnName="COD_MAESTRO" />
           <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
           <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
@@ -52,6 +53,15 @@
           <ScalarProperty Name="VALOR_MENSUAL" ColumnName="VALOR_MENSUAL" />
           <ScalarProperty Name="VALOR_ANUAL" ColumnName="VALOR_ANUAL" />
           <ScalarProperty Name="ID_ARANCEL" ColumnName="ID_ARANCEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_CATEGORIAS">
+      <EntityTypeMapping TypeName="ITF.ITF_CATEGORIAS">
+        <MappingFragment StoreEntitySet="ITF_CATEGORIAS">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -104,12 +114,53 @@
     <EntitySetMapping Name="ITF_PAGOS">
       <EntityTypeMapping TypeName="ITF.ITF_PAGOS">
         <MappingFragment StoreEntitySet="ITF_PAGOS">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
           <ScalarProperty Name="MONTO" ColumnName="MONTO" />
           <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
           <ScalarProperty Name="ANO" ColumnName="ANO" />
           <ScalarProperty Name="MES" ColumnName="MES" />
           <ScalarProperty Name="FECHA_PAGO" ColumnName="FECHA_PAGO" />
           <ScalarProperty Name="ID_PAGO" ColumnName="ID_PAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_PEDIDOS">
+      <EntityTypeMapping TypeName="ITF.ITF_PEDIDOS">
+        <MappingFragment StoreEntitySet="ITF_PEDIDOS">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHA_APROX_ENTREGA" ColumnName="FECHA_APROX_ENTREGA" />
+          <ScalarProperty Name="COD_VENTA" ColumnName="COD_VENTA" />
+          <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_PRODUCTOS">
+      <EntityTypeMapping TypeName="ITF.ITF_PRODUCTOS">
+        <MappingFragment StoreEntitySet="ITF_PRODUCTOS">
+          <ScalarProperty Name="COD_SUCURSAL" ColumnName="COD_SUCURSAL" />
+          <ScalarProperty Name="RESPONSABLE_ENTREGA" ColumnName="RESPONSABLE_ENTREGA" />
+          <ScalarProperty Name="COD_ENTREGA" ColumnName="COD_ENTREGA" />
+          <ScalarProperty Name="MARCA" ColumnName="MARCA" />
+          <ScalarProperty Name="COD_PROVEEDOR" ColumnName="COD_PROVEEDOR" />
+          <ScalarProperty Name="URL_IMAGEN" ColumnName="URL_IMAGEN" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="PRECIO_INTERNET" ColumnName="PRECIO_INTERNET" />
+          <ScalarProperty Name="PRECIO_TIENDA" ColumnName="PRECIO_TIENDA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="NOMBRE_PRODUCTO" ColumnName="NOMBRE_PRODUCTO" />
+          <ScalarProperty Name="COD_CATEGORIA" ColumnName="COD_CATEGORIA" />
+          <ScalarProperty Name="COD_PRODUCTO" ColumnName="COD_PRODUCTO" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_PROVEEDORES">
+      <EntityTypeMapping TypeName="ITF.ITF_PROVEEDORES">
+        <MappingFragment StoreEntitySet="ITF_PROVEEDORES">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="NOMBRE_PROVEEDOR" ColumnName="NOMBRE_PROVEEDOR" />
+          <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -145,28 +196,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ITF_CATEGORIAS">
-      <EntityTypeMapping TypeName="ITF.ITF_CATEGORIAS">
-        <MappingFragment StoreEntitySet="ITF_CATEGORIAS">
+    <EntitySetMapping Name="ITF_VENTA">
+      <EntityTypeMapping TypeName="ITF.ITF_VENTA">
+        <MappingFragment StoreEntitySet="ITF_VENTA">
           <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
-          <ScalarProperty Name="NOMBRE_CATEGORIA" ColumnName="NOMBRE_CATEGORIA" />
-          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+          <ScalarProperty Name="MEDIO_PAGO" ColumnName="MEDIO_PAGO" />
+          <ScalarProperty Name="COD_USUARIO_CLIENTE" ColumnName="COD_USUARIO_CLIENTE" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="MONTO_TOTAL" ColumnName="MONTO_TOTAL" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="ID_VENTA" ColumnName="ID_VENTA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ITF_PRODUCTOS">
-      <EntityTypeMapping TypeName="ITF.ITF_PRODUCTOS">
-        <MappingFragment StoreEntitySet="ITF_PRODUCTOS">
-          <ScalarProperty Name="URL_IMAGEN" ColumnName="URL_IMAGEN" />
-          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
-          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
-          <ScalarProperty Name="PRECIO_INTERNET" ColumnName="PRECIO_INTERNET" />
-          <ScalarProperty Name="PRECIO_TIENDA" ColumnName="PRECIO_TIENDA" />
-          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
-          <ScalarProperty Name="NOMBRE_PRODUCTO" ColumnName="NOMBRE_PRODUCTO" />
-          <ScalarProperty Name="COD_CATEGORIA" ColumnName="COD_CATEGORIA" />
+    <EntitySetMapping Name="ITF_VENTA_DETALLE">
+      <EntityTypeMapping TypeName="ITF.ITF_VENTA_DETALLE">
+        <MappingFragment StoreEntitySet="ITF_VENTA_DETALLE">
+          <ScalarProperty Name="MONTO_TOTAL" ColumnName="MONTO_TOTAL" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="COD_VENTA" ColumnName="COD_VENTA" />
           <ScalarProperty Name="COD_PRODUCTO" ColumnName="COD_PRODUCTO" />
-          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_DETALLE_VENTA" ColumnName="ID_DETALLE_VENTA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

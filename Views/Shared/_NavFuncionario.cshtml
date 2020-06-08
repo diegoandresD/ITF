@@ -40,7 +40,7 @@
         overflow: hidden;
     }
 
-    .title-alumno {
+    .title-funcionario {
         color: red !important;
     }
 
@@ -107,20 +107,21 @@
     <div class="collapse navbar-collapse text-center" id="navbarColor03">
         <ul class="navbar-nav mr-auto" style="font-size:22px;font-weight: bold">
             <li class="nav-item active">
-                <a class="nav-link-alumno" href="@Url.Action("Home", "Alumno")"><i class="fas fa-home"></i> Home |</a>
+                <a class="nav-link-alumno" href="@Url.Action("Home", "Funcionario")"><i class="fas fa-home"></i> Home |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link-alumno" href="@Url.Action("MiProgresion","Alumno")"><i class="fas fa-chart-line"></i> Crear Evento |</a>
+                <a class="nav-link-alumno" href="@Url.Action("CrearEvento","Funcionario")"><i class="fas fa-calendar-day"></i> Crear Evento |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link-alumno" href="@Url.Action("Tienda","Alumno")"><i class="fas fa-shopping-basket"></i> Progresión Alumnos |</a>
+                <a class="nav-link-alumno" href="@Url.Action("Progresion","Funcionario")"><i class="fas fa-chart-line"></i> Progresion Alumnos |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link-alumno" href="@Url.Action("Examenes","Alumno")"><i class="fas fa-trophy"></i> Ranking |</a>
+                <a class="nav-link-alumno" href="@Url.Action("RankingInterno","Funcionario")"><i class="fas fa-trophy"></i> Ranking |</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link-alumno" href="@Url.Action("Eventos","Alumno")"><i class="fas fa-calendar-alt"></i> Maestros |</a>
+                <a class="nav-link-alumno" href="@Url.Action("Maestros","Funcionario")"><i class="fas fa-address-book"></i> Maestros |</a>
             </li>
+
         </ul>
         @*<form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

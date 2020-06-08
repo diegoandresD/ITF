@@ -6,15 +6,19 @@
     <EntitySet Name="ITF_AHORRO_TIPO_REGISTROS" EntityType="ITF.ITF_AHORRO_TIPO_REGISTROS" />
     <EntitySet Name="ITF_AHORROS" EntityType="ITF.ITF_AHORROS" />
     <EntitySet Name="ITF_ARANCELES" EntityType="ITF.ITF_ARANCELES" />
+    <EntitySet Name="ITF_CATEGORIAS" EntityType="ITF.ITF_CATEGORIAS" />
     <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="ITF.ITF_EXAMEN_REALIZADOS" />
     <EntitySet Name="ITF_GENEROS" EntityType="ITF.ITF_GENEROS" />
     <EntitySet Name="ITF_INDICADORES" EntityType="ITF.ITF_INDICADORES" />
     <EntitySet Name="ITF_MATRICULAS" EntityType="ITF.ITF_MATRICULAS" />
     <EntitySet Name="ITF_PAGOS" EntityType="ITF.ITF_PAGOS" />
+    <EntitySet Name="ITF_PEDIDOS" EntityType="ITF.ITF_PEDIDOS" />
+    <EntitySet Name="ITF_PRODUCTOS" EntityType="ITF.ITF_PRODUCTOS" />
+    <EntitySet Name="ITF_PROVEEDORES" EntityType="ITF.ITF_PROVEEDORES" />
     <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="ITF.ITF_TIPO_USUARIOS" />
     <EntitySet Name="ITF_USUARIOS" EntityType="ITF.ITF_USUARIOS" />
-    <EntitySet Name="ITF_CATEGORIAS" EntityType="ITF.ITF_CATEGORIAS" />
-    <EntitySet Name="ITF_PRODUCTOS" EntityType="ITF.ITF_PRODUCTOS" />
+    <EntitySet Name="ITF_VENTA" EntityType="ITF.ITF_VENTA" />
+    <EntitySet Name="ITF_VENTA_DETALLE" EntityType="ITF.ITF_VENTA_DETALLE" />
   </EntityContainer>
   <EntityType Name="ITF_ACADEMIAS">
     <Key>
@@ -24,8 +28,9 @@
     <Property Name="NOMBRE_ACADEMIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
     <Property Name="COD_MAESTRO" Type="Int32" />
+    <Property Name="HORARIOS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="ITF_AHORRO_REGISTROS">
     <Key>
@@ -63,6 +68,14 @@
     <Property Name="VALOR_MENSUAL" Type="Int32" />
     <Property Name="TITULO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ITF_CATEGORIAS">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_CATEGORIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ESTADO" Type="Boolean" />
   </EntityType>
   <EntityType Name="ITF_EXAMEN_REALIZADOS">
@@ -117,6 +130,44 @@
     <Property Name="ANO" Type="Int32" />
     <Property Name="COD_USUARIO" Type="Int32" />
     <Property Name="MONTO" Type="Int64" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITF_PEDIDOS">
+    <Key>
+      <PropertyRef Name="ID_PEDIDO" />
+    </Key>
+    <Property Name="ID_PEDIDO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_VENTA" Type="Int32" />
+    <Property Name="FECHA_APROX_ENTREGA" Type="DateTime" Precision="0" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITF_PRODUCTOS">
+    <Key>
+      <PropertyRef Name="ID_PRODUCTO" />
+    </Key>
+    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
+    <Property Name="COD_PRODUCTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COD_CATEGORIA" Type="Int32" />
+    <Property Name="NOMBRE_PRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PRECIO_TIENDA" Type="Int32" />
+    <Property Name="PRECIO_INTERNET" Type="Int32" />
+    <Property Name="STOCK" Type="Int32" />
+    <Property Name="ESTADO" Type="Boolean" />
+    <Property Name="URL_IMAGEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COD_PROVEEDOR" Type="Int32" />
+    <Property Name="MARCA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COD_ENTREGA" Type="Int32" />
+    <Property Name="RESPONSABLE_ENTREGA" Type="Int32" />
+    <Property Name="COD_SUCURSAL" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITF_PROVEEDORES">
+    <Key>
+      <PropertyRef Name="ID_PROVEEDOR" />
+    </Key>
+    <Property Name="ID_PROVEEDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_PROVEEDOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Boolean" />
   </EntityType>
   <EntityType Name="ITF_TIPO_USUARIOS">
     <Key>
@@ -148,27 +199,27 @@
     <Property Name="COD_ADADEMIA_ACTUAL" Type="Int32" />
     <Property Name="COD_TIPO_USUARIO" Type="Int32" />
   </EntityType>
-  <EntityType Name="ITF_CATEGORIAS">
+  <EntityType Name="ITF_VENTA">
     <Key>
-      <PropertyRef Name="ID_CATEGORIA" />
+      <PropertyRef Name="ID_VENTA" />
     </Key>
-    <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NOMBRE_CATEGORIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="ESTADO" Type="Boolean" />
+    <Property Name="ID_VENTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CANTIDAD" Type="Int32" />
+    <Property Name="MONTO_TOTAL" Type="Int32" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <Property Name="COD_USUARIO_CLIENTE" Type="Int32" />
+    <Property Name="MEDIO_PAGO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="ITF_PRODUCTOS">
+  <EntityType Name="ITF_VENTA_DETALLE">
     <Key>
-      <PropertyRef Name="ID_PRODUCTO" />
+      <PropertyRef Name="ID_DETALLE_VENTA" />
     </Key>
-    <Property Name="ID_PRODUCTO" Type="Int32" Nullable="false" />
-    <Property Name="COD_PRODUCTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="COD_CATEGORIA" Type="Int32" />
-    <Property Name="NOMBRE_PRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-    <Property Name="PRECIO_TIENDA" Type="Int32" />
-    <Property Name="PRECIO_INTERNET" Type="Int32" />
-    <Property Name="STOCK" Type="Int32" />
-    <Property Name="ESTADO" Type="Boolean" />
-    <Property Name="URL_IMAGEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ID_DETALLE_VENTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_PRODUCTO" Type="Int32" />
+    <Property Name="COD_VENTA" Type="Int32" />
+    <Property Name="CANTIDAD" Type="Int32" />
+    <Property Name="MONTO" Type="Int32" />
+    <Property Name="MONTO_TOTAL" Type="Int32" />
   </EntityType>
 </Schema>

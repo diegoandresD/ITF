@@ -132,11 +132,13 @@
     <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\ComprobarAlumnosProfesorController.cs" />
     <Compile Include="Controllers\ContactoController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ExamenesController.cs" />
     <Compile Include="Controllers\FormularioAlumnoNuevoController.cs" />
     <Compile Include="Controllers\FormularioCrearEventoFuncionarioController.cs" />
     <Compile Include="Controllers\FormularioInscripcionAlumnoController.cs" />
     <Compile Include="Controllers\FormularioPagoController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\GaleriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListaTorneosAlumnoController.cs" />
@@ -190,13 +192,25 @@
     <Compile Include="Models\ITF_PAGOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITF_PEDIDOS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ITF_PRODUCTOS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_PROVEEDORES.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_TIPO_USUARIOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_USUARIOS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_VENTA.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_VENTA_DETALLE.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\login.cs" />
@@ -2223,6 +2237,32 @@
     <Content Include="packages\Newtonsoft.Json.12.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.xml" />
     <Content Include="packages\WebGrease.1.6.0\lib\WebGrease.dll" />
     <Content Include="packages\WebGrease.1.6.0\tools\WG.EXE" />
+    <Content Include="plugins\cubeportfolio\css\cubeportfolio.css" />
+    <Content Include="plugins\cubeportfolio\css\cubeportfolio.min.css" />
+    <Content Include="plugins\cubeportfolio\img\cbp-loading-popup.gif" />
+    <Content Include="plugins\cubeportfolio\img\cbp-loading.gif" />
+    <Content Include="plugins\cubeportfolio\img\cbp-sprite.png" />
+    <Content Include="plugins\cubeportfolio\js\jquery.cubeportfolio.js" />
+    <Content Include="plugins\cubeportfolio\js\jquery.cubeportfolio.min.js" />
+    <Content Include="plugins\noty\lib\bounce.min.js" />
+    <Content Include="plugins\noty\lib\build\mo.js" />
+    <Content Include="plugins\noty\lib\build\mo.min.js" />
+    <Content Include="plugins\noty\lib\mojs.js" />
+    <Content Include="plugins\noty\lib\noty.css" />
+    <Content Include="plugins\noty\lib\noty.js" />
+    <Content Include="plugins\noty\lib\noty.min.js" />
+    <Content Include="plugins\noty\lib\themes\bootstrap-v3.css" />
+    <Content Include="plugins\noty\lib\themes\bootstrap-v4.css" />
+    <Content Include="plugins\noty\lib\themes\light.css" />
+    <Content Include="plugins\noty\lib\themes\metroui.css" />
+    <Content Include="plugins\noty\lib\themes\mint.css" />
+    <Content Include="plugins\noty\lib\themes\nest.css" />
+    <Content Include="plugins\noty\lib\themes\ps-icon-pack.min.css" />
+    <Content Include="plugins\noty\lib\themes\relax.css" />
+    <Content Include="plugins\noty\lib\themes\semanticui.css" />
+    <Content Include="plugins\noty\lib\themes\sunset.css" />
+    <Content Include="plugins\noty\lib\themes\vue.css" />
+    <Content Include="plugins\noty\lib\Velocity.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Css\bootstrap-grid.css.map" />
@@ -2491,6 +2531,10 @@
     <Content Include="packages\WebGrease.1.6.0\.signature.p7s" />
     <Content Include="packages\WebGrease.1.6.0\WebGrease.1.6.0.nupkg" />
     <Content Include="README.md" />
+    <Content Include="plugins\cubeportfolio\img\cbp-sprite.psd" />
+    <Content Include="plugins\noty\lib\noty.css.map" />
+    <Content Include="plugins\noty\lib\noty.js.map" />
+    <Content Include="plugins\noty\lib\noty.min.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2557,6 +2601,13 @@
     <Content Include="Views\Home\Eventos.cshtml" />
     <Content Include="Views\Home\Galeria.cshtml" />
     <Content Include="Views\Home\Reglamento.cshtml" />
+    <Content Include="Views\Funcionario\Home.cshtml" />
+    <Content Include="Views\Error\SessionCaducada.cshtml" />
+    <Content Include="Views\Shared\_NavFuncionario.cshtml" />
+    <Content Include="Views\Funcionario\CrearEvento.cshtml" />
+    <Content Include="Views\Funcionario\Progresion.cshtml" />
+    <Content Include="Views\Funcionario\RankingInterno.cshtml" />
+    <Content Include="Views\Funcionario\Maestros.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

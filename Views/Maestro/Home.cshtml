@@ -3,8 +3,11 @@
     ViewBag.Title = "Home";
 }
 
+@if (Session["Name"] != null)
+{
+    <div class="alrazy-title title-maestro" data-splitting>Bienvenido maestro @Session["Name"].ToString()!</div>
+}
 
-<div class="alrazy-title title-maestro" data-splitting>Bienvenido maestro Sebastian!</div>
 <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
 <script>Splitting();</script>
 <br />

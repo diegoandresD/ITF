@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "CrearEvento";
+}
+
+<style>
+    .weafea{
+        border:solid 5px red;
+        padding:50px;
+    }
+</style>
+
+<main>
+    <div class="container">
+        <div class="row weafea">
+
+            <div class="col-12" style="margin-bottom:2%;">
+                <h4>Creando Evento</h4>
+            </div>
+
+            <div class="col-6">
+                <label class="row" for="name">Nombre del Evento</label>
+                <div>
+                    <input id="name" name="name" type="text" placeholder="Escribe el nombre del Evento" class="form-control input-md" required="">
+                </div>
+            </div>
+
+            <div class="col-6">
+                <label class="row" for="ubicacion">Ubicación del Evento</label>
+                <div>
+                    <input id="name" name="ubicacion" type="text" placeholder="Escribe la ubicación del Evento" class="form-control input-md" required="">
+                </div>
+            </div>
+            
+            <div class="col-6">
+                <label class="row" for="name">Fecha del Evento</label>
+                <div>
+                    <input id="fecha" name="fecha" type="text" placeholder="Escribe la fecha del evento" class="form-control input-md" required="">
+                </div>
+            </div>
+            
+            <div class="col-6">
+                <label class="row" for="valor">Valor del Evento</label>
+                <div>
+                    <input id="valor" name="valor" type="text" placeholder="Escribe el valor del Evento" class="form-control input-md" required="">
+                </div>
+            </div>     
+
+
+
+            <div class="col-6">
+                <label for="country">Región</label>
+                <div>
+                    <select id="Region" name="Region" class="form-control">
+                        <option value="1">Santiago</option>
+                        <option value="2">Valparaiso </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-6 form-group">
+                <label for="country">Comuna</label>
+                <div>
+                    <select id="Comuna" name="country" class="form-control">
+                        <option value="1">Macul one</option>
+                        <option value="2">La Florida </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                <label class="row" for="name">Agrega una imagen</label>
+                <input id="file-upload" type="file" />
+            </div>
+
+
+            <div class="col-6">
+                <div>              
+                    <button id="submit" name="submit" class="btn btn-danger">Publicar</button>
+                </div>
+            </div>
+
+
+
+
+
+            
+        </div>
+    </div>
+
+</main>
