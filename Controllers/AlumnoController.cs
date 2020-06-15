@@ -38,5 +38,9 @@ namespace ITF.Controllers
         {
             return View();
         }
+        public ActionResult Carro()
+        {
+            return View();
+        }
     }
 }

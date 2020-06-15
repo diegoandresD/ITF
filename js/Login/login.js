@@ -180,9 +180,7 @@ window.addEventListener('load', () => {
                         window.location.href = "../Funcionario/Home";
                     }, 2000);
                 }
-                
-
-                
+   
             }
             else {
                 new Noty({

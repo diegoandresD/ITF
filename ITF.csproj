@@ -2535,7 +2535,18 @@
     <Content Include="plugins\noty\lib\noty.css.map" />
     <Content Include="plugins\noty\lib\noty.js.map" />
     <Content Include="plugins\noty\lib\noty.min.js.map" />
+    <Content Include="Scripts\chart.js-2.9.3\package\bower.json" />
+    <Content Include="Scripts\chart.js-2.9.3\package\composer.json" />
+    <Content Include="Scripts\chart.js-2.9.3\package\LICENSE.md" />
+    <Content Include="Scripts\chart.js-2.9.3\package\package.json" />
+    <Content Include="Scripts\chart.js-2.9.3\package\README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\chart.js-2.9.3\package\dist\Chart.bundle.js" />
+    <Content Include="Scripts\chart.js-2.9.3\package\dist\Chart.bundle.min.js" />
+    <Content Include="Scripts\chart.js-2.9.3\package\dist\Chart.css" />
+    <Content Include="Scripts\chart.js-2.9.3\package\dist\Chart.js" />
+    <Content Include="Scripts\chart.js-2.9.3\package\dist\Chart.min.css" />
+    <Content Include="Scripts\chart.js-2.9.3\package\dist\Chart.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -2578,7 +2589,7 @@
     <Content Include="Views\ListaTorneosAlumno\index.cshtml" />
     <Content Include="Views\Mensualidades\index.cshtml" />
     <Content Include="Views\ProgresionAlumno\index.cshtml" />
-    <Content Include="Views\ProgresionAlumno\ProgresionAlumnoFuncionario\index.cshtml" />
+    <Content Include="Views\ProgresionAlumnoFuncionario\index.cshtml" />
     <Content Include="Views\PublicarEvento\index.cshtml" />
     <Content Include="Views\Reglamento\index.cshtml" />
     <Content Include="Views\TiendaVistaMaestro\index.cshtml" />
@@ -2608,6 +2619,7 @@
     <Content Include="Views\Funcionario\Progresion.cshtml" />
     <Content Include="Views\Funcionario\RankingInterno.cshtml" />
     <Content Include="Views\Funcionario\Maestros.cshtml" />
+    <Content Include="Views\Alumno\Carro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
