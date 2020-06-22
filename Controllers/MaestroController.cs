@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,6 +36,13 @@ namespace ITF.Controllers
         public ActionResult Mensualidades()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult ListaMisAlumno()
+        {
+            //al modelo, para traer la información
+            return Json(ModeloMaestro.ListaMisAlumno(), JsonRequestBehavior.AllowGet);
         }
     }
 }
