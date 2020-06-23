@@ -40,8 +40,11 @@ namespace ITF.Models
         public virtual DbSet<ITF_PRODUCTOS> ITF_PRODUCTOS { get; set; }
         public virtual DbSet<ITF_PROVEEDORES> ITF_PROVEEDORES { get; set; }
         public virtual DbSet<ITF_TIPO_USUARIOS> ITF_TIPO_USUARIOS { get; set; }
-        public virtual DbSet<ITF_USUARIOS> ITF_USUARIOS { get; set; }
         public virtual DbSet<ITF_VENTA> ITF_VENTA { get; set; }
         public virtual DbSet<ITF_VENTA_DETALLE> ITF_VENTA_DETALLE { get; set; }
+        public virtual DbSet<ITF_ACADEMIAS_MAESTRO> ITF_ACADEMIAS_MAESTRO { get; set; }
+        public virtual DbSet<ITF_PREGUNTAS_SEGURIDAD> ITF_PREGUNTAS_SEGURIDAD { get; set; }
+        public virtual DbSet<ITF_RESPUESTAS_SEGURIDAD> ITF_RESPUESTAS_SEGURIDAD { get; set; }
+        public virtual DbSet<ITF_USUARIOS> ITF_USUARIOS { get; set; }
     }
 }

@@ -31,5 +31,6 @@ namespace ITF.Models
         public Nullable<int> COD_ACADEMIA_ANTERIOR { get; set; }
         public Nullable<int> COD_ADADEMIA_ACTUAL { get; set; }
         public Nullable<int> COD_TIPO_USUARIO { get; set; }
+        public Nullable<bool> PRIMERA_VEZ { get; set; }
     }
 }

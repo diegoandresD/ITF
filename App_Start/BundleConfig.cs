@@ -28,7 +28,8 @@ namespace ITF
                 "~/js/jquery-3.4.1.min.js",
                 "~/js/bootstrap.min.js",
                 "~/js/scripts.js",
-                "~/js/popper.min.js"
+                "~/js/popper.min.js",
+                "~/plugins/moment.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

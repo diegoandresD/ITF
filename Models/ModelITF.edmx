@@ -17,6 +17,14 @@
           <Property Name="COD_MAESTRO" Type="int" />
           <Property Name="HORARIOS" Type="varchar" MaxLength="500" />
         </EntityType>
+        <EntityType Name="ITF_ACADEMIAS_MAESTRO">
+          <Key>
+            <PropertyRef Name="ID_ACADEMIA_MAESTRO" />
+          </Key>
+          <Property Name="ID_ACADEMIA_MAESTRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COD_ACADEMIA" Type="int" />
+          <Property Name="COD_MAESTRO" Type="int" />
+        </EntityType>
         <EntityType Name="ITF_AHORRO_REGISTROS">
           <Key>
             <PropertyRef Name="ID_REGISTRO_AHORRO" />
@@ -126,6 +134,13 @@
           <Property Name="FECHA_APROX_ENTREGA" Type="date" />
           <Property Name="ESTADO" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="ITF_PREGUNTAS_SEGURIDAD">
+          <Key>
+            <PropertyRef Name="ID_PREGUNTAS" />
+          </Key>
+          <Property Name="ID_PREGUNTAS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PREGUNTA" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="ITF_PRODUCTOS">
           <Key>
             <PropertyRef Name="ID_PRODUCTO" />
@@ -153,6 +168,15 @@
           <Property Name="ID_PROVEEDOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NOMBRE_PROVEEDOR" Type="varchar" MaxLength="50" />
           <Property Name="ESTADO" Type="bit" />
+        </EntityType>
+        <EntityType Name="ITF_RESPUESTAS_SEGURIDAD">
+          <Key>
+            <PropertyRef Name="ID_RESPUESTA" />
+          </Key>
+          <Property Name="ID_RESPUESTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RESPUESTA" Type="varchar" MaxLength="50" />
+          <Property Name="COD_USUARIO" Type="int" />
+          <Property Name="COD_PREGUNTA" Type="int" />
         </EntityType>
         <EntityType Name="ITF_TIPO_USUARIOS">
           <Key>
@@ -183,6 +207,7 @@
           <Property Name="COD_ACADEMIA_ANTERIOR" Type="int" />
           <Property Name="COD_ADADEMIA_ACTUAL" Type="int" />
           <Property Name="COD_TIPO_USUARIO" Type="int" />
+          <Property Name="PRIMERA_VEZ" Type="bit" />
         </EntityType>
         <EntityType Name="ITF_VENTA">
           <Key>
@@ -209,6 +234,7 @@
         </EntityType>
         <EntityContainer Name="ITFStoreContainer">
           <EntitySet Name="ITF_ACADEMIAS" EntityType="Self.ITF_ACADEMIAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_ACADEMIAS_MAESTRO" EntityType="Self.ITF_ACADEMIAS_MAESTRO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_AHORRO_REGISTROS" EntityType="Self.ITF_AHORRO_REGISTROS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_AHORRO_TIPO_REGISTROS" EntityType="Self.ITF_AHORRO_TIPO_REGISTROS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_AHORROS" EntityType="Self.ITF_AHORROS" Schema="dbo" store:Type="Tables" />
@@ -220,8 +246,10 @@
           <EntitySet Name="ITF_MATRICULAS" EntityType="Self.ITF_MATRICULAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_PAGOS" EntityType="Self.ITF_PAGOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_PEDIDOS" EntityType="Self.ITF_PEDIDOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_PREGUNTAS_SEGURIDAD" EntityType="Self.ITF_PREGUNTAS_SEGURIDAD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_PRODUCTOS" EntityType="Self.ITF_PRODUCTOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_PROVEEDORES" EntityType="Self.ITF_PROVEEDORES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_RESPUESTAS_SEGURIDAD" EntityType="Self.ITF_RESPUESTAS_SEGURIDAD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="Self.ITF_TIPO_USUARIOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_USUARIOS" EntityType="Self.ITF_USUARIOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_VENTA" EntityType="Self.ITF_VENTA" Schema="dbo" store:Type="Tables" />
@@ -247,9 +275,12 @@
           <EntitySet Name="ITF_PRODUCTOS" EntityType="ITF.ITF_PRODUCTOS" />
           <EntitySet Name="ITF_PROVEEDORES" EntityType="ITF.ITF_PROVEEDORES" />
           <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="ITF.ITF_TIPO_USUARIOS" />
-          <EntitySet Name="ITF_USUARIOS" EntityType="ITF.ITF_USUARIOS" />
           <EntitySet Name="ITF_VENTA" EntityType="ITF.ITF_VENTA" />
           <EntitySet Name="ITF_VENTA_DETALLE" EntityType="ITF.ITF_VENTA_DETALLE" />
+          <EntitySet Name="ITF_ACADEMIAS_MAESTRO" EntityType="ITF.ITF_ACADEMIAS_MAESTRO" />
+          <EntitySet Name="ITF_PREGUNTAS_SEGURIDAD" EntityType="ITF.ITF_PREGUNTAS_SEGURIDAD" />
+          <EntitySet Name="ITF_RESPUESTAS_SEGURIDAD" EntityType="ITF.ITF_RESPUESTAS_SEGURIDAD" />
+          <EntitySet Name="ITF_USUARIOS" EntityType="ITF.ITF_USUARIOS" />
         </EntityContainer>
         <EntityType Name="ITF_ACADEMIAS">
           <Key>
@@ -408,28 +439,6 @@
           <Property Name="NOMBRE_TIPO_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ESTADO" Type="Boolean" />
         </EntityType>
-        <EntityType Name="ITF_USUARIOS">
-          <Key>
-            <PropertyRef Name="ID_USUARIO" />
-          </Key>
-          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RUT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="NOMBRE_SOCIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Precision="0" />
-          <Property Name="COD_GENERO" Type="Int32" />
-          <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CONTRASENA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="TELEFONO_CONTACTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="COD_ACADEMIA_ANTERIOR" Type="Int32" />
-          <Property Name="COD_ADADEMIA_ACTUAL" Type="Int32" />
-          <Property Name="COD_TIPO_USUARIO" Type="Int32" />
-        </EntityType>
         <EntityType Name="ITF_VENTA">
           <Key>
             <PropertyRef Name="ID_VENTA" />
@@ -452,6 +461,53 @@
           <Property Name="CANTIDAD" Type="Int32" />
           <Property Name="MONTO" Type="Int32" />
           <Property Name="MONTO_TOTAL" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ITF_ACADEMIAS_MAESTRO">
+          <Key>
+            <PropertyRef Name="ID_ACADEMIA_MAESTRO" />
+          </Key>
+          <Property Name="ID_ACADEMIA_MAESTRO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COD_ACADEMIA" Type="Int32" />
+          <Property Name="COD_MAESTRO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ITF_PREGUNTAS_SEGURIDAD">
+          <Key>
+            <PropertyRef Name="ID_PREGUNTAS" />
+          </Key>
+          <Property Name="ID_PREGUNTAS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PREGUNTA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ITF_RESPUESTAS_SEGURIDAD">
+          <Key>
+            <PropertyRef Name="ID_RESPUESTA" />
+          </Key>
+          <Property Name="ID_RESPUESTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RESPUESTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COD_USUARIO" Type="Int32" />
+          <Property Name="COD_PREGUNTA" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ITF_USUARIOS">
+          <Key>
+            <PropertyRef Name="ID_USUARIO" />
+          </Key>
+          <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RUT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="APELLIDO_PATERNO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="APELLIDO_MATERNO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE_SOCIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Precision="0" />
+          <Property Name="COD_GENERO" Type="Int32" />
+          <Property Name="NOMBRE_USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CONTRASENA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CORREO_ELECTRONICO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO_CONTACTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COD_ACADEMIA_ANTERIOR" Type="Int32" />
+          <Property Name="COD_ADADEMIA_ACTUAL" Type="Int32" />
+          <Property Name="COD_TIPO_USUARIO" Type="Int32" />
+          <Property Name="PRIMERA_VEZ" Type="Boolean" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -631,29 +687,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ITF_USUARIOS">
-            <EntityTypeMapping TypeName="ITF.ITF_USUARIOS">
-              <MappingFragment StoreEntitySet="ITF_USUARIOS">
-                <ScalarProperty Name="COD_TIPO_USUARIO" ColumnName="COD_TIPO_USUARIO" />
-                <ScalarProperty Name="COD_ADADEMIA_ACTUAL" ColumnName="COD_ADADEMIA_ACTUAL" />
-                <ScalarProperty Name="COD_ACADEMIA_ANTERIOR" ColumnName="COD_ACADEMIA_ANTERIOR" />
-                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
-                <ScalarProperty Name="TELEFONO_CONTACTO" ColumnName="TELEFONO_CONTACTO" />
-                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
-                <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
-                <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
-                <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
-                <ScalarProperty Name="COD_GENERO" ColumnName="COD_GENERO" />
-                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
-                <ScalarProperty Name="NOMBRE_SOCIAL" ColumnName="NOMBRE_SOCIAL" />
-                <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />
-                <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
-                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
-                <ScalarProperty Name="RUT" ColumnName="RUT" />
-                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ITF_VENTA">
             <EntityTypeMapping TypeName="ITF.ITF_VENTA">
               <MappingFragment StoreEntitySet="ITF_VENTA">
@@ -676,6 +709,57 @@
                 <ScalarProperty Name="COD_VENTA" ColumnName="COD_VENTA" />
                 <ScalarProperty Name="COD_PRODUCTO" ColumnName="COD_PRODUCTO" />
                 <ScalarProperty Name="ID_DETALLE_VENTA" ColumnName="ID_DETALLE_VENTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_ACADEMIAS_MAESTRO">
+            <EntityTypeMapping TypeName="ITF.ITF_ACADEMIAS_MAESTRO">
+              <MappingFragment StoreEntitySet="ITF_ACADEMIAS_MAESTRO">
+                <ScalarProperty Name="COD_MAESTRO" ColumnName="COD_MAESTRO" />
+                <ScalarProperty Name="COD_ACADEMIA" ColumnName="COD_ACADEMIA" />
+                <ScalarProperty Name="ID_ACADEMIA_MAESTRO" ColumnName="ID_ACADEMIA_MAESTRO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_PREGUNTAS_SEGURIDAD">
+            <EntityTypeMapping TypeName="ITF.ITF_PREGUNTAS_SEGURIDAD">
+              <MappingFragment StoreEntitySet="ITF_PREGUNTAS_SEGURIDAD">
+                <ScalarProperty Name="PREGUNTA" ColumnName="PREGUNTA" />
+                <ScalarProperty Name="ID_PREGUNTAS" ColumnName="ID_PREGUNTAS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_RESPUESTAS_SEGURIDAD">
+            <EntityTypeMapping TypeName="ITF.ITF_RESPUESTAS_SEGURIDAD">
+              <MappingFragment StoreEntitySet="ITF_RESPUESTAS_SEGURIDAD">
+                <ScalarProperty Name="COD_PREGUNTA" ColumnName="COD_PREGUNTA" />
+                <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+                <ScalarProperty Name="RESPUESTA" ColumnName="RESPUESTA" />
+                <ScalarProperty Name="ID_RESPUESTA" ColumnName="ID_RESPUESTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_USUARIOS">
+            <EntityTypeMapping TypeName="ITF.ITF_USUARIOS">
+              <MappingFragment StoreEntitySet="ITF_USUARIOS">
+                <ScalarProperty Name="PRIMERA_VEZ" ColumnName="PRIMERA_VEZ" />
+                <ScalarProperty Name="COD_TIPO_USUARIO" ColumnName="COD_TIPO_USUARIO" />
+                <ScalarProperty Name="COD_ADADEMIA_ACTUAL" ColumnName="COD_ADADEMIA_ACTUAL" />
+                <ScalarProperty Name="COD_ACADEMIA_ANTERIOR" ColumnName="COD_ACADEMIA_ANTERIOR" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO_CONTACTO" ColumnName="TELEFONO_CONTACTO" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="CORREO_ELECTRONICO" ColumnName="CORREO_ELECTRONICO" />
+                <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+                <ScalarProperty Name="NOMBRE_USUARIO" ColumnName="NOMBRE_USUARIO" />
+                <ScalarProperty Name="COD_GENERO" ColumnName="COD_GENERO" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+                <ScalarProperty Name="NOMBRE_SOCIAL" ColumnName="NOMBRE_SOCIAL" />
+                <ScalarProperty Name="APELLIDO_MATERNO" ColumnName="APELLIDO_MATERNO" />
+                <ScalarProperty Name="APELLIDO_PATERNO" ColumnName="APELLIDO_PATERNO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

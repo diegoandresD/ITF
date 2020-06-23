@@ -45,60 +45,57 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label>Rut</label>
-                        <p><input type="text" class="form-control" /></p>
+                        <p><input id="AddRut" type="text" class="form-control" /></p>
                     </div>
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
                         <label>Nombres</label>
-                        <p><input type="text" class="form-control" /></p>
+                        <p><input id="AddNombres" type="text" class="form-control" /></p>
                     </div>
                     <div class="col-md-6">
                         <label>Apellido paterno</label>
-                        <p><input type="text" class="form-control" /></p>
+                        <p><input id="AddPaterno" type="text" class="form-control" /></p>
                     </div>
                     <div class="col-md-6">
                         <label>Apellido materno</label>
-                        <p><input type="text" class="form-control" /></p>
+                        <p><input id="AddMaterno" type="text" class="form-control" /></p>
                     </div>
                     <div class="col-md-6">
                         <label>Fecha nacimiento</label>
-                        <p><input type="text" class="form-control" /></p>
+                        <p><input id="AddFechaNac" type="text" class="form-control" /></p>
                     </div>
                     <div class="col-md-6">
                         <label>Genero</label>
                         <p>
-                            <select class="form-control">
+                            <select id="AddGenero"class="form-control">
                                 <option value="0">--Seleccione--</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
-                                <option value="3">Otro</option>
                             </select>
                         </p>
                     </div>
                     <div class="col-md-6">
                         <label>Nombre usuario</label>
-                        <p><input type="text" class="form-control" /></p>
+                        <p><input id="AddNombreUsuario" type="text" class="form-control" /></p>
                     </div>
                     <div class="col-md-6">
                         <label>Correo electronico</label>
-                        <p><input type="text" class="form-control" /></p>
+                        <p><input id="AddCorreo" type="text" class="form-control" /></p>
                     </div>
                     <div class="col-md-6">
                         <label>Telefono</label>
-                        <p><input type="text" class="form-control" /></p>
+                        <p><input id="AddTelefono" type="text" class="form-control" /></p>
                     </div>
                     <div class="col-md-6">
-                        <label for="txtTelefonoContacto">Telefono contácto</label>
-                        <p><input type="text" class="form-control" id="txtTelefonoContacto" /></p>
+                        <label for="AddTelefonoContacto">Telefono contácto</label>
+                        <p><input type="text" class="form-control" id="AddTelefonoContacto" /></p>
                     </div>
                     <div class="col-md-6">
-                        <label for="txtDireccion">Direccion</label>
-                        <p><input type="text" class="form-control" id="txtDireccion" /></p>
+                        <label for="AddDireccion">Direccion</label>
+                        <p><input type="text" class="form-control" id="AddDireccion" /></p>
                     </div>
                     <div class="col-md-6">
-                        <label>Academia anterior</label>
+                        <label>Academia</label>
                         <p>
-                            <select class="form-control">
+                            <select id="AddAcademia" class="form-control">
                                 <option value="0">--Seleccione--</option>
                             </select>
                         </p>
@@ -108,11 +105,83 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button type="button" id="AgregarAlumno" class="btn btn-primary">Agregar</button>
             </div>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="VerAlumno" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalle alumno <label style="font-weight:bold" id="AlumnoNombre"></label></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Rut</label>
+                        <p><input  id="RutVer" type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <label>Nombres</label>
+                        <p><input id="NombresVer" type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Apellido paterno</label>
+                        <p><input id="PaternoVer" type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Apellido materno</label>
+                        <p><input id="MaternoVer" type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Fecha nacimiento</label>
+                        <p><input id="FechaNacVer" type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Genero</label>
+                        <p>
+                            <select id="GeneroVer" class="form-control">
+                                <option value="0">--Seleccione--</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Femenino</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Correo electronico</label>
+                        <p><input id="CorreoVer" type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Telefono</label>
+                        <p><input id="TelefonoVer" type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="TelefonoContacto">Telefono contácto</label>
+                        <p><input id="TelefonoContactoVer" type="text" class="form-control" /></p>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="DireccionVer">Direccion</label>
+                        <p><input type="text" class="form-control" id="DireccionVer" /></p>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="GuardarAlumno">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <div>
     <div class="row" style="margin-top:3%;border-bottom:solid 5px #007bff">
