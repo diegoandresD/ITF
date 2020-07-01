@@ -17,5 +17,6 @@ namespace ITF.Models
         public int ID_CATEGORIA { get; set; }
         public string NOMBRE_CATEGORIA { get; set; }
         public Nullable<bool> ESTADO { get; set; }
+        public Nullable<int> COD_MAESTRO { get; set; }
     }
 }

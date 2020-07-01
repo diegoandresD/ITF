@@ -162,6 +162,9 @@
     <Compile Include="Models\ITF_ACADEMIAS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITF_ACADEMIAS_MAESTRO.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ITF_AHORROS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
@@ -195,10 +198,16 @@
     <Compile Include="Models\ITF_PEDIDOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITF_PREGUNTAS_SEGURIDAD.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ITF_PRODUCTOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_PROVEEDORES.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_RESPUESTAS_SEGURIDAD.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_TIPO_USUARIOS.cs">
@@ -229,6 +238,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelITF.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModeloAlumno.cs" />
+    <Compile Include="Models\ModeloMaestro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2010,12 +2021,16 @@
     <Content Include="img\slide4.jpg" />
     <Content Include="img\slide7.jpg" />
     <Content Include="img\slide8.jpg" />
+    <Content Include="js\Alumno\Tienda.js" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
+    <Content Include="js\Layoult\Cerrarsesion.js" />
     <Content Include="js\Login\login.js" />
+    <Content Include="js\Maestro\Alumnos.js" />
+    <Content Include="js\Maestro\MisProductos.js" />
     <Content Include="js\popper.min.js" />
     <Content Include="js\scripts.js" />
     <Content Include="Login\css\main.css" />
@@ -2105,6 +2120,8 @@
     <Content Include="packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.dll" />
     <Content Include="packages\EntityFramework.6.2.0\tools\EntityFramework.PowerShell.Utility.dll" />
     <Content Include="packages\EntityFramework.6.2.0\tools\migrate.exe" />
+    <Content Include=".vs\ITF\config\applicationhost.config" />
+    <Content Include=".vs\ITF\v16\.suo" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -2244,6 +2261,8 @@
     <Content Include="plugins\cubeportfolio\img\cbp-sprite.png" />
     <Content Include="plugins\cubeportfolio\js\jquery.cubeportfolio.js" />
     <Content Include="plugins\cubeportfolio\js\jquery.cubeportfolio.min.js" />
+    <Content Include="plugins\FileSaver\FileSaver.js" />
+    <Content Include="plugins\moment.js" />
     <Content Include="plugins\noty\lib\bounce.min.js" />
     <Content Include="plugins\noty\lib\build\mo.js" />
     <Content Include="plugins\noty\lib\build\mo.min.js" />
@@ -2263,6 +2282,9 @@
     <Content Include="plugins\noty\lib\themes\sunset.css" />
     <Content Include="plugins\noty\lib\themes\vue.css" />
     <Content Include="plugins\noty\lib\Velocity.js" />
+    <Content Include="plugins\swal\sweetalert2.css" />
+    <Content Include="plugins\swal\sweetalert2.init.js" />
+    <Content Include="plugins\swal\sweetalert2.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Css\bootstrap-grid.css.map" />
@@ -2623,6 +2645,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\Productos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

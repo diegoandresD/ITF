@@ -2,6 +2,10 @@
 @{
     ViewBag.Title = "MisProductos";
 }
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/relax.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+<link href="~/plugins/swal/sweetalert2.css" rel="stylesheet" />
 
 
 <div class="alrazy-title title-maestro" data-splitting>
@@ -14,7 +18,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-4 col-md-offset-2">
             <div class="card">
                 <div class="card-body d-flex justify-content-between align-items-center">
                     Agregar Producto
@@ -30,125 +34,7 @@
 <div class="row" style="margin-top:3%;border-bottom:solid 5px #007bff">
 
     <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-3" style="margin-bottom:1%">
-                <div class="card">
-                    <img class="card-img-top" src="https://artemarcial.cl/wp-content/uploads/2019/02/empeineras-taekwondo-itf.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6" style="font-size:12px">
-                                <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal1" href="#">
-                                    <i class="fas fa-edit"></i>Editar
-                                </button>
-
-                            </div>
-                            <div class="col-6" style="font-size:12px">
-                                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal1" href="#">
-                                    <i class="fas fa-trash"></i> Eliminar
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <div style="text-align:center">
-                            <h4 class="text-info text-center" style="font-weight:bold">25.000 CLP</h4>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3" style="margin-bottom:1%">
-                <div class="card">
-                    <img class="card-img-top" src="https://artemarcial.cl/wp-content/uploads/2019/02/empeineras-taekwondo-itf.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6" style="font-size:12px">
-                                <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal1" href="#">
-                                    <i class="fas fa-edit"></i>Editar
-                                </button>
-
-                            </div>
-                            <div class="col-6" style="font-size:12px">
-                                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal1" href="#">
-                                    <i class="fas fa-trash"></i> Eliminar
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <div style="text-align:center">
-                            <h4 class="text-info text-center" style="font-weight:bold">25.000 CLP</h4>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3" style="margin-bottom:1%">
-                <div class="card">
-                    <img class="card-img-top" src="https://artemarcial.cl/wp-content/uploads/2019/02/empeineras-taekwondo-itf.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6" style="font-size:12px">
-                                <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal1" href="#">
-                                    <i class="fas fa-edit"></i>Editar
-                                </button>
-
-                            </div>
-                            <div class="col-6" style="font-size:12px">
-                                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal1" href="#">
-                                    <i class="fas fa-trash"></i> Eliminar
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <div style="text-align:center">
-                            <h4 class="text-info text-center" style="font-weight:bold">25.000 CLP</h4>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-3" style="margin-bottom:1%">
-                <div class="card">
-                    <img class="card-img-top" src="https://artemarcial.cl/wp-content/uploads/2019/02/empeineras-taekwondo-itf.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6" style="font-size:12px">
-                                <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#exampleModal1" href="#">
-                                    <i class="fas fa-edit"></i>Editar
-                                </button>
-
-                            </div>
-                            <div class="col-6" style="font-size:12px">
-                                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal1" href="#">
-                                    <i class="fas fa-trash"></i> Eliminar
-                                </button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <div style="text-align:center">
-                            <h4 class="text-info text-center" style="font-weight:bold">25.000 CLP</h4>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-
-
-
-        </div>
-
+        <div id="ElementosTienda"></div>
     </div>
 
 </div>
@@ -167,52 +53,87 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Codigo Producto" type="text" />
+                        <select id="CategoriaProductoAdd" class="form-control">
+                            <option value="0">--Seleccione categoria--</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                        <input id="CodigoProductoAdd" class="form-control" placeholder="Codigo Producto" type="text" />
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Nombre Producto" />
+                        <input id="NombreProductoAdd" class="form-control" placeholder="Nombre Producto" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Precio tienda $" type="text" />
+                        <input id="PrecioTiendaAdd" class="form-control" placeholder="Precio tienda $" type="text" />
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Precio Internet" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Marca" type="text" />
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Stock" />
+                        <input id="PrecioInternetAdd" class="form-control" placeholder="Precio Internet" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Proveedor" type="text" />
+                        <input id="MarcaAdd" class="form-control" placeholder="Marca" type="text" />
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Responsable Entrega" />
+                        <input id="StockAdd" type="number" class="form-control" placeholder="Stock" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input class="form-control" placeholder="Lugar de retiro" type="text" />
+                        <select id="ProveedorAdd" class="form-control">
+                            <option value="0">--Seleccione proveedor--</option>
+                        </select>
+                    </div>
+                    @*<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                            <input id="ResponsableEntregaAdd" class="form-control" placeholder="Responsable Entrega" />
+                        </div>*@
+                </div>
+                <div class="row">
+                    @*<div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                            <input id="LugarRetiroAdd" class="form-control" placeholder="Lugar de retiro" type="text" />
+                        </div>*@
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                        <input id="ImagenProductoAdd" type="file" />
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
-                        <input id="file-upload" type="file" />
+                        <label class="text-danger">* La imágen subida, será bajo su responsabilidad (ojo)</label>
                     </div>
 
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                        <textarea style="resize:vertical;" class="form-control" placeholder="Descripción del producto..." rows="6" name="comment"></textarea>
+                        <textarea id="DescripcionProductoAdd" style="resize:vertical;" class="form-control" placeholder="Descripción del producto..." rows="6" name="comment"></textarea>
                     </div>
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="AgregarProducto" class="btn btn-primary">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-
+<div class="modal fade" id="exampleModalCategoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Categoria</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="padding-bottom: 10px;">
+                        <input class="form-control" placeholder="Nombre categoria" type="text" />
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -223,7 +144,7 @@
 </div>
 
 
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -237,59 +158,57 @@
 
                     <div class="col-md-6">
                         <div class="col-12">
-                            <img class="card-img-top" width="100" height="300" src="https://artemarcial.cl/wp-content/uploads/2019/02/empeineras-taekwondo-itf.jpg" alt="Card image cap">
+                            <img id="ImagenProductoEdit" class="card-img-top" width="100" height="300" src="#" alt="">
                         </div>
                         <div class="col-12">
-                            <input type="file" class="form-control" />
+                            <input id="FileProductEdit" type="file" class="form-control" />
                         </div>
                         <div class="col-12">
                             <label>Descripción del producto</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                        <div class="col-12">
-                            <label>Responsable de entrega</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                        <div class="col-12">
-                            <label>Lugar de retiro</label>
-                            <select class="form-control">
-                                <option value="0">--Seleccione--</option>
-                            </select>
+                            <input id="DescripcionEdit" type="text" class="form-control" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="col-12">
-                            <label>Nombre Producto</label>
-                            <p><input type="text" class="form-control" /></p>
-                        </div>
-                        <div class="col-12">
-                            <label>Precio Tienda</label>
-                            <p><input type="text" class="form-control" /></p>
-                        </div>
-                        <div class="col-12">
-                            <label>Precio Internet</label>
-                            <p><input type="text" class="form-control" /></p>
-                        </div>
-
-                        <div class="col-12">
-                            <label>Stock</label>
-                            <p><input type="text" class="form-control" /></p>
-                        </div>
-                        <div class="col-12">
-                            <label>Marca</label>
+                            <label>Categoria</label>
                             <p>
-                                <select class="form-control">
+                                <select id="CategoriaEdit" class="form-control">
                                     <option value="0">--Seleccione--</option>
-                                    <option value="1">Nike</option>
-                                    <option value="2">Adidas</option>
-                                    <option value="3">Puma</option>
                                 </select>
                             </p>
                         </div>
                         <div class="col-12">
-                            <label>Stock</label>
-                            <p><input type="text" class="form-control" /></p>
+                            <label>Nombre Producto</label>
+                            <p><input id="NombreProductoEdit" type="text" class="form-control" /></p>
                         </div>
+                        <div class="col-12">
+                            <label>Precio Tienda</label>
+                            <p><input id="PrecioTiendaEdit" type="text" class="form-control" /></p>
+                        </div>
+                        <div class="col-12">
+                            <label>Precio Internet</label>
+                            <p><input id="PrecioInternetEdit" type="text" class="form-control" /></p>
+                        </div>
+
+                        <div class="col-12">
+                            <label>Stock</label>
+                            <p><input id="StockEdit" type="text" class="form-control" /></p>
+                        </div>
+                        <div class="col-12">
+                            <label>Marca</label>
+                            <p>
+                                <input id="MarcaEdit" type="text" class="form-control" />
+                            </p>
+                        </div>
+                        <div class="col-12">
+                            <label>Proveedor</label>
+                            <p>
+                                <select id="ProveedorEdit" class="form-control">
+                                    <option value="0">--Seleccione--</option>
+                                </select>
+                            </p>
+                        </div>
+
 
 
                     </div>
@@ -298,14 +217,19 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Agregar al carrito</button>
+                <button type="button" id="ButonEditarProducto" class="btn btn-primary">Guardar</button>
             </div>
         </div>
     </div>
 </div>
 
 
-
+<script src="~/plugins/noty/lib/bounce.min.js"></script>
+<script src="~/plugins/swal/sweetalert2.min.js"></script>
+<script src="~/plugins/swal/sweetalert2.init.js"></script>
+<script src="~/plugins/noty/lib/noty.js"></script>
+<script src="~/js/Maestro/MisProductos.js"></script>
+@*<script src="~/plugins/FileSaver/FileSaver.js"></script>*@
 
 
 

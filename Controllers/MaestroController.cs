@@ -13,6 +13,8 @@ namespace ITF.Controllers
 
 
         //ROUTES.
+
+        #region ALUMNO
         public ActionResult Home()
         {
             return View();
@@ -32,7 +34,7 @@ namespace ITF.Controllers
         {
             return View();
         }
-        
+
         public ActionResult Mensualidades()
         {
             return View();
@@ -82,6 +84,72 @@ namespace ITF.Controllers
             //al modelo, para traer la información
             return Json(ModeloMaestro.AgregarAlumno(_user), JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public ActionResult AnularAlumno(int ID)
+        {
+            //modelo;
+            return Json(ModeloMaestro.AnularAlumno(ID), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult ActivarAlumno(int ID)
+        {
+            return Json(ModeloMaestro.ActivarAlumno(ID), JsonRequestBehavior.AllowGet);
+
+        }
+        #endregion
+
+        #region TIENDA
+
+        public ActionResult ListaInicial()
+        {
+            return Json(ModeloMaestro.ListaInicial(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ListaProductos()
+        {
+            return Json(ModeloMaestro.ListaProductos(), JsonRequestBehavior.AllowGet);
+
+        }
+        public ActionResult ProductoID(int ID_PRODUCTO)
+        {
+            return Json(ModeloMaestro.ProductoID(ID_PRODUCTO), JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult ListaCategorias()
+        {
+            return Json(ModeloMaestro.ListaCategorias(), JsonRequestBehavior.AllowGet);
+
+        }
+        public ActionResult ListaProveedores()
+        {
+            return Json(ModeloMaestro.ListaProveedores(), JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult AgregarProducto(ITF_PRODUCTOS PRODUCTO)
+        {
+            return Json(ModeloMaestro.AgregarProducto(PRODUCTO), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult AgregarFotoAlProducto(HttpPostedFileBase ARCHIVO, int ID)
+        {
+            return Json(ModeloMaestro.AgregarFotoAlProducto(ARCHIVO, ID), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult EditarProducto(ITF_PRODUCTOS PRODUCTO)
+        {
+            return Json(ModeloMaestro.EditarProducto(PRODUCTO), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult EliminarProducto(int ID_PRODUCTO)
+        {
+            return Json(ModeloMaestro.EliminarProducto(ID_PRODUCTO), JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
+
+
+
+
 
 
     }

@@ -17,5 +17,6 @@ namespace ITF.Models
         public int ID_PROVEEDOR { get; set; }
         public string NOMBRE_PROVEEDOR { get; set; }
         public Nullable<bool> ESTADO { get; set; }
+        public Nullable<int> COD_MAESTRO { get; set; }
     }
 }

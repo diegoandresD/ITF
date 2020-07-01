@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -41,6 +42,11 @@ namespace ITF.Controllers
         public ActionResult Carro()
         {
             return View();
+        }
+
+        public ActionResult Searching(int? page)
+        {
+            return Json(ModeloAlumno.Searching(page), JsonRequestBehavior.AllowGet);
         }
     }
 }

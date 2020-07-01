@@ -101,7 +101,7 @@ window.addEventListener('load', () => {
         if (usuario === "") {
             Errores += 1;
             new Noty({
-                text: '<strong>Atención!</strong><br />Debe ingresar el nombre de usuario<br /> ',
+                text: `<strong>Atención!</strong><br />Debe ingresar el nombre de usuario<br />Detalle error: ${Error}<br /> `,
                 type: 'error',
                 theme: 'sunset',
                 layout: 'topRight',
