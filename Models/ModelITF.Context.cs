@@ -34,8 +34,6 @@ namespace ITF.Models
         public virtual DbSet<ITF_GENEROS> ITF_GENEROS { get; set; }
         public virtual DbSet<ITF_INDICADORES> ITF_INDICADORES { get; set; }
         public virtual DbSet<ITF_MATRICULAS> ITF_MATRICULAS { get; set; }
-        public virtual DbSet<ITF_PAGOS> ITF_PAGOS { get; set; }
-        public virtual DbSet<ITF_PEDIDOS> ITF_PEDIDOS { get; set; }
         public virtual DbSet<ITF_TIPO_USUARIOS> ITF_TIPO_USUARIOS { get; set; }
         public virtual DbSet<ITF_VENTA> ITF_VENTA { get; set; }
         public virtual DbSet<ITF_VENTA_DETALLE> ITF_VENTA_DETALLE { get; set; }
@@ -46,5 +44,9 @@ namespace ITF.Models
         public virtual DbSet<ITF_CATEGORIAS> ITF_CATEGORIAS { get; set; }
         public virtual DbSet<ITF_PRODUCTOS> ITF_PRODUCTOS { get; set; }
         public virtual DbSet<ITF_PROVEEDORES> ITF_PROVEEDORES { get; set; }
+        public virtual DbSet<ITF_PEDIDOS> ITF_PEDIDOS { get; set; }
+        public virtual DbSet<ITF_PEDIDOS_DETALLE> ITF_PEDIDOS_DETALLE { get; set; }
+        public virtual DbSet<ITF_BOLETAS> ITF_BOLETAS { get; set; }
+        public virtual DbSet<ITF_PAGOS> ITF_PAGOS { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ITF.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,10 +31,7 @@ namespace ITF.Controllers
             return View();
         }
 
-        public ActionResult Pedidos()
-        {
-            return View();
-        }
+
 
         public ActionResult Mensualidades()
         {
@@ -147,6 +145,52 @@ namespace ITF.Controllers
 
         #endregion
 
+        #region PEDIDOS
+        public ActionResult Pedidos()
+        {
+            return View();
+        }
+
+        public ActionResult ListaPedidos()
+        {
+            return Json(ModeloPedidos.ListaPedidos(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult DetallePedido(int ID)
+        {
+            return Json(ModeloPedidos.DetallePedido(ID), JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult ProductoEntregado(int ID)
+        {
+            return Json(ModeloPedidos.ProductoEntregado(ID), JsonRequestBehavior.AllowGet);
+        }
+        #endregion
+
+        #region MENSUALIDADES
+        public JsonResult BuscarAlumno(string term)
+        {
+            using (ITFEntities db = new ITFEntities())
+            {
+                var resultado = db.ITF_USUARIOS.Where(a => (a.NOMBRE+ " " + a.APELLIDO_PATERNO + "(" + a.RUT + ")").Contains(term))
+                    .Select(x => (x.NOMBRE + " " + x.APELLIDO_PATERNO+ "(" + x.RUT + ")")).Distinct().Take(5).ToList();
+
+                return Json(resultado, JsonRequestBehavior.AllowGet);
+            }
+        }
+        #endregion
+
+        #region PAGOS
+
+        public ActionResult ListaPagos()
+        {
+            return Json(ModeloMaestro.ListaPagos(), JsonRequestBehavior.AllowGet);
+
+        }
+        public ActionResult RegistarMensualidad(string usuario, string ano_mes, string monto, string descripcion)
+        {
+            return Json(ModeloMaestro.RegistarMensualidad(usuario, ano_mes, monto, descripcion), JsonRequestBehavior.AllowGet);
+        }
+        #endregion
 
 
 

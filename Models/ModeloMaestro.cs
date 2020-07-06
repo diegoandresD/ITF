@@ -398,7 +398,7 @@ namespace ITF.Models
                     return new { RESPUESTA = true, TIPO = 1, DATA = _pro };
                 }
             }
-            catch(Exception Error)
+            catch (Exception Error)
             {
                 return new { RESPUESTA = true, TIPO = 3, Error = Error.Message };
             }
@@ -408,7 +408,71 @@ namespace ITF.Models
 
         #endregion
 
+        #region PAGO
+        public static object ListaPagos()
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    string Rut = HttpContext.Current.Session["RUT"].ToString();
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.RUT == Rut).FirstOrDefault();
 
+                    object[] _data = (from p in db.ITF_PAGOS
+                                      join u in db.ITF_USUARIOS
+                                      on p.COD_USUARIO equals u.ID_USUARIO
+                                      where u.COD_ADADEMIA_ACTUAL == _user.COD_ADADEMIA_ACTUAL
+                                      select new
+                                      {
+                                          NOMBRE_ALUMNO = u.NOMBRE + " " + u.APELLIDO_PATERNO + "( " + u.RUT + " )",
+                                          p.FECHA_PAGO,
+                                          p.ESTADO,
+                                          PERIODO = p.ESTADO,
+                                          p.DESCRIPCION 
+                                      }).ToArray();
+
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _data };
+
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
+
+
+        public static object RegistarMensualidad(string usuario, string ano_mes, string monto, string descripcion)
+        {
+            try
+            {
+                monto = monto.Replace(",", "");
+                monto = monto.Replace(".", "");
+                string[] Periodo = ano_mes.Split('/');
+                using (ITFEntities db = new ITFEntities())
+                {
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => (a.NOMBRE + " " + a.APELLIDO_PATERNO + "(" + a.RUT + ")") == usuario).FirstOrDefault();
+                    ITF_PAGOS _pago = new ITF_PAGOS();
+                    _pago.MES = Periodo[0];
+                    _pago.ANO = Periodo[1];
+                    _pago.COD_USUARIO = _user.ID_USUARIO;
+                    _pago.MONTO = Convert.ToInt32(monto);
+                    _pago.ESTADO = "Mensualidad " + ano_mes;
+                    _pago.DESCRIPCION = descripcion;
+                    _pago.FECHA_PAGO = DateTime.Now;
+
+                    db.ITF_PAGOS.Add(_pago);
+                    db.SaveChanges();
+
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _pago };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
+        #endregion
 
     }
 

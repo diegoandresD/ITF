@@ -16,10 +16,11 @@ namespace ITF.Models
     {
         public int ID_PAGO { get; set; }
         public Nullable<System.DateTime> FECHA_PAGO { get; set; }
-        public Nullable<int> MES { get; set; }
-        public Nullable<int> ANO { get; set; }
+        public string MES { get; set; }
+        public string ANO { get; set; }
         public Nullable<int> COD_USUARIO { get; set; }
         public Nullable<long> MONTO { get; set; }
         public string ESTADO { get; set; }
+        public string DESCRIPCION { get; set; }
     }
 }

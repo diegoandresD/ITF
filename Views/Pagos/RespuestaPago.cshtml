@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "RespuestaPago";
+}
+
+<html>
+<head>
+    Redireccionando...
+</head>
+<body>
+    <form action="@ViewBag.Url" id="Webpay-form" method="post">
+        <input type="hidden" name="token_ws" value="@ViewBag.Token" />
+        @*<button type="submit" class="btn btn-info">Pagar</button>*@
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+
+        let array = localStorage.getItem('_cart');
+
+        array = JSON.parse(array);
+
+        window.localStorage.setItem("BUY_ORDEN",@ViewBag.BUY_ORDEN );
+        window.localStorage.setItem("RESPONSE_CODE",@ViewBag.RESPONSE_CODE );
+
+        setTimeout(function () { this.document.getElementById('Webpay-form').submit(); }, 1000);
+    });
+</script>

@@ -15,8 +15,9 @@ namespace ITF.Models
     public partial class ITF_PEDIDOS
     {
         public int ID_PEDIDO { get; set; }
-        public Nullable<int> COD_VENTA { get; set; }
-        public Nullable<System.DateTime> FECHA_APROX_ENTREGA { get; set; }
-        public string ESTADO { get; set; }
+        public string ORDEN_COMPRA { get; set; }
+        public Nullable<System.DateTime> FECHA { get; set; }
+        public Nullable<int> COD_USUARIO { get; set; }
+        public Nullable<int> COD_ESTADO { get; set; }
     }
 }

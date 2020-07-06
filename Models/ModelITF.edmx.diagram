@@ -14,8 +14,6 @@
         <EntityTypeShape EntityType="ITF.ITF_GENEROS" Width="1.5" PointX="2.75" PointY="6.75" />
         <EntityTypeShape EntityType="ITF.ITF_INDICADORES" Width="1.5" PointX="6.75" PointY="3.75" />
         <EntityTypeShape EntityType="ITF.ITF_MATRICULAS" Width="1.5" PointX="4.75" PointY="6.75" />
-        <EntityTypeShape EntityType="ITF.ITF_PAGOS" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="ITF.ITF_PEDIDOS" Width="1.5" PointX="8.75" PointY="0.75" />
         <EntityTypeShape EntityType="ITF.ITF_TIPO_USUARIOS" Width="1.5" PointX="0.5" PointY="4.125" />
         <EntityTypeShape EntityType="ITF.ITF_VENTA" Width="1.5" PointX="12.875" PointY="5" />
         <EntityTypeShape EntityType="ITF.ITF_VENTA_DETALLE" Width="1.5" PointX="10.75" PointY="6.75" />
@@ -26,6 +24,10 @@
         <EntityTypeShape EntityType="ITF.ITF_CATEGORIAS" Width="1.5" PointX="10.375" PointY="10.75" />
         <EntityTypeShape EntityType="ITF.ITF_PRODUCTOS" Width="1.5" PointX="12.375" PointY="9.75" />
         <EntityTypeShape EntityType="ITF.ITF_PROVEEDORES" Width="1.5" PointX="9.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ITF.ITF_PEDIDOS" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ITF.ITF_PEDIDOS_DETALLE" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ITF.ITF_BOLETAS" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ITF.ITF_PAGOS" Width="1.5" PointX="7.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

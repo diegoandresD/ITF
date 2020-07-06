@@ -1,8 +1,19 @@
 ﻿
 @{
+
     ViewBag.Title = "Mensualidades";
 }
 
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/relax.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+<link href="~/plugins/swal/sweetalert2.css" rel="stylesheet" />
+
+<style>
+    ul.ui-autocomplete {
+        z-index: 9090909090;
+    }
+</style>
 
 
 <div class="alrazy-title title-maestro" data-splitting>
@@ -29,33 +40,22 @@
             </div>
             <br />
         </div>
+
         <table class="table table-sm table-hover table-bordered table-responsive-lg text-center">
             <!-- responsive sirve para ajutar la tabla segun el dispositivo -->
             <thead>
                 <!-- Encabezado de tabla -->
                 <tr class="table bg-primary text-white">
-                    <th>Id</th>
-                    <th>Fecha pago</th>
-                    <th>Monto</th>
-                    <th>Mes / año</th>
                     <th>Alumno</th>
-                    <th>Estado</th>
-                    <th colspan="3">Acciones</th>
+                    <th>Fecha pago</th>
+                    <th>Periodo</th>
+                    <th>Descripción</th>
                 </tr>
             </thead>
-            <tr>
-                <td>12316556-8</td>
-                <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
-                <td>Fernandez</td>
-                <td>Junio 2020</td>
-                <td>Masculino</td>
-                <td>Diego</td>
-                <td colspan="3">
-                    <button class="btn btn-sm btn-primary" title="Ver"><i class="fa fa-eye"></i></button>
-                    <button class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
-                </td>
-            </tr>
-            <tr>
+            <tbody id="tbodyPagos">
+
+            </tbody>
+            @*<tr>
                 <td>12316556-8</td>
                 <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
                 <td>Fernandez</td>
@@ -67,14 +67,12 @@
                     <button class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
                 </td>
 
-            </tr>
+            </tr>*@
 
 
         </table>
     </div>
-    <div class="text-center" style="margin-bottom:50px">
 
-    </div>
 
 
     <!--Modal agregar pago-->
@@ -90,24 +88,22 @@
                 <div class="modal-body">
                     <label>Alumno</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Buscar por...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-info" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
+                        <input type="text" id="RutCompletar" class="form-control">
                     </div>
-                    <label>Seleccione mes / año</label>
-                    <p>
-                        <select class="form-control">
-                            <option value="0">--Seleccione--</option>
-                            
-                        </select>
-                    </p>
+                    <label>Mes</label>
+                    <input class="form-control" id="Calendar" />
+                    <label>Monto</label>
+                    <input id="Monto" class="form-control" type="number" onkeyup="format(this)" onchange="format(this)" />
+                    <label>Descripción</label>
+                    <textarea id="Descripcion" style="resize:vertical;" class="form-control" placeholder="Descripción..." rows="6"></textarea>
+
+
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Agregar</button>
+                    <button type="button" id="Agregar_pago" class="btn btn-primary">Agregar</button>
                 </div>
             </div>
         </div>
@@ -200,3 +196,54 @@
         color: #FFF !important;
     }
 </style>
+
+
+
+@section scripts{
+    <script src="~/plugins/noty/lib/bounce.min.js"></script>
+    <script src="~/plugins/swal/sweetalert2.min.js"></script>
+    <script src="~/plugins/swal/sweetalert2.init.js"></script>
+    <script src="~/plugins/noty/lib/noty.js"></script>
+
+    <script src="~/js/Maestro/Mensualidades.js"></script>
+
+    <script>
+        $.datepicker.regional['es'] = {
+            closeText: 'Cerrar',
+            prevText: '< Ant',
+            nextText: 'Sig >',
+            currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            weekHeader: 'Sm',
+            dateFormat: 'mm/yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+        $(function () {
+            $("#Calendar").datepicker();
+        });
+
+
+
+        //$('#Calendar').datepicker({
+        //    format: 'yyyy-mm-dd',
+        //    orientation: "auto left",
+        //    forceParse: false,
+        //    autoclose: true,
+        //    todayHighlight: true,
+        //    toggleActive: true,
+        //    endDate: '0',
+        //});
+
+
+    </script>
+}
+
+

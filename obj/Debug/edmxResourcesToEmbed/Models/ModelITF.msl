@@ -102,29 +102,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ITF_PAGOS">
-      <EntityTypeMapping TypeName="ITF.ITF_PAGOS">
-        <MappingFragment StoreEntitySet="ITF_PAGOS">
-          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
-          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
-          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
-          <ScalarProperty Name="ANO" ColumnName="ANO" />
-          <ScalarProperty Name="MES" ColumnName="MES" />
-          <ScalarProperty Name="FECHA_PAGO" ColumnName="FECHA_PAGO" />
-          <ScalarProperty Name="ID_PAGO" ColumnName="ID_PAGO" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ITF_PEDIDOS">
-      <EntityTypeMapping TypeName="ITF.ITF_PEDIDOS">
-        <MappingFragment StoreEntitySet="ITF_PEDIDOS">
-          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
-          <ScalarProperty Name="FECHA_APROX_ENTREGA" ColumnName="FECHA_APROX_ENTREGA" />
-          <ScalarProperty Name="COD_VENTA" ColumnName="COD_VENTA" />
-          <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ITF_TIPO_USUARIOS">
       <EntityTypeMapping TypeName="ITF.ITF_TIPO_USUARIOS">
         <MappingFragment StoreEntitySet="ITF_TIPO_USUARIOS">
@@ -249,6 +226,58 @@
           <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
           <ScalarProperty Name="NOMBRE_PROVEEDOR" ColumnName="NOMBRE_PROVEEDOR" />
           <ScalarProperty Name="ID_PROVEEDOR" ColumnName="ID_PROVEEDOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_PEDIDOS">
+      <EntityTypeMapping TypeName="ITF.ITF_PEDIDOS">
+        <MappingFragment StoreEntitySet="ITF_PEDIDOS">
+          <ScalarProperty Name="COD_ESTADO" ColumnName="COD_ESTADO" />
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="ORDEN_COMPRA" ColumnName="ORDEN_COMPRA" />
+          <ScalarProperty Name="ID_PEDIDO" ColumnName="ID_PEDIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_PEDIDOS_DETALLE">
+      <EntityTypeMapping TypeName="ITF.ITF_PEDIDOS_DETALLE">
+        <MappingFragment StoreEntitySet="ITF_PEDIDOS_DETALLE">
+          <ScalarProperty Name="COD_PEDIDO" ColumnName="COD_PEDIDO" />
+          <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
+          <ScalarProperty Name="ID_DETALLE_PEDIDO" ColumnName="ID_DETALLE_PEDIDO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_BOLETAS">
+      <EntityTypeMapping TypeName="ITF.ITF_BOLETAS">
+        <MappingFragment StoreEntitySet="ITF_BOLETAS">
+          <ScalarProperty Name="CODIGO_AUTORIZACION" ColumnName="CODIGO_AUTORIZACION" />
+          <ScalarProperty Name="ORDEN_COMPRA" ColumnName="ORDEN_COMPRA" />
+          <ScalarProperty Name="NUMERO_TARJETA" ColumnName="NUMERO_TARJETA" />
+          <ScalarProperty Name="MEDIO_PAGO" ColumnName="MEDIO_PAGO" />
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="COD_PEDIDO" ColumnName="COD_PEDIDO" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="ID_BOLETA" ColumnName="ID_BOLETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_PAGOS">
+      <EntityTypeMapping TypeName="ITF.ITF_PAGOS">
+        <MappingFragment StoreEntitySet="ITF_PAGOS">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="MONTO" ColumnName="MONTO" />
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="ANO" ColumnName="ANO" />
+          <ScalarProperty Name="MES" ColumnName="MES" />
+          <ScalarProperty Name="FECHA_PAGO" ColumnName="FECHA_PAGO" />
+          <ScalarProperty Name="ID_PAGO" ColumnName="ID_PAGO" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

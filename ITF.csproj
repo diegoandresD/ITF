@@ -52,11 +52,82 @@
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Services3.3.0.0.0\lib\net20\Microsoft.Web.Services3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Primitives.4.0.1\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MQTTnet, Version=3.0.8.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
+      <HintPath>packages\MQTTnet.3.0.8\lib\net452\MQTTnet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Console.4.0.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Globalization.Calendars.4.0.1\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.4.1.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.ZipFile.4.0.1\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.1.0\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Security, Version=4.0.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Security.4.3.2\lib\net46\System.Net.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Sockets.4.1.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.WebSockets.4.3.0\lib\net46\System.Net.WebSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.WebSockets.Client, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.WebSockets.Client.4.3.2\lib\net46\System.Net.WebSockets.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net46\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,8 +146,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
@@ -109,6 +178,9 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Transbank, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\TransbankSDK.2.4.0\lib\net452\Transbank.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -146,6 +218,7 @@
     <Compile Include="Controllers\MaestroController.cs" />
     <Compile Include="Controllers\MensualidadesController.cs" />
     <Compile Include="Controllers\MisAlumnosController.cs" />
+    <Compile Include="Controllers\PagosController.cs" />
     <Compile Include="Controllers\PedidosProfesorController.cs" />
     <Compile Include="Controllers\ProgresionAlumnoController.cs" />
     <Compile Include="Controllers\ProgresionAlumnoFuncionarioController.cs" />
@@ -177,6 +250,9 @@
     <Compile Include="Models\ITF_ARANCELES.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITF_BOLETAS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ITF_CATEGORIAS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
@@ -196,6 +272,9 @@
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_PEDIDOS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_PEDIDOS_DETALLE.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_PREGUNTAS_SEGURIDAD.cs">
@@ -240,6 +319,7 @@
     </Compile>
     <Compile Include="Models\ModeloAlumno.cs" />
     <Compile Include="Models\ModeloMaestro.cs" />
+    <Compile Include="Models\ModeloPedidos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2021,6 +2101,7 @@
     <Content Include="img\slide4.jpg" />
     <Content Include="img\slide7.jpg" />
     <Content Include="img\slide8.jpg" />
+    <Content Include="js\Alumno\Carrito.js" />
     <Content Include="js\Alumno\Tienda.js" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
@@ -2030,7 +2111,10 @@
     <Content Include="js\Layoult\Cerrarsesion.js" />
     <Content Include="js\Login\login.js" />
     <Content Include="js\Maestro\Alumnos.js" />
+    <Content Include="js\Maestro\Mensualidades.js" />
     <Content Include="js\Maestro\MisProductos.js" />
+    <Content Include="js\Maestro\Pedidos.js" />
+    <Content Include="js\Pagos\comprobante.js" />
     <Content Include="js\popper.min.js" />
     <Content Include="js\scripts.js" />
     <Content Include="Login\css\main.css" />
@@ -2573,7 +2657,26 @@
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\package.json" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\AUTHORS.txt" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\external\jquery\jquery.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\images\ui-icons_444444_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\images\ui-icons_555555_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\images\ui-icons_777620_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\images\ui-icons_777777_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\index.html" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\jquery-ui.min.css" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\jquery-ui.structure.css" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\jquery-ui.theme.css" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui-1.12.1\LICENSE.txt" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -2642,6 +2745,9 @@
     <Content Include="Views\Funcionario\RankingInterno.cshtml" />
     <Content Include="Views\Funcionario\Maestros.cshtml" />
     <Content Include="Views\Alumno\Carro.cshtml" />
+    <Content Include="Views\Pagos\GenerarPagoTotal.cshtml" />
+    <Content Include="Views\Pagos\RespuestaPago.cshtml" />
+    <Content Include="Views\Pagos\ComprobanteCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

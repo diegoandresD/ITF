@@ -25,11 +25,12 @@
                 <div class="collapse navbar-collapse" id="navbarresponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Index", "Home")">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Academias", "Home")" target="_blank" >Academias</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="@Url.Action("Academias", "Home")" target="_blank">Academias</a></li>
                         <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Galeria", "Home")">Galeria</a></li>
                         <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Reglamento", "Home")">Reglamento</a></li>
                         <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Eventos", "Home")">Eventos</a></li>
                         <li class="nav-item"><a class="nav-link text-black" target="_blank" href="@Url.Action("Contacto", "Home")">Contacto</a></li>
+
                         @if (Session["NAME"] != null)
                         {
                             if (Session["TIPO"] != null)
@@ -50,9 +51,9 @@
                                 <li class="nav-item"><a class="nav-link text-@clase" href="#"><strong>Hola @Session["NAME"].ToString()</strong></a></li>
 
                                 <li class="nav-item"><button class="btn-sm btn-@clase nav-link text-white" target="_blank" id="LogOut"><i class="fas fa-sign-out-alt"></i></button></li>
-                                
 
-                            
+
+
 
                             }
                         }
@@ -60,10 +61,10 @@
 
                         @*<li class="nav-item"><a class="nav-link active text-black" href="#">| Sebastian Venegas</a></li>*@
                         @*<li class="nav-item">
-            <a class="nav-link active text-black" href="#" title="mi carrito">
-                | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i>
-            </a>
-        </li>*@
+                                <a class="nav-link active text-black" href="#" title="mi carrito">
+                                    | <span class="badge badge-pill badge-info">0</span> <i class="fas fa-shopping-cart text-info"></i>
+                                </a>
+                            </li>*@
 
                     </ul>
 
@@ -95,14 +96,14 @@
                     @Html.Partial("_NavFuncionario");
                 }
             }
-            else
-            {
-                <script>
-                    setTimeout(() => {
-                        window.location.href = "../Error/SessionCaducada";
-                    }, 500);
-                </script>
-            }
+            @*else
+                {
+                    <script>
+                        setTimeout(() => {
+                            window.location.href = "../Error/SessionCaducada";
+                        }, 500);
+                    </script>
+                }*@
             <!--Nav maestros (accesos directos)-->
             <!-- Slider -->
 
@@ -139,7 +140,12 @@
         </div>
     </footer>
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     @Scripts.Render("~/Bundles/js")
+    @RenderSection("scripts", false)
+
     <script src="~/js/Layoult/Cerrarsesion.js"></script>
 </body>
 </html>

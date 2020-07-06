@@ -8,11 +8,57 @@
 <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
 <script>Splitting();</script>
 <br />
+<div class="container">
+    <table id="Saldo" class="table table-hover table-bordered text-center">
+        <thead>
+            
+            <tr>
+                <th class="text-success" colspan="5">Cuentas</th>
+            </tr>
+            <tr>
+                <th style="width:10%">Tipo cuenta</th>
+                <th style="width:10%">N° Cuenta</th>
+                <th style="width:8%">Moneda</th>
+                <th style="width:22%" class="text-center">Saldo disponible CLP</th>
+                <th style="width:10%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cartera de ahorro</td>
+                <td>0019730268</td>
+                <td>CLP</td>
+                <td>1.000</td>
+                <td><button class="btn btn-sm btn-success"><i class="fas fa-arrow-right"></i> Transferir</button></td>
+            </tr>
+        </tbody>
+
+
+    </table>
+    <table id="Movimiento" class="table table-hover table-bordered text-center">
+        <thead>
+            <tr class="text-success">
+                <th colspan="6">
+                    Movimientos
+                </th>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <th>N° Operación</th>
+                <th>Descripción</th>
+                <th>Cargos CLP</th>
+                <th>Abonos CLP</th>
+                <th>Saldo CLP</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
 
 <link rel="stylesheet" href="~/Scripts/chart.js-2.9.3/package/dist/Chart.css">
 <link rel="stylesheet" href="~/Scripts/chart.js-2.9.3/package/dist/Chart.min.css">
 
-    <canvas id="myChart" width="400" height="400"></canvas>
+<canvas id="myChart" width="400" height="400"></canvas>
 
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');

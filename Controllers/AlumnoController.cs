@@ -44,9 +44,17 @@ namespace ITF.Controllers
             return View();
         }
 
+        #region TIENDA
         public ActionResult Searching(int? page)
         {
             return Json(ModeloAlumno.Searching(page), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult DetalleProducto(int ID)
+        {
+            return Json(ModeloAlumno.DetalleProducto(ID), JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion TIENDA
     }
 }
