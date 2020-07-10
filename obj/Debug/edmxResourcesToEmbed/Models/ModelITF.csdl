@@ -8,7 +8,6 @@
     <EntitySet Name="ITF_ARANCELES" EntityType="ITF.ITF_ARANCELES" />
     <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="ITF.ITF_EXAMEN_REALIZADOS" />
     <EntitySet Name="ITF_GENEROS" EntityType="ITF.ITF_GENEROS" />
-    <EntitySet Name="ITF_INDICADORES" EntityType="ITF.ITF_INDICADORES" />
     <EntitySet Name="ITF_MATRICULAS" EntityType="ITF.ITF_MATRICULAS" />
     <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="ITF.ITF_TIPO_USUARIOS" />
     <EntitySet Name="ITF_VENTA" EntityType="ITF.ITF_VENTA" />
@@ -24,6 +23,10 @@
     <EntitySet Name="ITF_PEDIDOS_DETALLE" EntityType="ITF.ITF_PEDIDOS_DETALLE" />
     <EntitySet Name="ITF_BOLETAS" EntityType="ITF.ITF_BOLETAS" />
     <EntitySet Name="ITF_PAGOS" EntityType="ITF.ITF_PAGOS" />
+    <EntitySet Name="ITF_CARTERA" EntityType="ITF.ITF_CARTERA" />
+    <EntitySet Name="ITF_CARTERA_MOVIMIENTOS" EntityType="ITF.ITF_CARTERA_MOVIMIENTOS" />
+    <EntitySet Name="ITF_GRADOS" EntityType="ITF.ITF_GRADOS" />
+    <EntitySet Name="ITF_INDICADORES" EntityType="ITF.ITF_INDICADORES" />
   </EntityContainer>
   <EntityType Name="ITF_ACADEMIAS">
     <Key>
@@ -96,16 +99,6 @@
     </Key>
     <Property Name="ID_GENERO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NOMBRE_GENERO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="ITF_INDICADORES">
-    <Key>
-      <PropertyRef Name="ID_INDICADOR" />
-    </Key>
-    <Property Name="ID_INDICADOR" Type="Int32" Nullable="false" />
-    <Property Name="COD_USUARIO" Type="Int32" />
-    <Property Name="PESO" Type="Decimal" Precision="10" Scale="2" />
-    <Property Name="COD_GRADO" Type="Int32" />
-    <Property Name="ESTATURA" Type="Decimal" Precision="10" Scale="2" />
   </EntityType>
   <EntityType Name="ITF_MATRICULAS">
     <Key>
@@ -281,5 +274,48 @@
     <Property Name="MONTO" Type="Int64" />
     <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DESCRIPCION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITF_CARTERA">
+    <Key>
+      <PropertyRef Name="ID_CARTERA" />
+    </Key>
+    <Property Name="ID_CARTERA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NRO_CUENTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MONEDA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SALDO" Type="Int32" />
+    <Property Name="TIPO_CUENTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITF_CARTERA_MOVIMIENTOS">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <Property Name="CODIGO_OPERACION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CARGO" Type="Boolean" />
+    <Property Name="ABONO" Type="Boolean" />
+    <Property Name="SALDO" Type="Int32" />
+    <Property Name="COD_CARTERA" Type="Int32" />
+    <Property Name="SUBTOTAL" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ITF_GRADOS">
+    <Key>
+      <PropertyRef Name="ID_GRADO" />
+    </Key>
+    <Property Name="ID_GRADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ITF_INDICADORES">
+    <Key>
+      <PropertyRef Name="ID_INDICADOR" />
+    </Key>
+    <Property Name="ID_INDICADOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+    <Property Name="PESO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="COD_GRADO" Type="Int32" />
+    <Property Name="ESTATURA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

@@ -12,12 +12,16 @@ namespace ITF.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ITF_INDICADORES
+    public partial class ITF_CARTERA_MOVIMIENTOS
     {
-        public int ID_INDICADOR { get; set; }
-        public Nullable<int> COD_USUARIO { get; set; }
-        public string PESO { get; set; }
-        public Nullable<int> COD_GRADO { get; set; }
-        public string ESTATURA { get; set; }
+        public int ID_DETALLE { get; set; }
+        public Nullable<System.DateTime> FECHA { get; set; }
+        public string CODIGO_OPERACION { get; set; }
+        public string DESCRIPCION { get; set; }
+        public Nullable<bool> CARGO { get; set; }
+        public Nullable<bool> ABONO { get; set; }
+        public Nullable<int> SALDO { get; set; }
+        public Nullable<int> COD_CARTERA { get; set; }
+        public Nullable<int> SUBTOTAL { get; set; }
     }
 }

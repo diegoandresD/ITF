@@ -25,6 +25,7 @@ namespace ITF
 
 
             bundles.Add(new StyleBundle("~/bundles/js").Include(
+                "~/Login/vendor/jquery/jquery-3.2.1.min.js",
                 "~/js/bootstrap.min.js",
                 "~/js/scripts.js",
                 "~/js/popper.min.js",

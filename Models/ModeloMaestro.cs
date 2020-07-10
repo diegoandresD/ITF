@@ -1,4 +1,5 @@
 ﻿using Microsoft.SqlServer.Server;
+using Microsoft.Web.Services3.Addressing;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -42,7 +43,72 @@ namespace ITF.Models
             }
         }
 
+        public static object ListaGrados()
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    ITF_GRADOS[] _grados = db.ITF_GRADOS.Where(a => a.ESTADO == true).ToArray();
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _grados };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };//mensaje del error };
 
+            }
+        }
+
+        public static object ListaDatosConfirmacion(string RUT)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    object _INDICADORES = null;
+                    object _datos_anteriores = null;
+
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.RUT == RUT).FirstOrDefault();
+
+                    if (_user != null)
+                    {
+                        _INDICADORES = (from i in db.ITF_INDICADORES
+                                        join g in db.ITF_GRADOS on i.COD_GRADO equals g.ID_GRADO
+                                        where i.COD_USUARIO == _user.ID_USUARIO
+                                        select new
+                                        {
+                                            i.ID_INDICADOR,
+                                            i.ESTATURA,
+                                            i.PESO,
+                                            g.NOMBRE
+                                        }).FirstOrDefault();
+
+
+
+
+                        _datos_anteriores = (from a in db.ITF_ACADEMIAS
+                                             join u in db.ITF_USUARIOS
+                                             on a.COD_MAESTRO equals u.ID_USUARIO
+                                             where a.ID_ACADEMIA == _user.COD_ACADEMIA_ANTERIOR
+                                             select new
+                                             {
+                                                 a.COD_MAESTRO,
+                                                 a.NOMBRE_ACADEMIA,
+                                                 NOMBRE_COMPLETO = u.NOMBRE + " " + u.APELLIDO_PATERNO + " " + u.APELLIDO_MATERNO,
+                                             }).FirstOrDefault();
+                    }
+
+
+                    return new { RESPUESTA = true, TIPO = 1, DATA = new { INDI = _INDICADORES, ANTERIOR = _datos_anteriores, USER = _user } };
+
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
         public static object ListaGeneros()
         {
             try
@@ -69,7 +135,22 @@ namespace ITF.Models
             {
                 using (ITFEntities db = new ITFEntities())
                 {
-                    ITF_USUARIOS[] _user = db.ITF_USUARIOS.Where(a => a.COD_TIPO_USUARIO == 1).ToArray();
+
+                    string Rut = HttpContext.Current.Session["RUT"].ToString();
+
+                    ITF_USUARIOS _maestro = db.ITF_USUARIOS.Where(a => a.RUT == Rut).FirstOrDefault();
+
+                    List<int?> academias = new List<int?>();
+
+                    ITF_ACADEMIAS[] _aca = db.ITF_ACADEMIAS.Where(a => a.COD_MAESTRO == _maestro.ID_USUARIO).ToArray();
+                    foreach (var item in _aca)
+                    {
+                        academias.Add(item.ID_ACADEMIA);
+                    }
+
+
+
+                    ITF_USUARIOS[] _user = db.ITF_USUARIOS.Where(a => a.COD_TIPO_USUARIO == 1 && academias.Contains(a.COD_ADADEMIA_ACTUAL)).ToArray();
                     return new { RESPUESTA = true, TIPO = 1, DATA = _user };
                 }
             }
@@ -188,6 +269,39 @@ namespace ITF.Models
             catch (Exception Error)
             {
                 return new { RESULTADO = false, TIPO = 3, Error = Error.Message };
+            }
+        }
+
+        public static object AgregarDatosTecnicos(ITF_INDICADORES INDICADORES)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    db.ITF_INDICADORES.Add(INDICADORES);
+                    db.SaveChanges();
+                    return new { RESPUESTA = true, TIPO = 1, DATA = INDICADORES };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error.Message };
+            }
+        }
+
+        public static object DatosTecnicosUsuario(int ID)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    ITF_INDICADORES _ind = db.ITF_INDICADORES.Where(a => a.COD_USUARIO == ID).FirstOrDefault();
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _ind };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error.Message };
             }
         }
         #endregion
@@ -428,7 +542,7 @@ namespace ITF.Models
                                           p.FECHA_PAGO,
                                           p.ESTADO,
                                           PERIODO = p.ESTADO,
-                                          p.DESCRIPCION 
+                                          p.DESCRIPCION
                                       }).ToArray();
 
                     return new { RESPUESTA = true, TIPO = 1, DATA = _data };

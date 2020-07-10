@@ -12,12 +12,10 @@ namespace ITF.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ITF_INDICADORES
+    public partial class ITF_GRADOS
     {
-        public int ID_INDICADOR { get; set; }
-        public Nullable<int> COD_USUARIO { get; set; }
-        public string PESO { get; set; }
-        public Nullable<int> COD_GRADO { get; set; }
-        public string ESTATURA { get; set; }
+        public int ID_GRADO { get; set; }
+        public string NOMBRE { get; set; }
+        public Nullable<bool> ESTADO { get; set; }
     }
 }

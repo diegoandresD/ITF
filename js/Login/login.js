@@ -151,7 +151,42 @@ window.addEventListener('load', () => {
             const Fetchs = Fetch(url, datos);
             const Resultado = await Fetchs.FetchWithData();
             console.log(Resultado);
+
             if (Resultado.RESPUESTA) {
+
+                if (Resultado.data.ACTIVO === false) {
+                    new Noty({
+                        text: '<strong>Usuario NO activo, contácte con su maestro</strong><br />--<br /> ',
+                        type: 'error',
+                        theme: 'sunset',
+                        layout: 'topRight',
+                        timeout: 4000,
+                        animation: {
+                            open: bouncejsShow,
+                            close: bouncejsClose
+                        }
+                    }).show();
+
+                    return false;
+                }
+
+                if (Resultado.data.PRIMERA_VEZ) {
+
+
+
+                    await ListaPreguntas();
+                    $("#ModalPreguntas").modal("show");
+                    return false;
+
+
+                }
+                else {
+                    //Preguntas de seguridad;
+
+                    await ListaPreguntasIngreso();
+                    return false;
+                }
+
 
                 new Noty({
                     text: '<strong>Ingresado correctamente</strong><br /> Redireccionando..<br /> ',
@@ -180,9 +215,10 @@ window.addEventListener('load', () => {
                         window.location.href = "../Funcionario/Home";
                     }, 2000);
                 }
-   
+
             }
             else {
+
                 new Noty({
                     text: '<strong>Usuario o contraseña invalida</strong><br />--<br /> ',
                     type: 'error',
@@ -200,3 +236,213 @@ window.addEventListener('load', () => {
     });
 
 });
+
+document.getElementById('ButtonGuardarPreguntas').addEventListener('click', async () => {
+    //registrar preguntas;
+    let respuesta = document.getElementsByClassName('preguntas');
+    let Username = document.getElementById('Username');
+    let Password = document.getElementById('Password');
+
+
+    let array = [];
+    for (var i = 0; i < respuesta.length; i++) {
+        array.push({ RESPUESTA: respuesta[i].value, COD_PREGUNTA: respuesta[i].id });
+    }
+
+    let url = "../Login/RespuestaPrimeraVez";
+    let data = { RESPUESTAS: array, Username: Username.value, Password: Password.value };
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+
+    if (Resultado.RESPUESTA) {
+        let noty;
+        let Tipo;
+        if (document.getElementById('btn_login').classList.contains('alumno')) {
+            Tipo = 1;
+            noty = "success";
+        }
+        else if (document.getElementById('btn_login').classList.contains('directivo')) {
+            Tipo = 3;
+            noty = "error";
+        }
+        else if (document.getElementById('btn_login').classList.contains('maestro')) {
+            Tipo = 2;
+            noty = "info";
+        }
+
+        new Noty({
+            text: '<strong>Ingresado correctamente</strong><br /> Redireccionando..<br /> ',
+            type: noty,
+            theme: 'sunset',
+            layout: 'topRight',
+            timeout: 4000,
+            animation: {
+                open: bouncejsShow,
+                close: bouncejsClose
+            }
+        }).show();
+
+        if (Resultado.data.COD_TIPO_USUARIO === 1) {
+            setTimeout(() => {
+                window.location.href = "../Alumno/Home";
+            }, 2000);
+        }
+        else if (Resultado.data.COD_TIPO_USUARIO === 2) {
+            setTimeout(() => {
+                window.location.href = "../Maestro/Home";
+            }, 2000);
+        }
+        else if (Resultado.data.COD_TIPO_USUARIO === 3) {
+            setTimeout(() => {
+                window.location.href = "../Funcionario/Home";
+            }, 2000);
+        }
+
+
+    }
+
+
+
+})
+
+document.getElementById('CompararRespuestas').addEventListener('click', async () => {
+    await compararRespuestaIngresadas();
+});
+
+
+const ListaPreguntas = async () => {
+    let url = "../Login/ListaPreguntas";
+    const Fetchs = Fetch(url, null);
+    const Resultado = await Fetchs.FetchWithOutData();
+
+    let ContenidoPreguntas = document.getElementById('ContenidoPreguntas');
+    ContenidoPreguntas.innerHTML = "";
+    let Contenedor = "";
+
+    if (Resultado.RESPUESTA) {
+        //Lista preguntas
+        let data = Resultado.DATA;
+        data.forEach(Item => {
+            Contenedor += `<div class="container"><span class="col-lg-12">${Item.PREGUNTA}</span>
+                        <input id="${Item.ID_PREGUNTAS}" class="col-lg-12 preguntas form-control" type="text" name="${Item.ID_PREGUNTAS}" placeholder="Ingrese su respuesta"></div>`;
+        })
+
+        ContenidoPreguntas.innerHTML = Contenedor;
+    }
+
+
+}
+
+
+
+
+const ListaPreguntasIngreso = async () => {
+    let Username = document.getElementById('Username');
+    let Password = document.getElementById('Password');
+
+    let url = "../Login/ListaRespuestaUsuario";
+    let data = { usuario: Username.value, contrasena: Password.value };
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+
+    let ContenidoPreguntas = document.getElementById('ContenidoPreguntasIngreso');
+    ContenidoPreguntas.innerHTML = "";
+    let Contenedor = "";
+
+    if (Resultado.RESPUESTA) {
+        //Lista preguntas
+        let data = Resultado.DATA;
+        data.forEach(Item => {
+            Contenedor += `<div class="container"><span class="col-lg-12">${Item.PREGUNTA}</span>
+                        <input id="${Item.ID_PREGUNTAS}" class="col-lg-12 respuestas form-control" type="text" name="${Item.ID_PREGUNTAS}" placeholder="Ingrese su respuesta"></div>`;
+        })
+
+        ContenidoPreguntas.innerHTML = Contenedor;
+    }
+
+
+    $("#ModalPreguntasIngreso").modal("show");
+
+}
+
+const compararRespuestaIngresadas = async () => {
+    let respuesta = document.getElementsByClassName('respuestas');
+    let Username = document.getElementById('Username');
+    let Password = document.getElementById('Password');
+
+
+    let array = [];
+    for (var i = 0; i < respuesta.length; i++) {
+        array.push({ RESPUESTA: respuesta[i].value, COD_PREGUNTA: respuesta[i].id });
+    }
+
+    let url = "../Login/ValidarRespuestas";
+    let data = { RESPUESTAS: array, usuario: Username.value, contrasena: Password.value };
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+
+    if (Resultado.RESPUESTA) {
+        //Respuesta correctas;
+        let noty;
+        let Tipo;
+        if (document.getElementById('btn_login').classList.contains('alumno')) {
+            Tipo = 1;
+            noty = "success";
+        }
+        else if (document.getElementById('btn_login').classList.contains('directivo')) {
+            Tipo = 3;
+            noty = "error";
+        }
+        else if (document.getElementById('btn_login').classList.contains('maestro')) {
+            Tipo = 2;
+            noty = "info";
+        }
+
+        new Noty({
+            text: '<strong>Ingresado correctamente</strong><br /> Redireccionando..<br /> ',
+            type: noty,
+            theme: 'sunset',
+            layout: 'topRight',
+            timeout: 4000,
+            animation: {
+                open: bouncejsShow,
+                close: bouncejsClose
+            }
+        }).show();
+
+        if (Resultado.DATA.COD_TIPO_USUARIO === 1) {
+            setTimeout(() => {
+                window.location.href = "../Alumno/Home";
+            }, 2000);
+        }
+        else if (Resultado.DATA.COD_TIPO_USUARIO === 2) {
+            setTimeout(() => {
+                window.location.href = "../Maestro/Home";
+            }, 2000);
+        }
+        else if (Resultado.DATA.COD_TIPO_USUARIO === 3) {
+            setTimeout(() => {
+                window.location.href = "../Funcionario/Home";
+            }, 2000);
+        }
+    }
+    else {
+        //Respuesta malas;
+        new Noty({
+            text: '<strong>Información</strong><br /> Algunas de sus respuestas es incorrecta, vuelva a intentarlo..<br /> ',
+            type: 'error',
+            theme: 'sunset',
+            layout: 'topRight',
+            timeout: 4000,
+            animation: {
+                open: bouncejsShow,
+                close: bouncejsClose
+            }
+        }).show();
+    }
+}
+
+
+//const HacerPreguntasSeguridad = async () => {
+
+//};

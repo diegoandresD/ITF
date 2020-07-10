@@ -80,17 +80,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ITF_INDICADORES">
-      <EntityTypeMapping TypeName="ITF.ITF_INDICADORES">
-        <MappingFragment StoreEntitySet="ITF_INDICADORES">
-          <ScalarProperty Name="ESTATURA" ColumnName="ESTATURA" />
-          <ScalarProperty Name="COD_GRADO" ColumnName="COD_GRADO" />
-          <ScalarProperty Name="PESO" ColumnName="PESO" />
-          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
-          <ScalarProperty Name="ID_INDICADOR" ColumnName="ID_INDICADOR" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ITF_MATRICULAS">
       <EntityTypeMapping TypeName="ITF.ITF_MATRICULAS">
         <MappingFragment StoreEntitySet="ITF_MATRICULAS">
@@ -278,6 +267,53 @@
           <ScalarProperty Name="MES" ColumnName="MES" />
           <ScalarProperty Name="FECHA_PAGO" ColumnName="FECHA_PAGO" />
           <ScalarProperty Name="ID_PAGO" ColumnName="ID_PAGO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_CARTERA">
+      <EntityTypeMapping TypeName="ITF.ITF_CARTERA">
+        <MappingFragment StoreEntitySet="ITF_CARTERA">
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="TIPO_CUENTA" ColumnName="TIPO_CUENTA" />
+          <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+          <ScalarProperty Name="MONEDA" ColumnName="MONEDA" />
+          <ScalarProperty Name="NRO_CUENTA" ColumnName="NRO_CUENTA" />
+          <ScalarProperty Name="ID_CARTERA" ColumnName="ID_CARTERA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_CARTERA_MOVIMIENTOS">
+      <EntityTypeMapping TypeName="ITF.ITF_CARTERA_MOVIMIENTOS">
+        <MappingFragment StoreEntitySet="ITF_CARTERA_MOVIMIENTOS">
+          <ScalarProperty Name="SUBTOTAL" ColumnName="SUBTOTAL" />
+          <ScalarProperty Name="COD_CARTERA" ColumnName="COD_CARTERA" />
+          <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+          <ScalarProperty Name="ABONO" ColumnName="ABONO" />
+          <ScalarProperty Name="CARGO" ColumnName="CARGO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="CODIGO_OPERACION" ColumnName="CODIGO_OPERACION" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="ID_DETALLE" ColumnName="ID_DETALLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_GRADOS">
+      <EntityTypeMapping TypeName="ITF.ITF_GRADOS">
+        <MappingFragment StoreEntitySet="ITF_GRADOS">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_GRADO" ColumnName="ID_GRADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_INDICADORES">
+      <EntityTypeMapping TypeName="ITF.ITF_INDICADORES">
+        <MappingFragment StoreEntitySet="ITF_INDICADORES">
+          <ScalarProperty Name="ESTATURA" ColumnName="ESTATURA" />
+          <ScalarProperty Name="COD_GRADO" ColumnName="COD_GRADO" />
+          <ScalarProperty Name="PESO" ColumnName="PESO" />
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="ID_INDICADOR" ColumnName="ID_INDICADOR" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

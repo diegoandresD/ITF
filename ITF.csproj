@@ -253,6 +253,12 @@
     <Compile Include="Models\ITF_BOLETAS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITF_CARTERA.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_CARTERA_MOVIMIENTOS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ITF_CATEGORIAS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
@@ -260,6 +266,9 @@
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_GENEROS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_GRADOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITF_INDICADORES.cs">
@@ -2102,6 +2111,7 @@
     <Content Include="img\slide7.jpg" />
     <Content Include="img\slide8.jpg" />
     <Content Include="js\Alumno\Carrito.js" />
+    <Content Include="js\Alumno\Cartera.js" />
     <Content Include="js\Alumno\Tienda.js" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
@@ -2748,6 +2758,9 @@
     <Content Include="Views\Pagos\GenerarPagoTotal.cshtml" />
     <Content Include="Views\Pagos\RespuestaPago.cshtml" />
     <Content Include="Views\Pagos\ComprobanteCliente.cshtml" />
+    <Content Include="Views\Alumno\GenerarPagoTotal.cshtml" />
+    <Content Include="Views\Alumno\RespuestaPago.cshtml" />
+    <Content Include="Views\Alumno\ComprobanteCliente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

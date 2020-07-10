@@ -92,6 +92,17 @@ function Fetch(Ruta, Data) {
 
 
 window.addEventListener('load', async () => {
+
+
+    await ListarAlumnos();
+    await ListaAcademias();
+    await ListaGeneros();
+    await ListaGrados();
+
+});
+
+
+const ListarAlumnos = async () => {
     let url = "../Maestro/ListaMisAlumno";
 
     const Fetchs = Fetch(url, null);
@@ -106,16 +117,6 @@ window.addEventListener('load', async () => {
     data_alumno.forEach(item => {
         let fecha = moment(item.FECHA_NACIMIENTO).format('DD-MM-YYYY');
         let nombre = item.NOMBRE + " " + item.APELLIDO_PATERNO;
-
-
-        //let button = document.createElement('button');
-        //button.setAttribute("onclick", "eded");
-        //button.setAttribute("title", "");
-        //let icon = document.createElement('i');
-        //icon.className = "fas fa-user-times";
-        //button.appendChild(icon);
-        //let texto = document.createTextNode(" Aceptar");
-        //button.appendChild(texto);
 
         let buton_activo = "";
         if (item.ACTIVO) {
@@ -134,18 +135,15 @@ window.addEventListener('load', async () => {
                               <button onclick='VerDetalle(${item.ID_USUARIO})' title='Ver' class='btn btn-sm btn-info'><i class="fas fa-eye"></i></button> 
                               <button onclick='TransferirAlumno(${item.ID_USUARIO})' title='Transferir' class='btn btn-sm btn-primary'><i class="fas fa-paper-plane"></i></button>
                               ${buton_activo}
+                              <button onclick='DatosTecnicos(${item.ID_USUARIO})' title='Datos técnicos' class='btn btn-sm btn-primary'><i class="fas fa-user-ninja"></i></button>
+
                           </td>
                        </tr>`;
     });
 
 
     tbody.innerHTML = arreglo;
-
-
-    await ListaAcademias();
-    await ListaGeneros();
-
-});
+}
 
 const VerDetalle = async (id) => {
     let url = '../Maestro/DetalleAlumno';
@@ -472,6 +470,16 @@ document.getElementById('AgregarAlumno').addEventListener('click', async () => {
         let data = { _user: ALUMNO };
         const Fetchs = Fetch(url, data);
         const Resultado = await Fetchs.FetchWithData();
+
+        if (Resultado.RESULTADO) {
+            await ListarAlumnos();
+            Swal.fire(
+                `Alumno creado correctamente`,
+            )
+
+            $("#exampleModal").modal("hide");
+
+        }
     }
 
 
@@ -482,6 +490,16 @@ document.getElementById('AgregarAlumno').addEventListener('click', async () => {
 });
 //Fin editar alumno;
 
+document.getElementById('ButtonGuardarTecnicos').addEventListener('click', async () => {
+    await AgregarDatosTecnicos();
+});
+
+document.getElementById('AbrirComprobacion').addEventListener('click', async () => {
+    //click
+    let RutComprobar = document.getElementById('RutComprobar');
+    await ListaComprobacion(RutComprobar.value);
+
+});
 
 async function ListaAcademias() {
     let url = '../Maestro/ListaAcademias';
@@ -503,7 +521,7 @@ async function ListaAcademias() {
             padre.appendChild(option);
             padre2.appendChild(option.cloneNode(true));
         }
-        
+
     }
 
 }
@@ -522,6 +540,29 @@ async function ListaGeneros() {
             let option = document.createElement('option');
             option.value = datos[i].ID_GENERO;
             option.appendChild(document.createTextNode(datos[i].NOMBRE_GENERO));
+
+            padre.appendChild(option);
+
+        }
+    }
+
+
+}
+
+async function ListaGrados() {
+    let url = '../Maestro/ListaGrados';
+    const Fetchs = Fetch(url, null);
+    const Resultado = await Fetchs.FetchWithOutData();
+    if (Resultado.RESPUESTA) {
+        let padre = document.getElementById('Grado');
+
+        let datos = Resultado.DATA;
+
+        for (var i = 0; i < datos.length; i++) {
+
+            let option = document.createElement('option');
+            option.value = datos[i].ID_GRADO;
+            option.appendChild(document.createTextNode(datos[i].NOMBRE));
 
             padre.appendChild(option);
 
@@ -615,8 +656,107 @@ const TransferirAlumno = async (id) => {
     $("#TransferirAlumno").modal("show");
 };
 
+const DatosTecnicos = async (ID) => {
 
-const EditarProducto = async (ID) =>
-{
+    await ListaTecnicosAlumno(ID);
+    $("#DatosPersonal").modal("show");
+    document.getElementById('ButtonGuardarTecnicos').value = ID;
 
 }
+
+const AgregarDatosTecnicos = async () => {
+    let Grado = document.getElementById('Grado');
+    let Peso = document.getElementById('Peso');
+    let Estatura = document.getElementById('Estatura');
+    let Usuario = document.getElementById('ButtonGuardarTecnicos');
+
+    let url = "../Maestro/AgregarDatosTecnicos";
+    let INDICADORES = new Object();
+    INDICADORES.COD_USUARIO = Number(Usuario.value);
+    INDICADORES.PESO = Peso.value;
+    INDICADORES.COD_GRADO = Number(Grado.value);
+    INDICADORES.ESTATURA = Estatura.value;
+    let data = { INDICADORES: INDICADORES };
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+    if (Resultado.RESPUESTA) {
+        Swal.fire(
+            `Datos modificados correctamente`,
+        )
+        $("#DatosPersonal").modal("hide");
+
+    }
+}
+
+const ListaTecnicosAlumno = async (ID) => {
+    let url = "../Maestro/DatosTecnicosUsuario";
+    let data = { ID: ID };
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+    if (Resultado.RESPUESTA) {
+        let data = Resultado.DATA;
+        let Grado = document.getElementById('Grado').value = "0";
+        let Peso = document.getElementById('Peso').value = "";
+        let Estatura = document.getElementById('Estatura').value = "";
+
+        if (data !== null) {
+            let Grado = document.getElementById('Grado').value = data.COD_GRADO;
+            let Peso = document.getElementById('Peso').value = data.PESO;
+            let Estatura = document.getElementById('Estatura').value = data.ESTATURA;
+
+        }
+    }
+
+
+}
+
+const ListaComprobacion = async (Rut) => {
+    let url = "../Maestro/ListaDatosConfirmacion";
+    let data = { RUT: Rut };
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+    if (Resultado.RESPUESTA) {
+        let TbodyDatosAnteriores = document.getElementById('TbodyDatosAnteriores');
+        TbodyDatosAnteriores.innerHTML = "";
+        let Contenedor = "";
+        let indicadores = Resultado.DATA.INDI;
+        let anterior = Resultado.DATA.ANTERIOR;
+        let user = Resultado.DATA.USER;
+
+        let ESTATURA = "Sin información";
+        let PESO = "Sin información";
+
+        let GRADO = "Sin información";
+        let ACADEMIA_ANTERIOR = "Sin información";
+        let PROFESOR_ANTERIOR = "Sin información";
+        let NOMBRE_USUARIO = "Sin información";
+
+        if (indicadores !== null) {
+            if (indicadores.NOMBRE !== null) {
+                GRADO = indicadores.NOMBRE;
+            }
+        }
+
+        if (anterior != null) {
+            if (anterior.NOMBRE_COMPLETO !== null) {
+                PROFESOR_ANTERIOR = anterior.NOMBRE_COMPLETO;
+            }
+            if (anterior.NOMBRE_ACADEMIA) {
+                ACADEMIA_ANTERIOR = anterior.NOMBRE_ACADEMIA;
+            }
+        }
+
+        if (user !== null) {
+            NOMBRE_USUARIO = user.NOMBRE + " " + user.APELLIDO_PATERNO + " " + user.APELLIDO_MATERNO;
+        }
+
+        TbodyDatosAnteriores.innerHTML = `<tr><td>${NOMBRE_USUARIO}</td><td>${PROFESOR_ANTERIOR}</td><td>${ACADEMIA_ANTERIOR}</td><td>${GRADO}</td></tr>`;
+
+
+
+    }
+
+
+
+    $("#ModalComprobar").modal("show");
+};

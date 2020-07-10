@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    Redireccionando...
+</head>
+<body>
+    <form action="@ViewBag.Url" id="Webpay-form" method="post">
+        <input type="hidden" name="token_ws" value="@ViewBag.Token" />
+        @*<button type="submit" class="btn btn-info">Pagar</button>*@
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+
+    window.addEventListener('load', function () {
+        window.localStorage.clear();
+        window.localStorage.setItem("authorizationCode",@ViewBag.authorizationCode );
+        window.localStorage.setItem("cardDetail", @ViewBag.cardDetail );
+        window.localStorage.setItem("amount", @ViewBag.amount );
+        window.localStorage.setItem("buyOrder", @ViewBag.buyOrder );
+        window.localStorage.setItem("ID", @ViewBag.ID);
+        setTimeout(function () { this.document.getElementById('Webpay-form').submit(); }, 2000);
+    });
+</script>

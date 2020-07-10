@@ -72,6 +72,31 @@
     <Property Name="ORDEN_COMPRA" Type="int" />
     <Property Name="CODIGO_AUTORIZACION" Type="int" />
   </EntityType>
+  <EntityType Name="ITF_CARTERA">
+    <Key>
+      <PropertyRef Name="ID_CARTERA" />
+    </Key>
+    <Property Name="ID_CARTERA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NRO_CUENTA" Type="varchar" MaxLength="50" />
+    <Property Name="MONEDA" Type="varchar" MaxLength="20" />
+    <Property Name="SALDO" Type="int" />
+    <Property Name="TIPO_CUENTA" Type="varchar" MaxLength="50" />
+    <Property Name="COD_USUARIO" Type="int" />
+  </EntityType>
+  <EntityType Name="ITF_CARTERA_MOVIMIENTOS">
+    <Key>
+      <PropertyRef Name="ID_DETALLE" />
+    </Key>
+    <Property Name="ID_DETALLE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHA" Type="datetime" />
+    <Property Name="CODIGO_OPERACION" Type="varchar" MaxLength="50" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="500" />
+    <Property Name="CARGO" Type="bit" />
+    <Property Name="ABONO" Type="bit" />
+    <Property Name="SALDO" Type="int" />
+    <Property Name="COD_CARTERA" Type="int" />
+    <Property Name="SUBTOTAL" Type="int" />
+  </EntityType>
   <EntityType Name="ITF_CATEGORIAS">
     <Key>
       <PropertyRef Name="ID_CATEGORIA" />
@@ -103,15 +128,23 @@
     <Property Name="ID_GENERO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NOMBRE_GENERO" Type="varchar" MaxLength="20" />
   </EntityType>
+  <EntityType Name="ITF_GRADOS">
+    <Key>
+      <PropertyRef Name="ID_GRADO" />
+    </Key>
+    <Property Name="ID_GRADO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="ESTADO" Type="bit" />
+  </EntityType>
   <EntityType Name="ITF_INDICADORES">
     <Key>
       <PropertyRef Name="ID_INDICADOR" />
     </Key>
-    <Property Name="ID_INDICADOR" Type="int" Nullable="false" />
+    <Property Name="ID_INDICADOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="COD_USUARIO" Type="int" />
-    <Property Name="PESO" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="PESO" Type="varchar" MaxLength="100" />
     <Property Name="COD_GRADO" Type="int" />
-    <Property Name="ESTATURA" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="ESTATURA" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="ITF_MATRICULAS">
     <Key>
@@ -265,9 +298,12 @@
     <EntitySet Name="ITF_AHORROS" EntityType="Self.ITF_AHORROS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_ARANCELES" EntityType="Self.ITF_ARANCELES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_BOLETAS" EntityType="Self.ITF_BOLETAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_CARTERA" EntityType="Self.ITF_CARTERA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_CARTERA_MOVIMIENTOS" EntityType="Self.ITF_CARTERA_MOVIMIENTOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_CATEGORIAS" EntityType="Self.ITF_CATEGORIAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="Self.ITF_EXAMEN_REALIZADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_GENEROS" EntityType="Self.ITF_GENEROS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_GRADOS" EntityType="Self.ITF_GRADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_INDICADORES" EntityType="Self.ITF_INDICADORES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_MATRICULAS" EntityType="Self.ITF_MATRICULAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_PAGOS" EntityType="Self.ITF_PAGOS" Schema="dbo" store:Type="Tables" />

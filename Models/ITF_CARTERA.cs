@@ -12,12 +12,13 @@ namespace ITF.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ITF_INDICADORES
+    public partial class ITF_CARTERA
     {
-        public int ID_INDICADOR { get; set; }
+        public int ID_CARTERA { get; set; }
+        public string NRO_CUENTA { get; set; }
+        public string MONEDA { get; set; }
+        public Nullable<int> SALDO { get; set; }
+        public string TIPO_CUENTA { get; set; }
         public Nullable<int> COD_USUARIO { get; set; }
-        public string PESO { get; set; }
-        public Nullable<int> COD_GRADO { get; set; }
-        public string ESTATURA { get; set; }
     }
 }

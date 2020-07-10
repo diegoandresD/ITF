@@ -11,7 +11,7 @@
 <div class="container">
     <table id="Saldo" class="table table-hover table-bordered text-center">
         <thead>
-            
+
             <tr>
                 <th class="text-success" colspan="5">Cuentas</th>
             </tr>
@@ -23,14 +23,8 @@
                 <th style="width:10%"></th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Cartera de ahorro</td>
-                <td>0019730268</td>
-                <td>CLP</td>
-                <td>1.000</td>
-                <td><button class="btn btn-sm btn-success"><i class="fas fa-arrow-right"></i> Transferir</button></td>
-            </tr>
+        <tbody id="tbodyCartera">
+            
         </tbody>
 
 
@@ -51,16 +45,44 @@
                 <th>Saldo CLP</th>
             </tr>
         </thead>
+        <tbody id="TbodyMovimientos">
+
+        </tbody>
     </table>
 </div>
 
+<div class="modal fade" id="ModalAddSaldo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Transferir a tu ahorro <label style="font-weight:bold" id="AlumnoNombre"></label></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>Monto a transferir: </label>
+                        <input type="number" id="Monto_transferir" class="form-control" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="ButtonTransferirAhorro">Tranferir</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <link rel="stylesheet" href="~/Scripts/chart.js-2.9.3/package/dist/Chart.css">
 <link rel="stylesheet" href="~/Scripts/chart.js-2.9.3/package/dist/Chart.min.css">
 
 <canvas id="myChart" width="400" height="400"></canvas>
 
-<script>
+@*<script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -98,10 +120,13 @@
             }
         }
     });
-</script>
+</script>*@
+@section scripts{
+    @*<script src="~/Scripts/chart.js-2.9.3/package/dist/Chart.min.js"></script>
+    <script src="~/Scripts/chart.js-2.9.3/package/dist/Chart.bundle.js"></script>
+    <script src="~/Scripts/chart.js-2.9.3/package/dist/Chart.bundle.min.js"></script>
+    <script src="~/Scripts/chart.js-2.9.3/package/dist/Chart.js"></script>*@
 
-<script src="~/Scripts/chart.js-2.9.3/package/dist/Chart.min.js"></script>
-<script src="~/Scripts/chart.js-2.9.3/package/dist/Chart.bundle.js"></script>
-<script src="~/Scripts/chart.js-2.9.3/package/dist/Chart.bundle.min.js"></script>
-<script src="~/Scripts/chart.js-2.9.3/package/dist/Chart.js"></script>
+    <script src="~/js/Alumno/Cartera.js"></script>
 
+}

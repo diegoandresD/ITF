@@ -39,6 +39,20 @@ namespace ITF.Controllers
         }
 
         [HttpPost]
+        public ActionResult ListaGrados()
+        {
+            return Json(ModeloMaestro.ListaGrados(), JsonRequestBehavior.AllowGet);
+
+        }
+
+        [HttpPost]
+        public ActionResult ListaDatosConfirmacion(string RUT)
+        {
+            return Json(ModeloMaestro.ListaDatosConfirmacion(RUT), JsonRequestBehavior.AllowGet);
+        }
+
+
+        [HttpPost]
         public ActionResult ListaAcademias()
         {
             return Json(ModeloMaestro.ListaAcademias(), JsonRequestBehavior.AllowGet);
@@ -95,6 +109,18 @@ namespace ITF.Controllers
         {
             return Json(ModeloMaestro.ActivarAlumno(ID), JsonRequestBehavior.AllowGet);
 
+        }
+        [HttpPost]
+        public ActionResult DatosTecnicosUsuario(int ID)
+        {
+            return Json(ModeloMaestro.DatosTecnicosUsuario(ID), JsonRequestBehavior.AllowGet);
+
+        }
+
+        [HttpPost]
+        public ActionResult AgregarDatosTecnicos(ITF_INDICADORES INDICADORES)
+        {
+            return Json(ModeloMaestro.AgregarDatosTecnicos(INDICADORES), JsonRequestBehavior.AllowGet);
         }
         #endregion
 

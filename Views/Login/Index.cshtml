@@ -20,6 +20,58 @@
 </head>
 <body>
 
+    <div class="modal fade" id="ModalPreguntas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Preguntas de Seguridad <label style="font-weight:bold" id="AlumnoNombreTecnico"></label></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!--Preguntas-->
+                        <div id="ContenidoPreguntas"></div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="ButtonGuardarPreguntas">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="ModalPreguntasIngreso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Por favor responda a las preguntas de seguridad que ud. ya ha registrado</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <!--Preguntas-->
+                        <div id="ContenidoPreguntasIngreso"></div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="CompararRespuestas">Guardar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <div class="limiter">
         <div class="container-login100" style="background-image: url('https://i0.wp.com/elpoli.pe/wp-content/uploads/2019/07/Taekwondo-ITF.png?w=1920&ssl=1');">
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">

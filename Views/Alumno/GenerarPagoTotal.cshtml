@@ -1,0 +1,22 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    Redireccionando...
+</head>
+<body>
+    <form action="@ViewBag.formAction" id="Webpay-form" method="post">
+        <input type="hidden" name="token_ws" value="@ViewBag.tokenWs" />
+        @*<button type="submit" class="btn btn-info">Pagar</button>*@
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    window.addEventListener('load', function () {
+        setTimeout(function () { this.document.getElementById('Webpay-form').submit(); }, 2000);
+    });
+</script>
