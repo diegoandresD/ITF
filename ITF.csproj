@@ -262,6 +262,12 @@
     <Compile Include="Models\ITF_CATEGORIAS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITF_EVENTOS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITF_EVENTOS_INSCRIPCIONES.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ITF_EXAMEN_REALIZADOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
@@ -327,6 +333,8 @@
       <DependentUpon>ModelITF.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ModeloAlumno.cs" />
+    <Compile Include="Models\ModeloFuncionarios.cs" />
+    <Compile Include="Models\ModeloHome.cs" />
     <Compile Include="Models\ModeloMaestro.cs" />
     <Compile Include="Models\ModeloPedidos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2084,6 +2092,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="hola.txt" />
+    <Content Include="img\Eventos\MicrosoftTeams-image.png" />
     <Content Include="img\foto.jpg" />
     <Content Include="img\img-1.jpg" />
     <Content Include="img\img-11.jpg" />
@@ -2112,11 +2121,15 @@
     <Content Include="img\slide8.jpg" />
     <Content Include="js\Alumno\Carrito.js" />
     <Content Include="js\Alumno\Cartera.js" />
+    <Content Include="js\Alumno\Eventos.js" />
     <Content Include="js\Alumno\Tienda.js" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\Funcionario\CrearEvento.js" />
+    <Content Include="js\Funcionario\Maestros.js" />
+    <Content Include="js\Home\Eventos.js" />
     <Content Include="js\jquery-3.4.1.min.js" />
     <Content Include="js\Layoult\Cerrarsesion.js" />
     <Content Include="js\Login\login.js" />
@@ -2355,6 +2368,9 @@
     <Content Include="plugins\cubeportfolio\img\cbp-sprite.png" />
     <Content Include="plugins\cubeportfolio\js\jquery.cubeportfolio.js" />
     <Content Include="plugins\cubeportfolio\js\jquery.cubeportfolio.min.js" />
+    <Content Include="plugins\datetimepicker\bootstrap-datetimepicker.css" />
+    <Content Include="plugins\datetimepicker\bootstrap-datetimepicker.js" />
+    <Content Include="plugins\datetimepicker\bootstrap-datetimepicker.min.js" />
     <Content Include="plugins\FileSaver\FileSaver.js" />
     <Content Include="plugins\moment.js" />
     <Content Include="plugins\noty\lib\bounce.min.js" />

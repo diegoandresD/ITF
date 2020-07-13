@@ -176,5 +176,12 @@ namespace ITF.Controllers
             return Json(ModeloAlumno.AutoLogin(ID), JsonRequestBehavior.AllowGet);
         }
         #endregion
+
+        #region EVENTOS
+        public ActionResult InscribirseEvento(int ID)
+        {
+            return Json(ModeloAlumno.InscribirseEvento(ID), JsonRequestBehavior.AllowGet);
+        }
+        #endregion
     }
 }

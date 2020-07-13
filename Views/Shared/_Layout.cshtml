@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
-
-
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="~/Css/PaginaPrincipal.css">
 
 </head>
@@ -140,12 +138,27 @@
         </div>
     </footer>
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    @Scripts.Render("~/Bundles/js")
+
+
+
+    @*@Scripts.Render("~/bundles/jsLogin")*@
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Login/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Login/vendor/bootstrap/js/bootstrap.min.js"></script>
+    @*<script src="~/Login/vendor/daterangepicker/moment.min.js"></script>*@
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/es.js"></script>
+    <script src="~/plugins/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+
+
     @RenderSection("scripts", false)
 
     <script src="~/js/Layoult/Cerrarsesion.js"></script>
+
+
+
+
+
 </body>
 </html>

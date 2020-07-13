@@ -2,16 +2,39 @@
 @{
     ViewBag.Title = "Maestros";
 }
+<link href="~/plugins/datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/relax.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+<link href="~/plugins/swal/sweetalert2.css" rel="stylesheet" />
+
+
+<div class="alrazy-title title-funcionario" data-splitting>Lista Maestros.</div>
+
+<script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+<script>Splitting();</script>
+<br />
 
 <div>
     <div class="row">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="card">
+                <div class="col-md-6 col-md-offset-2">
+                    <div class="card" style="border:solid 1px red">
                         <div class="card-body d-flex justify-content-between align-items-center">
                             Agregar Maestro
-                            <button type="button" title="Agregar Maestro" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" id="ButtonAgregarMaestro" title="Agregar Maestro" class="btn btn-outline-danger">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-md-offset-2">
+                    <div class="card" style="border:solid 1px red">
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            Agregar Academia
+                            <button id="ButtonAgregarAcademia" type="button" title="Agregar Academia" class="btn btn-outline-danger">
                                 <i class="fas fa-plus-circle"></i>
                             </button>
                         </div>
@@ -28,40 +51,14 @@
                     <th>Rut</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Mes / año</th>
-                    <th>Alumno</th>
-                    <th>Estado</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
                     <th colspan="3">Acciones</th>
                 </tr>
             </thead>
-            <tr>
-                <td>12316556-8</td>
-                <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
-                <td>Fernandez</td>
-                <td>Junio 2020</td>
-                <td>Masculino</td>
-                <td>Diego</td>
-                <td colspan="3">
-                    <button class="btn btn-sm btn-primary" title="Ver"><i class="fa fa-eye"></i></button>
-                    <button class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-sm btn-danger" title="Editar"><i class="fas fa-trash"></i></button>
-                </td>
-            </tr>
-            <tr>
-                <td>12316556-8</td>
-                <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
-                <td>Fernandez</td>
-                <td>Mayo 2020</td>
-                <td>Masculino</td>
-                <td>Diego</td>
-                <td colspan="3">
-                    <button class="btn btn-sm btn-primary" title="Ver detalle pedido"><i class="fa fa-eye"></i></button>
-                    <button class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-sm btn-danger" title="Editar"><i class="fas fa-trash"></i></button>
-                    
-                </td>
+            <tbody id="TbodyMaestro"></tbody>
 
-            </tr>
 
 
         </table>
@@ -109,4 +106,164 @@
 
 
 </div>
+
+
+<div class="modal fade" id="ModalAddAcademia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar nueva academia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Nombre academia</label>
+                        <input type="text" id="NombreAddAcademia" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Teléfono</label>
+                        <input type="text" id="TelefonoAddAcademia" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Correo electrónico</label>
+                        <input type="text" id="CorreoAddAcademia" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Dirección</label>
+                        <input type="text" id="DireccionAddAcademia" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Horarios</label>
+                        <input type="text" id="HorariosAddAcademia" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="Agregar_academia" class="btn btn-primary">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalAddMaestro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo maestro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label>Rut</label>
+                        <input type="text" id="RutAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Nombre</label>
+                        <input type="text" id="NombreAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Apellido paterno</label>
+                        <input type="text" id="ApaternoAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Apellido materno</label>
+                        <input type="text" id="AmaternoAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Fecha Nacimiento</label>
+                        <input type="text" id="FechaNacAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Genero</label>
+                        <select id="GeneroAddMaestro" class="form-control">
+                            <option value="1">Femenino</option>
+                            <option value="2">Masculino</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Nombre usuario</label>
+                        <input type="text" id="UsuarioAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Correo electronico</label>
+                        <input type="text" id="CorreoAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Teléfono</label>
+                        <input type="text" id="TelefonoAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Dirección</label>
+                        <input type="text" id="DireccionAddMaestro" class="form-control" />
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Academia</label>
+                        <select id="AcademiaAddMaestro" class="form-control">
+                            <option value="0">--Seleccione--</option>
+                        </select>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" id="Agregar_maestro" class="btn btn-primary">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/plugins/noty/lib/bounce.min.js"></script>
+    <script src="~/plugins/swal/sweetalert2.min.js"></script>
+    <script src="~/plugins/swal/sweetalert2.init.js"></script>
+    <script src="~/plugins/noty/lib/noty.js"></script>
+
+    <script src="~/js/Funcionario/Maestros.js"></script>
+
+    <script>
+        $.datepicker.regional['es'] = {
+            closeText: 'Cerrar',
+            prevText: '< Ant',
+            nextText: 'Sig >',
+            currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            weekHeader: 'Sm',
+            dateFormat: 'yy/mm/dd',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+
+
+
+
+        $('#FechaNacAddMaestro').datepicker({
+            format: 'yyyy-mm-dd',
+            orientation: "auto left",
+            forceParse: false,
+            autoclose: true,
+            todayHighlight: true,
+            toggleActive: true,
+            endDate: '0',
+        });
+    </script>
+}
 

@@ -27,6 +27,8 @@
     <EntitySet Name="ITF_CARTERA_MOVIMIENTOS" EntityType="ITF.ITF_CARTERA_MOVIMIENTOS" />
     <EntitySet Name="ITF_GRADOS" EntityType="ITF.ITF_GRADOS" />
     <EntitySet Name="ITF_INDICADORES" EntityType="ITF.ITF_INDICADORES" />
+    <EntitySet Name="ITF_EVENTOS" EntityType="ITF.ITF_EVENTOS" />
+    <EntitySet Name="ITF_EVENTOS_INSCRIPCIONES" EntityType="ITF.ITF_EVENTOS_INSCRIPCIONES" />
   </EntityContainer>
   <EntityType Name="ITF_ACADEMIAS">
     <Key>
@@ -317,5 +319,30 @@
     <Property Name="PESO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="COD_GRADO" Type="Int32" />
     <Property Name="ESTATURA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITF_EVENTOS">
+    <Key>
+      <PropertyRef Name="ID_EVENTO" />
+    </Key>
+    <Property Name="ID_EVENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TITULO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA" Type="DateTime" Precision="3" />
+    <Property Name="DESCRIPCION_CORTA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION_DETALLADA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UBICACION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="URL_IMAGEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADO" Type="Boolean" />
+    <Property Name="COD_USUARIO_CREADOR" Type="Int32" />
+    <Property Name="VALOR" Type="Int32" />
+    <Property Name="FECHA_SUBIDA" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ITF_EVENTOS_INSCRIPCIONES">
+    <Key>
+      <PropertyRef Name="ID_INSCRIPCION" />
+    </Key>
+    <Property Name="ID_INSCRIPCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+    <Property Name="COD_EVENTO" Type="Int32" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

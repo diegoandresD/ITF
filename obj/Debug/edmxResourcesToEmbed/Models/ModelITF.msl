@@ -317,5 +317,32 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ITF_EVENTOS">
+      <EntityTypeMapping TypeName="ITF.ITF_EVENTOS">
+        <MappingFragment StoreEntitySet="ITF_EVENTOS">
+          <ScalarProperty Name="FECHA_SUBIDA" ColumnName="FECHA_SUBIDA" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="COD_USUARIO_CREADOR" ColumnName="COD_USUARIO_CREADOR" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="URL_IMAGEN" ColumnName="URL_IMAGEN" />
+          <ScalarProperty Name="UBICACION" ColumnName="UBICACION" />
+          <ScalarProperty Name="DESCRIPCION_DETALLADA" ColumnName="DESCRIPCION_DETALLADA" />
+          <ScalarProperty Name="DESCRIPCION_CORTA" ColumnName="DESCRIPCION_CORTA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+          <ScalarProperty Name="ID_EVENTO" ColumnName="ID_EVENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_EVENTOS_INSCRIPCIONES">
+      <EntityTypeMapping TypeName="ITF.ITF_EVENTOS_INSCRIPCIONES">
+        <MappingFragment StoreEntitySet="ITF_EVENTOS_INSCRIPCIONES">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="COD_EVENTO" ColumnName="COD_EVENTO" />
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="ID_INSCRIPCION" ColumnName="ID_INSCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

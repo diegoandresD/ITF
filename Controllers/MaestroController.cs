@@ -11,8 +11,6 @@ namespace ITF.Controllers
     public class MaestroController : Controller
     {
         // GET: Maestro
-
-
         //ROUTES.
 
         #region ALUMNO
@@ -30,8 +28,6 @@ namespace ITF.Controllers
         {
             return View();
         }
-
-
 
         public ActionResult Mensualidades()
         {
@@ -167,6 +163,16 @@ namespace ITF.Controllers
         public ActionResult EliminarProducto(int ID_PRODUCTO)
         {
             return Json(ModeloMaestro.EliminarProducto(ID_PRODUCTO), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult AgregarProveedor(ITF_PROVEEDORES PROVEEDOR)
+        {
+            return Json(ModeloMaestro.AgregarProveedor(PROVEEDOR), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult AgregarCategorias(ITF_CATEGORIAS CATEGORIAS)
+        {
+            return Json(ModeloMaestro.AgregarCategorias(CATEGORIAS), JsonRequestBehavior.AllowGet);
         }
 
         #endregion

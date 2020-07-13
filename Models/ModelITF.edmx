@@ -111,6 +111,31 @@
           <Property Name="ESTADO" Type="bit" />
           <Property Name="COD_MAESTRO" Type="int" />
         </EntityType>
+        <EntityType Name="ITF_EVENTOS">
+          <Key>
+            <PropertyRef Name="ID_EVENTO" />
+          </Key>
+          <Property Name="ID_EVENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TITULO" Type="varchar" MaxLength="100" />
+          <Property Name="FECHA" Type="datetime" />
+          <Property Name="DESCRIPCION_CORTA" Type="varchar" MaxLength="100" />
+          <Property Name="DESCRIPCION_DETALLADA" Type="varchar" MaxLength="100" />
+          <Property Name="UBICACION" Type="varchar" MaxLength="100" />
+          <Property Name="URL_IMAGEN" Type="varchar" MaxLength="100" />
+          <Property Name="ESTADO" Type="bit" />
+          <Property Name="COD_USUARIO_CREADOR" Type="int" />
+          <Property Name="VALOR" Type="int" />
+          <Property Name="FECHA_SUBIDA" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ITF_EVENTOS_INSCRIPCIONES">
+          <Key>
+            <PropertyRef Name="ID_INSCRIPCION" />
+          </Key>
+          <Property Name="ID_INSCRIPCION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="COD_USUARIO" Type="int" />
+          <Property Name="COD_EVENTO" Type="int" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="ITF_EXAMEN_REALIZADOS">
           <Key>
             <PropertyRef Name="ID_EXAMEN" />
@@ -306,6 +331,8 @@
           <EntitySet Name="ITF_CARTERA" EntityType="Self.ITF_CARTERA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_CARTERA_MOVIMIENTOS" EntityType="Self.ITF_CARTERA_MOVIMIENTOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_CATEGORIAS" EntityType="Self.ITF_CATEGORIAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_EVENTOS" EntityType="Self.ITF_EVENTOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_EVENTOS_INSCRIPCIONES" EntityType="Self.ITF_EVENTOS_INSCRIPCIONES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="Self.ITF_EXAMEN_REALIZADOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_GENEROS" EntityType="Self.ITF_GENEROS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_GRADOS" EntityType="Self.ITF_GRADOS" Schema="dbo" store:Type="Tables" />
@@ -354,6 +381,8 @@
           <EntitySet Name="ITF_CARTERA_MOVIMIENTOS" EntityType="ITF.ITF_CARTERA_MOVIMIENTOS" />
           <EntitySet Name="ITF_GRADOS" EntityType="ITF.ITF_GRADOS" />
           <EntitySet Name="ITF_INDICADORES" EntityType="ITF.ITF_INDICADORES" />
+          <EntitySet Name="ITF_EVENTOS" EntityType="ITF.ITF_EVENTOS" />
+          <EntitySet Name="ITF_EVENTOS_INSCRIPCIONES" EntityType="ITF.ITF_EVENTOS_INSCRIPCIONES" />
         </EntityContainer>
         <EntityType Name="ITF_ACADEMIAS">
           <Key>
@@ -644,6 +673,31 @@
           <Property Name="PESO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="COD_GRADO" Type="Int32" />
           <Property Name="ESTATURA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ITF_EVENTOS">
+          <Key>
+            <PropertyRef Name="ID_EVENTO" />
+          </Key>
+          <Property Name="ID_EVENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TITULO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA" Type="DateTime" Precision="3" />
+          <Property Name="DESCRIPCION_CORTA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION_DETALLADA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UBICACION" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="URL_IMAGEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="Boolean" />
+          <Property Name="COD_USUARIO_CREADOR" Type="Int32" />
+          <Property Name="VALOR" Type="Int32" />
+          <Property Name="FECHA_SUBIDA" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ITF_EVENTOS_INSCRIPCIONES">
+          <Key>
+            <PropertyRef Name="ID_INSCRIPCION" />
+          </Key>
+          <Property Name="ID_INSCRIPCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COD_USUARIO" Type="Int32" />
+          <Property Name="COD_EVENTO" Type="Int32" />
+          <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -964,6 +1018,33 @@
                 <ScalarProperty Name="PESO" ColumnName="PESO" />
                 <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
                 <ScalarProperty Name="ID_INDICADOR" ColumnName="ID_INDICADOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_EVENTOS">
+            <EntityTypeMapping TypeName="ITF.ITF_EVENTOS">
+              <MappingFragment StoreEntitySet="ITF_EVENTOS">
+                <ScalarProperty Name="FECHA_SUBIDA" ColumnName="FECHA_SUBIDA" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+                <ScalarProperty Name="COD_USUARIO_CREADOR" ColumnName="COD_USUARIO_CREADOR" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="URL_IMAGEN" ColumnName="URL_IMAGEN" />
+                <ScalarProperty Name="UBICACION" ColumnName="UBICACION" />
+                <ScalarProperty Name="DESCRIPCION_DETALLADA" ColumnName="DESCRIPCION_DETALLADA" />
+                <ScalarProperty Name="DESCRIPCION_CORTA" ColumnName="DESCRIPCION_CORTA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+                <ScalarProperty Name="ID_EVENTO" ColumnName="ID_EVENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_EVENTOS_INSCRIPCIONES">
+            <EntityTypeMapping TypeName="ITF.ITF_EVENTOS_INSCRIPCIONES">
+              <MappingFragment StoreEntitySet="ITF_EVENTOS_INSCRIPCIONES">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="COD_EVENTO" ColumnName="COD_EVENTO" />
+                <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+                <ScalarProperty Name="ID_INSCRIPCION" ColumnName="ID_INSCRIPCION" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

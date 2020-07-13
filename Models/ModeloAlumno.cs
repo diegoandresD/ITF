@@ -208,5 +208,34 @@ namespace ITF.Models
         }
         #endregion
 
+        #region EVENTOS
+        public static object InscribirseEvento(int ID)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    string user_rut = HttpContext.Current.Session["RUT"].ToString();
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.RUT == user_rut).FirstOrDefault();
+                    ITF_EVENTOS _evento = db.ITF_EVENTOS.Where(a => a.ID_EVENTO == ID).FirstOrDefault();
+
+                    ITF_EVENTOS_INSCRIPCIONES _insc = new ITF_EVENTOS_INSCRIPCIONES();
+                    _insc.COD_USUARIO = _user.ID_USUARIO;
+                    _insc.COD_EVENTO = _evento.ID_EVENTO;
+                    _insc.ESTADO = "Inscrito por Internet";
+                    db.ITF_EVENTOS_INSCRIPCIONES.Add(_insc);
+                    db.SaveChanges();
+
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _insc };
+                }
+            }
+            catch(Exception Error)
+            {
+                return new { RESPUESTA = true, TIPO = 3, Error = Error.Message };
+            }
+        }
+
+        #endregion
+
     }
 }

@@ -53,21 +53,20 @@
                 </tr>
             </thead>
             <tbody id="tbodyPagos">
-
             </tbody>
             @*<tr>
-                <td>12316556-8</td>
-                <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
-                <td>Fernandez</td>
-                <td>Mayo 2020</td>
-                <td>Masculino</td>
-                <td>Diego</td>
-                <td colspan="3">
-                    <button class="btn btn-sm btn-primary" title="Ver detalle pedido"><i class="fa fa-eye"></i></button>
-                    <button class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
-                </td>
+                    <td>12316556-8</td>
+                    <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
+                    <td>Fernandez</td>
+                    <td>Mayo 2020</td>
+                    <td>Masculino</td>
+                    <td>Diego</td>
+                    <td colspan="3">
+                        <button class="btn btn-sm btn-primary" title="Ver detalle pedido"><i class="fa fa-eye"></i></button>
+                        <button class="btn btn-sm btn-info" title="Editar"><i class="fa fa-edit"></i></button>
+                    </td>
 
-            </tr>*@
+                </tr>*@
 
 
         </table>
@@ -198,15 +197,17 @@
 </style>
 
 
-
+@*@Scripts.Render("~/Bundles/js")*@
 @section scripts{
+
+
     <script src="~/plugins/noty/lib/bounce.min.js"></script>
     <script src="~/plugins/swal/sweetalert2.min.js"></script>
     <script src="~/plugins/swal/sweetalert2.init.js"></script>
     <script src="~/plugins/noty/lib/noty.js"></script>
 
-    <script src="~/js/Maestro/Mensualidades.js"></script>
 
+    <script src="~/js/Maestro/Mensualidades.js"></script>
     <script>
         $.datepicker.regional['es'] = {
             closeText: 'Cerrar',
@@ -225,22 +226,21 @@
             showMonthAfterYear: false,
             yearSuffix: ''
         };
+
         $.datepicker.setDefaults($.datepicker.regional['es']);
-        $(function () {
-            $("#Calendar").datepicker();
+
+      
+
+
+        $('#Calendar').datepicker({
+            format: 'yyyy-mm-dd',
+            orientation: "auto left",
+            forceParse: false,
+            autoclose: true,
+            todayHighlight: true,
+            toggleActive: true,
+            endDate: '0',
         });
-
-
-
-        //$('#Calendar').datepicker({
-        //    format: 'yyyy-mm-dd',
-        //    orientation: "auto left",
-        //    forceParse: false,
-        //    autoclose: true,
-        //    todayHighlight: true,
-        //    toggleActive: true,
-        //    endDate: '0',
-        //});
 
 
     </script>

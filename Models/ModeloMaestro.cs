@@ -307,7 +307,6 @@ namespace ITF.Models
         #endregion
 
         #region Tienda
-
         public static object ListaInicial()
         {
             try
@@ -348,7 +347,7 @@ namespace ITF.Models
                                       on p.COD_PROVEEDOR equals prov.ID_PROVEEDOR
                                       join ct in db.ITF_CATEGORIAS
                                       on p.COD_CATEGORIA equals ct.ID_CATEGORIA
-                                      where p.ESTADO == true
+                                      where p.ESTADO == true && ct.COD_MAESTRO == _user.ID_USUARIO
                                       select new
                                       {
                                           p.ID_PRODUCTO,
@@ -518,6 +517,53 @@ namespace ITF.Models
             }
         }
 
+        public static object AgregarProveedor(ITF_PROVEEDORES PROVEEDOR)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    string Rut = HttpContext.Current.Session["RUT"].ToString();
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.RUT == Rut).FirstOrDefault();
+
+
+                    PROVEEDOR.ESTADO = true;
+                    PROVEEDOR.COD_MAESTRO = _user.ID_USUARIO;
+                    db.ITF_PROVEEDORES.Add(PROVEEDOR);
+                    db.SaveChanges();
+
+                    return new { RESPUESTA = true, TIPO = 1, DATA = PROVEEDOR };
+                }
+            }
+            catch(Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
+
+        public static object AgregarCategorias(ITF_CATEGORIAS CATEGORIAS)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    string Rut = HttpContext.Current.Session["RUT"].ToString();
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.RUT == Rut).FirstOrDefault();
+
+
+                    CATEGORIAS.ESTADO = true;
+                    CATEGORIAS.COD_MAESTRO = _user.ID_USUARIO;
+                    db.ITF_CATEGORIAS.Add(CATEGORIAS);
+                    db.SaveChanges();
+
+                    return new { RESPUESTA = true, TIPO = 1, DATA = CATEGORIAS };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
 
 
         #endregion

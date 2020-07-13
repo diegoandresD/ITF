@@ -124,6 +124,24 @@ document.getElementById('ButonEditarProducto').addEventListener('click', async (
     await EditarProducto();
 });
 
+document.getElementById('OpenAddCategoria').addEventListener('click', async () => {
+    $("#ModalCategoria").modal("show");
+});
+
+document.getElementById('OpenAddProveedor').addEventListener('click', async () => {
+    $("#ModalProveedor").modal("show");
+});
+
+document.getElementById('ButtonAgregarCategoria').addEventListener('click', async () => {
+
+    await AgregarCategoria();
+});
+
+document.getElementById('ButtonAgregarProveedor').addEventListener('click', async () => {
+
+    await AgregarProveedor();
+});
+
 
 const AgregarProducto = async () => {
     let CategoriaProductoAdd = document.getElementById('CategoriaProductoAdd');
@@ -457,12 +475,60 @@ const EliminarProducto = async (ID) => {
 
             }
 
-            
+
         }
     })
 
 
-    
+
 
 
 }
+
+const AgregarCategoria = async () => {
+
+    let NombreCategoriaAdd = document.getElementById('NombreCategoriaAdd');
+
+    let url = '../Maestro/AgregarCategorias';
+    let CATEGORIAS = new Object();
+    CATEGORIAS.NOMBRE_CATEGORIA = NombreCategoriaAdd.value;
+    let data = { CATEGORIAS: CATEGORIAS };
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+    if (Resultado.RESPUESTA) {
+
+        $("#ModalCategoria").modal("hide");
+
+        await ListaCategorias();
+        await ListaProveedores();
+
+        swal.fire({
+            title: "Agregado!",
+            text: `Categoria Agregada correctamente`
+        });
+    }
+};
+
+const AgregarProveedor = async () => {
+
+    let NombreProveedorAdd = document.getElementById('NombreProveedorAdd');
+
+    let url = '../Maestro/AgregarProveedor';
+    let PROVEEDOR = new Object();
+    PROVEEDOR.NOMBRE_PROVEEDOR = NombreProveedorAdd.value;
+    let data = { PROVEEDOR: PROVEEDOR };
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+    if (Resultado.RESPUESTA) {
+
+        $("#ModalProveedor").modal("hide");
+
+        await ListaCategorias();
+        await ListaProveedores();
+
+        swal.fire({
+            title: "Agregado!",
+            text: `Proveedor agregado correctamente`
+        });
+    }
+};

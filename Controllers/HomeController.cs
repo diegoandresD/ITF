@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ITF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -38,6 +39,25 @@ namespace ITF.Controllers
         {
             return View();
         }
+
+        #region EVENTOS
+        public ActionResult ListaEventos()
+        {
+            return Json(ModeloHome.ListaEventos(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ListaMisEventos()
+        {
+            return Json(ModeloHome.ListaMisEventos(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult DetalleEvento(int ID)
+        {
+            return Json(ModeloHome.DetalleEvento(ID), JsonRequestBehavior.AllowGet);
+        }
+
+        
+        #endregion
 
     }
 }

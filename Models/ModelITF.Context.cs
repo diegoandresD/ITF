@@ -51,5 +51,7 @@ namespace ITF.Models
         public virtual DbSet<ITF_CARTERA_MOVIMIENTOS> ITF_CARTERA_MOVIMIENTOS { get; set; }
         public virtual DbSet<ITF_GRADOS> ITF_GRADOS { get; set; }
         public virtual DbSet<ITF_INDICADORES> ITF_INDICADORES { get; set; }
+        public virtual DbSet<ITF_EVENTOS> ITF_EVENTOS { get; set; }
+        public virtual DbSet<ITF_EVENTOS_INSCRIPCIONES> ITF_EVENTOS_INSCRIPCIONES { get; set; }
     }
 }
