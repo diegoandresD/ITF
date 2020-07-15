@@ -2,39 +2,46 @@
 @{
     ViewBag.Title = "Progresion";
 }
+<link href="~/plugins/datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/relax.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+<link href="~/plugins/swal/sweetalert2.css" rel="stylesheet" />
 
+<div class="alrazy-title title-funcionario" data-splitting>Lista progresiones.</div>
+
+<script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+<script>Splitting();</script>
+<br />
 
 <div>
     <div class="row" style="border-bottom:5px solid red !important">
 
-        <div class="col-12 form-group just" >
+        <div class="col-12 form-group just">
             <h5><label for="pais">Selecciona la Academia:</label></h5>
-            <select name="pais" id="pais" class="form-control">
-                <option value="1">Loyalti</option>
-                <option value="2">Sabalim</option>
-                <option value="3">Exodia</option>
+            <select id="Academias" class="form-control">
+                <option value="0">--Seleccione--</option>
+
             </select>
         </div>
 
         <div class="col-5 form-group">
             <label for="nombre">Rut del Alumno:</label>
-            <input type="text" class="form-control" placeholder="Ingresa el rut del Alumno" name="nombre" id="nombre">
-            <button class="col btn-danger" type="submit">Buscar<i class="fas fa-search"></i></button>
+            <input type="text" class="form-control" placeholder="Ingresa el rut del Alumno" name="nombre" id="RutBusqueda">
+            <button class="col btn-danger" id="ButtonBuscarRut" type="submit">Buscar<i class="fas fa-search"></i></button>
         </div>
 
         <div class="col-6 form-group just">
             <h5><label for="pais">Selecciona al Alumno:</label></h5>
-            <select name="pais" id="pais" class="form-control">
-                <option value="1">Luiz Ossis Ossis</option>
-                <option value="2">Ariel Villalobos Castan</option>
-                <option value="3">Sebastián Venegas Concha</option>
+            <select id="AlumnoSelect" class="form-control">
+                <option value="0">--Seleccione--</option>
+
             </select>
         </div>
 
         <table class="col table table table-hover table-bordered  text-center">
             <!-- responsive sirve para ajutar la tabla segun el dispositivo -->
             <thead>
-
                 <!-- Encabezado de tabla -->
                 <tr class="table bg-danger text-white">
                     <th>Id</th>
@@ -42,15 +49,18 @@
                     <th>Grado</th>
                     <th>Forma</th>
                     <th>Fecha</th>
-                    <th>Tipo movimiento</th>
-                    <th>Descripción</th>
+                    @*<th>Tipo movimiento</th>*@
+                    @*<th>Descripción</th>*@
                     <th>Ejercicios F.F.F</th>
                     <th>Rutura</th>
-                    <th>Maestro</th>
-                    <th colspan="3">Acciones</th>
+                    @*<th>Maestro</th>*@
+                    @*<th colspan="3">Acciones</th>*@
                 </tr>
             </thead>
-            <tr>
+            <tbody id="TbodyExamenes">
+                <tr><td colspan='11'>Sin datos</td></tr>
+            </tbody>
+            @*<tr>
                 <td>12316556-8</td>
                 <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
                 <td>Fernandez</td>
@@ -64,8 +74,19 @@
                 <td colspan="3">
                     <button class="btn btn-sm btn-danger" title="Ver"><i class="fa fa-eye"></i></button>
                 </td>
-            </tr>
+            </tr>*@
         </table>
     </div>
 </div>
 
+
+
+@section scripts{
+    <script src="~/plugins/noty/lib/bounce.min.js"></script>
+    <script src="~/plugins/swal/sweetalert2.min.js"></script>
+    <script src="~/plugins/swal/sweetalert2.init.js"></script>
+    <script src="~/plugins/noty/lib/noty.js"></script>
+
+    <script src="~/js/Funcionario/Examenes.js"></script>
+
+}

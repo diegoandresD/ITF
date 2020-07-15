@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="ITF.ITF_AHORRO_TIPO_REGISTROS" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="ITF.ITF_AHORROS" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="ITF.ITF_ARANCELES" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="ITF.ITF_EXAMEN_REALIZADOS" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="ITF.ITF_GENEROS" Width="1.5" PointX="2.75" PointY="6.75" />
         <EntityTypeShape EntityType="ITF.ITF_MATRICULAS" Width="1.5" PointX="4.75" PointY="6.75" />
         <EntityTypeShape EntityType="ITF.ITF_TIPO_USUARIOS" Width="1.5" PointX="0.5" PointY="4.125" />
@@ -33,6 +32,8 @@
         <EntityTypeShape EntityType="ITF.ITF_INDICADORES" Width="1.5" PointX="14.375" PointY="8.75" />
         <EntityTypeShape EntityType="ITF.ITF_EVENTOS" Width="1.5" PointX="10.375" PointY="14.75" />
         <EntityTypeShape EntityType="ITF.ITF_EVENTOS_INSCRIPCIONES" Width="1.5" PointX="14.375" PointY="11.75" />
+        <EntityTypeShape EntityType="ITF.ITF_FORMAS" Width="1.5" PointX="14.375" PointY="14.75" />
+        <EntityTypeShape EntityType="ITF.ITF_EXAMEN_REALIZADOS" Width="1.5" PointX="15.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -56,22 +56,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ITF_EXAMEN_REALIZADOS">
-      <EntityTypeMapping TypeName="ITF.ITF_EXAMEN_REALIZADOS">
-        <MappingFragment StoreEntitySet="ITF_EXAMEN_REALIZADOS">
-          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
-          <ScalarProperty Name="FECHA_REALIZACION" ColumnName="FECHA_REALIZACION" />
-          <ScalarProperty Name="TEORIA" ColumnName="TEORIA" />
-          <ScalarProperty Name="ROTURA" ColumnName="ROTURA" />
-          <ScalarProperty Name="DEFENSA_PERSONAL" ColumnName="DEFENSA_PERSONAL" />
-          <ScalarProperty Name="ATAQUE" ColumnName="ATAQUE" />
-          <ScalarProperty Name="EJERCICIOS_F_F_F" ColumnName="EJERCICIOS_F_F_F" />
-          <ScalarProperty Name="FORMA" ColumnName="FORMA" />
-          <ScalarProperty Name="NOMBRE_EXAMEN" ColumnName="NOMBRE_EXAMEN" />
-          <ScalarProperty Name="ID_EXAMEN" ColumnName="ID_EXAMEN" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ITF_GENEROS">
       <EntityTypeMapping TypeName="ITF.ITF_GENEROS">
         <MappingFragment StoreEntitySet="ITF_GENEROS">
@@ -341,6 +325,34 @@
           <ScalarProperty Name="COD_EVENTO" ColumnName="COD_EVENTO" />
           <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
           <ScalarProperty Name="ID_INSCRIPCION" ColumnName="ID_INSCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_FORMAS">
+      <EntityTypeMapping TypeName="ITF.ITF_FORMAS">
+        <MappingFragment StoreEntitySet="ITF_FORMAS">
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="COD_GRADO" ColumnName="COD_GRADO" />
+          <ScalarProperty Name="NOMBRE_FORMA" ColumnName="NOMBRE_FORMA" />
+          <ScalarProperty Name="ID_FORMA" ColumnName="ID_FORMA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITF_EXAMEN_REALIZADOS">
+      <EntityTypeMapping TypeName="ITF.ITF_EXAMEN_REALIZADOS">
+        <MappingFragment StoreEntitySet="ITF_EXAMEN_REALIZADOS">
+          <ScalarProperty Name="FECHA_SUBIDA_EXAMEN" ColumnName="FECHA_SUBIDA_EXAMEN" />
+          <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+          <ScalarProperty Name="FECHA_REALIZACION" ColumnName="FECHA_REALIZACION" />
+          <ScalarProperty Name="TEORIA" ColumnName="TEORIA" />
+          <ScalarProperty Name="ROTURA" ColumnName="ROTURA" />
+          <ScalarProperty Name="DEFENSA_PERSONAL" ColumnName="DEFENSA_PERSONAL" />
+          <ScalarProperty Name="ATAQUE" ColumnName="ATAQUE" />
+          <ScalarProperty Name="EJERCICIOS_F_F_F" ColumnName="EJERCICIOS_F_F_F" />
+          <ScalarProperty Name="FORMA" ColumnName="FORMA" />
+          <ScalarProperty Name="COD_GRADO" ColumnName="COD_GRADO" />
+          <ScalarProperty Name="NOMBRE_EXAMEN" ColumnName="NOMBRE_EXAMEN" />
+          <ScalarProperty Name="ID_EXAMEN" ColumnName="ID_EXAMEN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

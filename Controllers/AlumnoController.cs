@@ -68,8 +68,11 @@ namespace ITF.Controllers
 
         public ActionResult GenerarPagoTotal(int t)
         {
+
             using (ITFEntities db = new ITFEntities())
             {
+
+
                 string nombre_usuario = Session["USER"].ToString();
                 ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.NOMBRE_USUARIO == nombre_usuario).FirstOrDefault();
 
@@ -77,6 +80,8 @@ namespace ITF.Controllers
 
                 var transaction = new Webpay(Configuration.ForTestingWebpayPlusNormal()).NormalTransaction;
                 var amount = t;
+
+
 
                 var sessionId = _user.ID_USUARIO.ToString();
                 var returnUrl = "https://localhost:44351/Alumno/RespuestaPago";

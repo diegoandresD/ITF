@@ -136,6 +136,7 @@ const ListarAlumnos = async () => {
                               <button onclick='TransferirAlumno(${item.ID_USUARIO})' title='Transferir' class='btn btn-sm btn-primary'><i class="fas fa-paper-plane"></i></button>
                               ${buton_activo}
                               <button onclick='DatosTecnicos(${item.ID_USUARIO})' title='Datos técnicos' class='btn btn-sm btn-primary'><i class="fas fa-user-ninja"></i></button>
+                              <button onclick='AgregarExamen(${item.ID_USUARIO})' title='Agregar examen' class='btn btn-sm btn-primary'><i class="fas fa-file-alt"></i></button>
 
                           </td>
                        </tr>`;
@@ -144,6 +145,7 @@ const ListarAlumnos = async () => {
 
     tbody.innerHTML = arreglo;
 }
+
 
 const VerDetalle = async (id) => {
     let url = '../Maestro/DetalleAlumno';
@@ -501,6 +503,46 @@ document.getElementById('AbrirComprobacion').addEventListener('click', async () 
 
 });
 
+document.getElementById('ExamenRealizados').addEventListener('click', async () => {
+    let ExamenRealizados = document.getElementById('ExamenRealizados');
+    await AgregarDatosExamen(Number(ExamenRealizados.value));
+    
+
+});
+
+document.getElementById('GradoExamenAdd').addEventListener('change', async () => {
+    let GradoExamenAdd = document.getElementById('GradoExamenAdd');
+    if (GradoExamenAdd.value !== "0") {
+
+        let FormaExamenAdd = document.getElementById('FormaExamenAdd');
+        FormaExamenAdd.innerHTML = "";
+        let url = "../Maestro/ListaFormasGrado";
+        let data = { GRADO: Number(GradoExamenAdd.value) };
+        const Fetchs = Fetch(url, data);
+        const Resultado = await Fetchs.FetchWithData();
+        if (Resultado.RESPUESTA) {
+            let DATA = Resultado.DATA;
+
+            if (DATA.length > 0) {
+                DATA.forEach(Item => {
+                    let option = document.createElement('option');
+                    option.value = Item.ID_FORMA;
+                    option.appendChild(document.createTextNode(Item.NOMBRE_FORMA));
+
+                    FormaExamenAdd.appendChild(option);
+                });
+            }
+            else {
+                FormaExamenAdd.innerHTML = "<option value='0'>--Seleccione--</option>"
+            }
+            
+
+        }
+
+    }
+
+});
+
 async function ListaAcademias() {
     let url = '../Maestro/ListaAcademias';
     const Fetchs = Fetch(url, null);
@@ -555,6 +597,7 @@ async function ListaGrados() {
     const Resultado = await Fetchs.FetchWithOutData();
     if (Resultado.RESPUESTA) {
         let padre = document.getElementById('Grado');
+        let Padre2 = document.getElementById('GradoExamenAdd');
 
         let datos = Resultado.DATA;
 
@@ -565,6 +608,7 @@ async function ListaGrados() {
             option.appendChild(document.createTextNode(datos[i].NOMBRE));
 
             padre.appendChild(option);
+            Padre2.appendChild(option.cloneNode(true));
 
         }
     }
@@ -759,4 +803,60 @@ const ListaComprobacion = async (Rut) => {
 
 
     $("#ModalComprobar").modal("show");
+};
+
+const AgregarExamen = async (ID) => {
+
+    $("#ModalExamen").modal("show");
+    let ExamenRealizados = document.getElementById('ExamenRealizados');
+    ExamenRealizados.value = ID;
+};
+
+const AgregarDatosExamen = async (ID) => {
+    let NombreExamenAdd = document.getElementById('NombreExamenAdd');
+    let FormaExamenAdd = document.getElementById('FormaExamenAdd');
+    let EjerciciosfffAdd = document.getElementById('EjerciciosfffAdd');
+    let AtaqueAdd = document.getElementById('AtaqueAdd');
+    let DefensaPersonalAdd = document.getElementById('DefensaPersonalAdd');
+    let RoturaAdd = document.getElementById('RoturaAdd');
+    let TeoriaAdd = document.getElementById('TeoriaAdd');
+    let FechaRealizacionAdd = document.getElementById('FechaRealizacionAdd');
+    let GradoExamenAdd = document.getElementById('GradoExamenAdd');
+        
+    let EXAMEN = new Object();
+    EXAMEN.NOMBRE_EXAMEN = NombreExamenAdd.value;
+    EXAMEN.FORMA = Number(FormaExamenAdd.value);
+    EXAMEN.EJERCICIOS_F_F_F = EjerciciosfffAdd.value;
+    EXAMEN.ATAQUE = AtaqueAdd.value;
+    EXAMEN.DEFENSA_PERSONAL = DefensaPersonalAdd.value;
+    EXAMEN.ROTURA = RoturaAdd.value;
+    EXAMEN.TEORIA = TeoriaAdd.value;
+    EXAMEN.FECHA_REALIZACION = FechaRealizacionAdd.value;
+    EXAMEN.COD_USUARIO = ID;
+    EXAMEN.COD_GRADO = Number(GradoExamenAdd.value);
+
+    let data =  { EXAMEN: EXAMEN };
+
+    let url = "../Maestro/AgregarExamenAlumno";
+    const Fetchs = Fetch(url, data);
+    const Resultado = await Fetchs.FetchWithData();
+    if (Resultado.RESPUESTA) {
+
+        if (Resultado.TIPO === 2) {
+            Swal.fire(
+                `Su ultimo examen fue realizado en menos de 3 meses, debe esperar estos 3 meses para agregar uno nuevo`,
+            )
+        }
+        else {
+            $("#ModalExamen").modal("hide");
+            await ListarAlumnos();
+
+            Swal.fire(
+                `Examen agregado correctamente`,
+            )
+        }
+
+        
+    }
+
 };

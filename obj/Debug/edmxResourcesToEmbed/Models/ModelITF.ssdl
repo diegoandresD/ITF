@@ -137,7 +137,8 @@
     </Key>
     <Property Name="ID_EXAMEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NOMBRE_EXAMEN" Type="varchar" MaxLength="30" />
-    <Property Name="FORMA" Type="varchar" MaxLength="30" />
+    <Property Name="COD_GRADO" Type="int" />
+    <Property Name="FORMA" Type="int" />
     <Property Name="EJERCICIOS_F_F_F" Type="varchar" MaxLength="1000" />
     <Property Name="ATAQUE" Type="varchar" MaxLength="1000" />
     <Property Name="DEFENSA_PERSONAL" Type="varchar" MaxLength="1000" />
@@ -145,6 +146,16 @@
     <Property Name="TEORIA" Type="varchar" MaxLength="1000" />
     <Property Name="FECHA_REALIZACION" Type="datetime" />
     <Property Name="COD_USUARIO" Type="int" />
+    <Property Name="FECHA_SUBIDA_EXAMEN" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ITF_FORMAS">
+    <Key>
+      <PropertyRef Name="ID_FORMA" />
+    </Key>
+    <Property Name="ID_FORMA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE_FORMA" Type="varchar" MaxLength="500" />
+    <Property Name="COD_GRADO" Type="int" />
+    <Property Name="ESTADO" Type="bit" />
   </EntityType>
   <EntityType Name="ITF_GENEROS">
     <Key>
@@ -329,6 +340,7 @@
     <EntitySet Name="ITF_EVENTOS" EntityType="Self.ITF_EVENTOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_EVENTOS_INSCRIPCIONES" EntityType="Self.ITF_EVENTOS_INSCRIPCIONES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="Self.ITF_EXAMEN_REALIZADOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ITF_FORMAS" EntityType="Self.ITF_FORMAS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_GENEROS" EntityType="Self.ITF_GENEROS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_GRADOS" EntityType="Self.ITF_GRADOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ITF_INDICADORES" EntityType="Self.ITF_INDICADORES" Schema="dbo" store:Type="Tables" />

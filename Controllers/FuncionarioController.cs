@@ -91,5 +91,28 @@ namespace ITF.Controllers
             return Json(ModeloFuncionarios.ActivarUsuario(ID), JsonRequestBehavior.AllowGet);
         }
         #endregion
+
+        #region EXAMENES
+
+        public ActionResult ListaAcademias()
+        {
+            return Json(ModeloFuncionarios.ListaAcademias(), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ListaAlumnoAcademia(int ID)
+        {
+            return Json(ModeloFuncionarios.ListaAlumnoAcademia(ID), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult BusquedaRutAlumno(string RUT)
+        {
+            return Json(ModeloFuncionarios.BusquedaRutAlumno(RUT), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult BusquedaIdAlumno(int ID)
+        {
+            return Json(ModeloFuncionarios.BusquedaIdAlumno(ID), JsonRequestBehavior.AllowGet);
+        }
+        #endregion
     }
 }

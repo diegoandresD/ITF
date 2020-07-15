@@ -59,15 +59,25 @@ namespace ITF.Controllers
                 string nombre_usuario = Session["USER"].ToString();
                 ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.NOMBRE_USUARIO == nombre_usuario).FirstOrDefault();
 
+                //INICIO LA TRASACCION PARA TEST (NO PRODUCTIVO); --> TRANSACCION NORMAL
                 var transaction = new Webpay(Configuration.ForTestingWebpayPlusNormal()).NormalTransaction;
+                //ACA EL MONTO;
                 var amount = t;
 
+                //UNA SESION QUE NECESITO PARA VOLVER A LOGEAR AL USUARIO
                 var sessionId = _user.ID_USUARIO.ToString();
+                //URL QUE LE MADO AL TRANBANK PARA LA RESPUESTA DEL PAGO
                 var returnUrl = "https://localhost:44351/Pagos/RespuestaPago";
+
+                //URL PARA RESUETA Y MOSTRAR EL COMPROBANTE
                 var finalUrl = "https://localhost:44351/Pagos/ComprobanteCliente";
+
+                //Y FINALMENTE LE PASO TODO A LA INTANCIA;
                 var initResult = transaction.initTransaction(
                         amount, b, sessionId, returnUrl, finalUrl);
 
+
+                //VARIABLES DE RETORNO
                 var formAction = initResult.url;
                 var tokenWs = initResult.token;
                 ViewBag.formAction = formAction;
@@ -84,16 +94,27 @@ namespace ITF.Controllers
         {
             using (ITFEntities db = new ITFEntities())
             {
+
+                //YO REVISO LO QUE ME ENVIA TRANSBANK
+                //INSTANCIO NUEVAMENTE LA TRANSACCION NORMAL;
                 var transaction = new Webpay(Configuration.ForTestingWebpayPlusNormal()).NormalTransaction;
+
+                //LE PASO EL TOKEN QUE ME MANDO, PARA QUE ME DEVUELVA EL DETALLE DE LA TRANSACCION RECIEN HECHA Y ALMACENO EL RESULTADO EN "RESULT"
                 var result = transaction.getTransactionResult(token_ws);
+
+                //EL OUPUT TIENE EL RESULTADO SI FUE CORRECTA LA TRANSACCION
                 var output = result.detailOutput[0];
 
+                //0 :> TRANSACION CORRECTA;
 
+                //ME RETORNA LA SESION QUE LE ENCIE PREVIAMENTE;
                 int id = Convert.ToInt32(result.sessionId);
 
+                //Y ME VUEVO A LOGEAR
                 ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.ID_USUARIO == id).FirstOrDefault();
                 if (_user != null)
                 {
+                    //GENERO LAS SESIONES NECESARIAS PARA EL SISTEMA;
                     Session["USER"] = _user.NOMBRE_USUARIO;
                     Session["NAME"] = _user.NOMBRE + " " + _user.APELLIDO_PATERNO;
                     Session["TIPO"] = _user.COD_TIPO_USUARIO;
@@ -101,8 +122,10 @@ namespace ITF.Controllers
                 }
 
                 ViewBag.RESPONSE_CODE = output.responseCode;
+                //EVALUO SI EL CODIGO ES 0, LO QUE SIGNIFICA QUE ESTA CORRECTO
                 if (output.responseCode == 0)
                 {
+                    //VARIABLES PARA RESCATAR INFORMACION EN EL BOUCHER;
                     ViewBag.BUY_ORDEN = result.buyOrder;
                     ViewBag.AUTHORIZATION_CODE = output.authorizationCode;
                     ViewBag.FECHA_TRANSACCION = result.transactionDate;
@@ -111,9 +134,11 @@ namespace ITF.Controllers
                     ViewBag.Token = token_ws;
                     ViewBag.SESSION_ID = result.sessionId;
 
+                    //GUARDO EL PEDIDO;
                     ITF_PEDIDOS _ped = db.ITF_PEDIDOS.Where(a => a.ORDEN_COMPRA == result.buyOrder).FirstOrDefault();
                     _ped.COD_ESTADO = 2;
 
+                    //GENERO LA BOLETA;
                     ITF_BOLETAS _boleta = new ITF_BOLETAS();
                     _boleta.TOTAL = Convert.ToInt32(output.amount);
                     _boleta.COD_PEDIDO = _ped.ID_PEDIDO;
@@ -125,17 +150,22 @@ namespace ITF.Controllers
                     _boleta.CODIGO_AUTORIZACION = Convert.ToInt32(output.authorizationCode);
 
                     db.ITF_BOLETAS.Add(_boleta);
+
+                    //GUARDO TODO;
                     db.SaveChanges();
 
                 }
-                else
+                else//CASO CONTRARIO A RESULTADO O, MUESTRO MENSAJE DE TRANSACCION ERROREA; 
                 {
                     ViewBag.BUY_ORDEN = result.buyOrder;
                     ViewBag.Url = result.urlRedirection;
                     ViewBag.Token = token_ws;
                     ViewBag.ERROR_MESSAGE = ERROR_MESSAGE(output.responseCode);
                 }
+                //RETORNO A MI VISTA
                 return View();
+
+                //FIN;
             }
 
         }

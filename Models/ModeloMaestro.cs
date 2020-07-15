@@ -60,6 +60,22 @@ namespace ITF.Models
             }
         }
 
+        public static object ListaFormasGrado(int GRADO)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    ITF_FORMAS[] _formas = db.ITF_FORMAS.Where(a => a.COD_GRADO == GRADO).ToArray();
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _formas };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
+
         public static object ListaDatosConfirmacion(string RUT)
         {
             try
@@ -220,6 +236,22 @@ namespace ITF.Models
                     _user.PRIMERA_VEZ = true;
                     db.ITF_USUARIOS.Add(_user);
                     db.SaveChanges();
+
+                    Random _random = new Random();
+                    int numero = _random.Next(10000, 99999);
+
+                    ITF_CARTERA _cart = new ITF_CARTERA();
+                    _cart.COD_USUARIO = _user.ID_USUARIO;
+                    _cart.NRO_CUENTA = numero.ToString();
+                    _cart.MONEDA = "CLP";
+                    _cart.SALDO = 0;
+                    _cart.TIPO_CUENTA = "Ahorro Cartera";
+
+
+                    db.ITF_CARTERA.Add(_cart);
+
+                    db.SaveChanges();
+
                     return new { RESULTADO = true, TIPO = 1, DATA = _user };
                 }
             }
@@ -278,8 +310,24 @@ namespace ITF.Models
             {
                 using (ITFEntities db = new ITFEntities())
                 {
-                    db.ITF_INDICADORES.Add(INDICADORES);
+                    //string Rut = HttpContext.Current.Session["RUT"].ToString();
+
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.ID_USUARIO == INDICADORES.COD_USUARIO).FirstOrDefault();
+
+                    ITF_INDICADORES _indi = db.ITF_INDICADORES.Where(a => a.COD_USUARIO == _user.ID_USUARIO).FirstOrDefault();
+                    if (_indi == null)
+                    {
+                        db.ITF_INDICADORES.Add(INDICADORES);
+                    }
+                    else
+                    {
+                        _indi.COD_GRADO = INDICADORES.COD_GRADO;
+                        _indi.PESO = INDICADORES.PESO;
+                        _indi.ESTATURA = INDICADORES.ESTATURA;
+                    }
                     db.SaveChanges();
+
+
                     return new { RESPUESTA = true, TIPO = 1, DATA = INDICADORES };
                 }
             }
@@ -304,6 +352,72 @@ namespace ITF.Models
                 return new { RESPUESTA = false, TIPO = 3, Error.Message };
             }
         }
+
+        public static object AgregarExamenAlumno(ITF_EXAMEN_REALIZADOS EXAMEN)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    ITF_EXAMEN_REALIZADOS _EXA = db.ITF_EXAMEN_REALIZADOS.Where(a => a.COD_USUARIO == EXAMEN.COD_USUARIO)
+                        .OrderByDescending(a => a.FECHA_REALIZACION).FirstOrDefault();
+
+                    if (_EXA != null)
+                    {
+                        //fecha donde puedo hacer el examanen;
+                        DateTime FechaMAx = Convert.ToDateTime(_EXA.FECHA_REALIZACION).AddMonths(3);
+                        DateTime _fecha_hoy = Convert.ToDateTime(EXAMEN.FECHA_REALIZACION);
+
+                        if (_fecha_hoy >= FechaMAx)
+                        {
+
+
+                            EXAMEN.FECHA_SUBIDA_EXAMEN = DateTime.Now;
+                            db.ITF_EXAMEN_REALIZADOS.Add(EXAMEN);
+                            db.SaveChanges();
+
+                            return new { RESPUESTA = true, TIPO = 1, DATA = EXAMEN };
+                        }
+                        else
+                        {
+                            return new { RESPUESTA = true, TIPO = 2, DATA = EXAMEN }; //2 significa no puede porque no supera los 3 meses;
+                        }
+                    }
+                    else
+                    {
+                        EXAMEN.FECHA_SUBIDA_EXAMEN = DateTime.Now;
+                        db.ITF_EXAMEN_REALIZADOS.Add(EXAMEN);
+                        db.SaveChanges();
+
+                        return new { RESPUESTA = true, TIPO = 1, DATA = EXAMEN };
+                    }
+
+
+
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
+
+        //public static object ListaGrados()
+        //{
+        //    try
+        //    {
+        //        using (ITFEntities db = new ITFEntities())
+        //        {
+        //            ITF_GRADOS[] _GRADOS = db.ITF_GRADOS.ToArray();
+        //            return new { RESPUESTA = true, TIPO = 1, DATA = _GRADOS };
+        //        }
+        //    }
+        //    catch(Exception Error)
+        //    {
+        //        return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+        //    }
+        //}
+
         #endregion
 
         #region Tienda
@@ -535,7 +649,7 @@ namespace ITF.Models
                     return new { RESPUESTA = true, TIPO = 1, DATA = PROVEEDOR };
                 }
             }
-            catch(Exception Error)
+            catch (Exception Error)
             {
                 return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
             }

@@ -271,6 +271,9 @@
     <Compile Include="Models\ITF_EXAMEN_REALIZADOS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITF_FORMAS.cs">
+      <DependentUpon>ModelITF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ITF_GENEROS.cs">
       <DependentUpon>ModelITF.tt</DependentUpon>
     </Compile>
@@ -2128,6 +2131,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\Funcionario\CrearEvento.js" />
+    <Content Include="js\Funcionario\Examenes.js" />
     <Content Include="js\Funcionario\Maestros.js" />
     <Content Include="js\Home\Eventos.js" />
     <Content Include="js\jquery-3.4.1.min.js" />

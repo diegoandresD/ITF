@@ -30,7 +30,6 @@ namespace ITF.Models
         public virtual DbSet<ITF_AHORRO_TIPO_REGISTROS> ITF_AHORRO_TIPO_REGISTROS { get; set; }
         public virtual DbSet<ITF_AHORROS> ITF_AHORROS { get; set; }
         public virtual DbSet<ITF_ARANCELES> ITF_ARANCELES { get; set; }
-        public virtual DbSet<ITF_EXAMEN_REALIZADOS> ITF_EXAMEN_REALIZADOS { get; set; }
         public virtual DbSet<ITF_GENEROS> ITF_GENEROS { get; set; }
         public virtual DbSet<ITF_MATRICULAS> ITF_MATRICULAS { get; set; }
         public virtual DbSet<ITF_TIPO_USUARIOS> ITF_TIPO_USUARIOS { get; set; }
@@ -53,5 +52,7 @@ namespace ITF.Models
         public virtual DbSet<ITF_INDICADORES> ITF_INDICADORES { get; set; }
         public virtual DbSet<ITF_EVENTOS> ITF_EVENTOS { get; set; }
         public virtual DbSet<ITF_EVENTOS_INSCRIPCIONES> ITF_EVENTOS_INSCRIPCIONES { get; set; }
+        public virtual DbSet<ITF_FORMAS> ITF_FORMAS { get; set; }
+        public virtual DbSet<ITF_EXAMEN_REALIZADOS> ITF_EXAMEN_REALIZADOS { get; set; }
     }
 }

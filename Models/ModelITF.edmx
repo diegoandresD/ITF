@@ -142,7 +142,8 @@
           </Key>
           <Property Name="ID_EXAMEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NOMBRE_EXAMEN" Type="varchar" MaxLength="30" />
-          <Property Name="FORMA" Type="varchar" MaxLength="30" />
+          <Property Name="COD_GRADO" Type="int" />
+          <Property Name="FORMA" Type="int" />
           <Property Name="EJERCICIOS_F_F_F" Type="varchar" MaxLength="1000" />
           <Property Name="ATAQUE" Type="varchar" MaxLength="1000" />
           <Property Name="DEFENSA_PERSONAL" Type="varchar" MaxLength="1000" />
@@ -150,6 +151,16 @@
           <Property Name="TEORIA" Type="varchar" MaxLength="1000" />
           <Property Name="FECHA_REALIZACION" Type="datetime" />
           <Property Name="COD_USUARIO" Type="int" />
+          <Property Name="FECHA_SUBIDA_EXAMEN" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ITF_FORMAS">
+          <Key>
+            <PropertyRef Name="ID_FORMA" />
+          </Key>
+          <Property Name="ID_FORMA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE_FORMA" Type="varchar" MaxLength="500" />
+          <Property Name="COD_GRADO" Type="int" />
+          <Property Name="ESTADO" Type="bit" />
         </EntityType>
         <EntityType Name="ITF_GENEROS">
           <Key>
@@ -334,6 +345,7 @@
           <EntitySet Name="ITF_EVENTOS" EntityType="Self.ITF_EVENTOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_EVENTOS_INSCRIPCIONES" EntityType="Self.ITF_EVENTOS_INSCRIPCIONES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="Self.ITF_EXAMEN_REALIZADOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ITF_FORMAS" EntityType="Self.ITF_FORMAS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_GENEROS" EntityType="Self.ITF_GENEROS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_GRADOS" EntityType="Self.ITF_GRADOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ITF_INDICADORES" EntityType="Self.ITF_INDICADORES" Schema="dbo" store:Type="Tables" />
@@ -360,7 +372,6 @@
           <EntitySet Name="ITF_AHORRO_TIPO_REGISTROS" EntityType="ITF.ITF_AHORRO_TIPO_REGISTROS" />
           <EntitySet Name="ITF_AHORROS" EntityType="ITF.ITF_AHORROS" />
           <EntitySet Name="ITF_ARANCELES" EntityType="ITF.ITF_ARANCELES" />
-          <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="ITF.ITF_EXAMEN_REALIZADOS" />
           <EntitySet Name="ITF_GENEROS" EntityType="ITF.ITF_GENEROS" />
           <EntitySet Name="ITF_MATRICULAS" EntityType="ITF.ITF_MATRICULAS" />
           <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="ITF.ITF_TIPO_USUARIOS" />
@@ -383,6 +394,8 @@
           <EntitySet Name="ITF_INDICADORES" EntityType="ITF.ITF_INDICADORES" />
           <EntitySet Name="ITF_EVENTOS" EntityType="ITF.ITF_EVENTOS" />
           <EntitySet Name="ITF_EVENTOS_INSCRIPCIONES" EntityType="ITF.ITF_EVENTOS_INSCRIPCIONES" />
+          <EntitySet Name="ITF_FORMAS" EntityType="ITF.ITF_FORMAS" />
+          <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="ITF.ITF_EXAMEN_REALIZADOS" />
         </EntityContainer>
         <EntityType Name="ITF_ACADEMIAS">
           <Key>
@@ -433,21 +446,6 @@
           <Property Name="TITULO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ESTADO" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="ITF_EXAMEN_REALIZADOS">
-          <Key>
-            <PropertyRef Name="ID_EXAMEN" />
-          </Key>
-          <Property Name="ID_EXAMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NOMBRE_EXAMEN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="FORMA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="EJERCICIOS_F_F_F" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="ATAQUE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="DEFENSA_PERSONAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="ROTURA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="TEORIA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="FECHA_REALIZACION" Type="DateTime" Precision="3" />
-          <Property Name="COD_USUARIO" Type="Int32" />
         </EntityType>
         <EntityType Name="ITF_GENEROS">
           <Key>
@@ -699,6 +697,32 @@
           <Property Name="COD_EVENTO" Type="Int32" />
           <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="ITF_FORMAS">
+          <Key>
+            <PropertyRef Name="ID_FORMA" />
+          </Key>
+          <Property Name="ID_FORMA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_FORMA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="COD_GRADO" Type="Int32" />
+          <Property Name="ESTADO" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ITF_EXAMEN_REALIZADOS">
+          <Key>
+            <PropertyRef Name="ID_EXAMEN" />
+          </Key>
+          <Property Name="ID_EXAMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE_EXAMEN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="COD_GRADO" Type="Int32" />
+          <Property Name="FORMA" Type="Int32" />
+          <Property Name="EJERCICIOS_F_F_F" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ATAQUE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DEFENSA_PERSONAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ROTURA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="TEORIA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_REALIZACION" Type="DateTime" Precision="3" />
+          <Property Name="COD_USUARIO" Type="Int32" />
+          <Property Name="FECHA_SUBIDA_EXAMEN" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -757,22 +781,6 @@
                 <ScalarProperty Name="VALOR_MENSUAL" ColumnName="VALOR_MENSUAL" />
                 <ScalarProperty Name="VALOR_ANUAL" ColumnName="VALOR_ANUAL" />
                 <ScalarProperty Name="ID_ARANCEL" ColumnName="ID_ARANCEL" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ITF_EXAMEN_REALIZADOS">
-            <EntityTypeMapping TypeName="ITF.ITF_EXAMEN_REALIZADOS">
-              <MappingFragment StoreEntitySet="ITF_EXAMEN_REALIZADOS">
-                <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
-                <ScalarProperty Name="FECHA_REALIZACION" ColumnName="FECHA_REALIZACION" />
-                <ScalarProperty Name="TEORIA" ColumnName="TEORIA" />
-                <ScalarProperty Name="ROTURA" ColumnName="ROTURA" />
-                <ScalarProperty Name="DEFENSA_PERSONAL" ColumnName="DEFENSA_PERSONAL" />
-                <ScalarProperty Name="ATAQUE" ColumnName="ATAQUE" />
-                <ScalarProperty Name="EJERCICIOS_F_F_F" ColumnName="EJERCICIOS_F_F_F" />
-                <ScalarProperty Name="FORMA" ColumnName="FORMA" />
-                <ScalarProperty Name="NOMBRE_EXAMEN" ColumnName="NOMBRE_EXAMEN" />
-                <ScalarProperty Name="ID_EXAMEN" ColumnName="ID_EXAMEN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1045,6 +1053,34 @@
                 <ScalarProperty Name="COD_EVENTO" ColumnName="COD_EVENTO" />
                 <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
                 <ScalarProperty Name="ID_INSCRIPCION" ColumnName="ID_INSCRIPCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_FORMAS">
+            <EntityTypeMapping TypeName="ITF.ITF_FORMAS">
+              <MappingFragment StoreEntitySet="ITF_FORMAS">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="COD_GRADO" ColumnName="COD_GRADO" />
+                <ScalarProperty Name="NOMBRE_FORMA" ColumnName="NOMBRE_FORMA" />
+                <ScalarProperty Name="ID_FORMA" ColumnName="ID_FORMA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITF_EXAMEN_REALIZADOS">
+            <EntityTypeMapping TypeName="ITF.ITF_EXAMEN_REALIZADOS">
+              <MappingFragment StoreEntitySet="ITF_EXAMEN_REALIZADOS">
+                <ScalarProperty Name="FECHA_SUBIDA_EXAMEN" ColumnName="FECHA_SUBIDA_EXAMEN" />
+                <ScalarProperty Name="COD_USUARIO" ColumnName="COD_USUARIO" />
+                <ScalarProperty Name="FECHA_REALIZACION" ColumnName="FECHA_REALIZACION" />
+                <ScalarProperty Name="TEORIA" ColumnName="TEORIA" />
+                <ScalarProperty Name="ROTURA" ColumnName="ROTURA" />
+                <ScalarProperty Name="DEFENSA_PERSONAL" ColumnName="DEFENSA_PERSONAL" />
+                <ScalarProperty Name="ATAQUE" ColumnName="ATAQUE" />
+                <ScalarProperty Name="EJERCICIOS_F_F_F" ColumnName="EJERCICIOS_F_F_F" />
+                <ScalarProperty Name="FORMA" ColumnName="FORMA" />
+                <ScalarProperty Name="COD_GRADO" ColumnName="COD_GRADO" />
+                <ScalarProperty Name="NOMBRE_EXAMEN" ColumnName="NOMBRE_EXAMEN" />
+                <ScalarProperty Name="ID_EXAMEN" ColumnName="ID_EXAMEN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

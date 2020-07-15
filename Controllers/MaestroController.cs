@@ -42,6 +42,13 @@ namespace ITF.Controllers
         }
 
         [HttpPost]
+        public ActionResult ListaFormasGrado(int GRADO)
+        {
+            return Json(ModeloMaestro.ListaFormasGrado(GRADO), JsonRequestBehavior.AllowGet);
+
+        }
+
+        [HttpPost]
         public ActionResult ListaDatosConfirmacion(string RUT)
         {
             return Json(ModeloMaestro.ListaDatosConfirmacion(RUT), JsonRequestBehavior.AllowGet);
@@ -117,6 +124,13 @@ namespace ITF.Controllers
         public ActionResult AgregarDatosTecnicos(ITF_INDICADORES INDICADORES)
         {
             return Json(ModeloMaestro.AgregarDatosTecnicos(INDICADORES), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult AgregarExamenAlumno(ITF_EXAMEN_REALIZADOS EXAMEN)
+        {
+            return Json(ModeloMaestro.AgregarExamenAlumno(EXAMEN), JsonRequestBehavior.AllowGet);
+
         }
         #endregion
 

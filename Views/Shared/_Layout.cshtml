@@ -94,14 +94,14 @@
                     @Html.Partial("_NavFuncionario");
                 }
             }
-            @*else
-                {
-                    <script>
-                        setTimeout(() => {
-                            window.location.href = "../Error/SessionCaducada";
-                        }, 500);
-                    </script>
-                }*@
+            else
+            {
+                <script>
+                    setTimeout(() => {
+                        window.location.href = "../Error/SessionCaducada";
+                    }, 500);
+                </script>
+            }
             <!--Nav maestros (accesos directos)-->
             <!-- Slider -->
 

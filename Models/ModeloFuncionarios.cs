@@ -219,5 +219,122 @@ namespace ITF.Models
             }
         }
         #endregion
+
+        #region EXAMENES
+
+        public static object ListaAcademias()
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    ITF_ACADEMIAS[] _ACADEMIAS = db.ITF_ACADEMIAS.ToArray();
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _ACADEMIAS };
+                }
+            }
+            catch (Exception Error)
+            {
+
+                return new { RESPUESTA = true, TIPO = 3, Error = Error.Message };
+            }
+        }
+
+        public static object ListaAlumnoAcademia(int ID)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    ITF_USUARIOS[] _user = db.ITF_USUARIOS.Where(a => a.COD_ADADEMIA_ACTUAL == ID && a.COD_TIPO_USUARIO == 1).ToArray();
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _user };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = true, TIPO = 3, Error = Error.Message };
+
+            }
+        }
+
+
+        public static object BusquedaRutAlumno(string RUT)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.RUT == RUT).FirstOrDefault();
+
+                    object[] _EXAM = (from exa in db.ITF_EXAMEN_REALIZADOS
+                                      join forma in db.ITF_FORMAS on
+                exa.FORMA equals forma.ID_FORMA
+                                      join grado in db.ITF_GRADOS
+      on exa.COD_GRADO equals grado.ID_GRADO
+                                      join user in db.ITF_USUARIOS
+                               on exa.COD_USUARIO equals user.ID_USUARIO
+                                      where exa.COD_USUARIO == _user.ID_USUARIO
+                                      select new
+                                      {
+                                          NOMBRE_ALUMNO = user.NOMBRE + " " + user.APELLIDO_PATERNO + " " + user.APELLIDO_MATERNO,
+                                          exa.NOMBRE_EXAMEN,
+                                          exa.ROTURA,
+                                          exa.TEORIA,
+                                          exa.EJERCICIOS_F_F_F,
+                                          NOMBRE_GRADO = grado.NOMBRE,
+                                          forma.NOMBRE_FORMA,
+                                          exa.FECHA_REALIZACION,
+                                          exa.FECHA_SUBIDA_EXAMEN,
+                                          exa.COD_USUARIO
+                                      }).ToArray();
+
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _EXAM };
+
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
+
+        public static object BusquedaIdAlumno(int ID)
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    object[] _EXAM = (from exa in db.ITF_EXAMEN_REALIZADOS
+                                      join forma in db.ITF_FORMAS on
+                exa.FORMA equals forma.ID_FORMA
+                                      join grado in db.ITF_GRADOS
+      on exa.COD_GRADO equals grado.ID_GRADO
+                                      join user in db.ITF_USUARIOS
+                               on exa.COD_USUARIO equals user.ID_USUARIO
+                                      where exa.COD_USUARIO == ID
+                                      select new
+                                      {
+                                          NOMBRE_ALUMNO = user.NOMBRE + " " + user.APELLIDO_PATERNO + " " + user.APELLIDO_MATERNO,
+                                          exa.NOMBRE_EXAMEN,
+                                          exa.ROTURA,
+                                          exa.TEORIA,
+                                          exa.EJERCICIOS_F_F_F,
+                                          NOMBRE_GRADO = grado.NOMBRE,
+                                          forma.NOMBRE_FORMA,
+                                          exa.FECHA_REALIZACION,
+                                          exa.FECHA_SUBIDA_EXAMEN,
+                                          exa.COD_USUARIO
+                                      }).ToArray();
+
+                    //ITF_EXAMEN_REALIZADOS[] _EXAM = db.ITF_EXAMEN_REALIZADOS.Where(a => a.COD_USUARIO == ID).ToArray();
+                    return new { RESPUESTA = true, TIPO = 1, DATA = _EXAM };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 3, Error = Error.Message };
+            }
+        }
+
+        #endregion
     }
 }

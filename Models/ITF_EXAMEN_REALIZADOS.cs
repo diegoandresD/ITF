@@ -16,7 +16,8 @@ namespace ITF.Models
     {
         public int ID_EXAMEN { get; set; }
         public string NOMBRE_EXAMEN { get; set; }
-        public string FORMA { get; set; }
+        public Nullable<int> COD_GRADO { get; set; }
+        public Nullable<int> FORMA { get; set; }
         public string EJERCICIOS_F_F_F { get; set; }
         public string ATAQUE { get; set; }
         public string DEFENSA_PERSONAL { get; set; }
@@ -24,5 +25,6 @@ namespace ITF.Models
         public string TEORIA { get; set; }
         public Nullable<System.DateTime> FECHA_REALIZACION { get; set; }
         public Nullable<int> COD_USUARIO { get; set; }
+        public Nullable<System.DateTime> FECHA_SUBIDA_EXAMEN { get; set; }
     }
 }

@@ -261,12 +261,11 @@
     </div>
 </div>
 
-
 <div class="modal fade" id="ModalComprobar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Preguntas de Seguridad <label style="font-weight:bold" id="AlumnoNombreTecnico"></label></h5>
+                <h5 class="modal-title" id="exampleModalLabel">Información alumno <label style="font-weight:bold" id="AlumnoNombreTecnico"></label></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -287,7 +286,7 @@
                             </tbody>
                         </table>
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -297,6 +296,74 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="ModalExamen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar examen <label style="font-weight:bold" id="AlumnoNombreTecnico"></label></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>Nombre examen</label>
+                                <input type="text" id="NombreExamenAdd" class="form-control" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Grado</label>
+                                <select type="text" id="GradoExamenAdd" class="form-control" >
+                                    <option value="0">--Seleccione--</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Forma</label>
+                                <select type="text" id="FormaExamenAdd" class="form-control" >
+                                    <option>--Seleccione--</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Ejercicios f_f_f</label>
+                                <input type="text" id="EjerciciosfffAdd" class="form-control" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Ataque</label>
+                                <input type="text" id="AtaqueAdd" class="form-control" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Defensa personal</label>
+                                <input type="text" id="DefensaPersonalAdd" class="form-control" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Rotura</label>
+                                <input type="text" id="RoturaAdd" class="form-control" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Teoria</label>
+                                <input type="text" id="TeoriaAdd" class="form-control" />
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Fecha realización</label>
+                                <input type="text" id="FechaRealizacionAdd" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="ExamenRealizados" class="btn btn-info" data-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 
@@ -345,6 +412,44 @@
 <script src="~/plugins/noty/lib/noty.js"></script>
 
 <script src="~/js/Maestro/Alumnos.js"></script>
+
+
+@section scripts{
+
+    <script>
+        $.datepicker.regional['es'] = {
+            closeText: 'Cerrar',
+            prevText: '< Ant',
+            nextText: 'Sig >',
+            currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+
+        $.datepicker.setDefaults($.datepicker.regional['es']);
+
+
+
+        $('#FechaRealizacionAdd').datepicker({
+            format: 'yyyy-mm-dd',
+            orientation: "auto left",
+            forceParse: false,
+            autoclose: true,
+            todayHighlight: true,
+            toggleActive: true,
+            endDate: '0',
+        });
+    </script>
+}
 
 
 

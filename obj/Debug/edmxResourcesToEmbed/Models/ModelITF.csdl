@@ -6,7 +6,6 @@
     <EntitySet Name="ITF_AHORRO_TIPO_REGISTROS" EntityType="ITF.ITF_AHORRO_TIPO_REGISTROS" />
     <EntitySet Name="ITF_AHORROS" EntityType="ITF.ITF_AHORROS" />
     <EntitySet Name="ITF_ARANCELES" EntityType="ITF.ITF_ARANCELES" />
-    <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="ITF.ITF_EXAMEN_REALIZADOS" />
     <EntitySet Name="ITF_GENEROS" EntityType="ITF.ITF_GENEROS" />
     <EntitySet Name="ITF_MATRICULAS" EntityType="ITF.ITF_MATRICULAS" />
     <EntitySet Name="ITF_TIPO_USUARIOS" EntityType="ITF.ITF_TIPO_USUARIOS" />
@@ -29,6 +28,8 @@
     <EntitySet Name="ITF_INDICADORES" EntityType="ITF.ITF_INDICADORES" />
     <EntitySet Name="ITF_EVENTOS" EntityType="ITF.ITF_EVENTOS" />
     <EntitySet Name="ITF_EVENTOS_INSCRIPCIONES" EntityType="ITF.ITF_EVENTOS_INSCRIPCIONES" />
+    <EntitySet Name="ITF_FORMAS" EntityType="ITF.ITF_FORMAS" />
+    <EntitySet Name="ITF_EXAMEN_REALIZADOS" EntityType="ITF.ITF_EXAMEN_REALIZADOS" />
   </EntityContainer>
   <EntityType Name="ITF_ACADEMIAS">
     <Key>
@@ -79,21 +80,6 @@
     <Property Name="TITULO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ESTADO" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="ITF_EXAMEN_REALIZADOS">
-    <Key>
-      <PropertyRef Name="ID_EXAMEN" />
-    </Key>
-    <Property Name="ID_EXAMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="NOMBRE_EXAMEN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="FORMA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="EJERCICIOS_F_F_F" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Name="ATAQUE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Name="DEFENSA_PERSONAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Name="ROTURA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Name="TEORIA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Name="FECHA_REALIZACION" Type="DateTime" Precision="3" />
-    <Property Name="COD_USUARIO" Type="Int32" />
   </EntityType>
   <EntityType Name="ITF_GENEROS">
     <Key>
@@ -344,5 +330,31 @@
     <Property Name="COD_USUARIO" Type="Int32" />
     <Property Name="COD_EVENTO" Type="Int32" />
     <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ITF_FORMAS">
+    <Key>
+      <PropertyRef Name="ID_FORMA" />
+    </Key>
+    <Property Name="ID_FORMA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_FORMA" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="COD_GRADO" Type="Int32" />
+    <Property Name="ESTADO" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ITF_EXAMEN_REALIZADOS">
+    <Key>
+      <PropertyRef Name="ID_EXAMEN" />
+    </Key>
+    <Property Name="ID_EXAMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_EXAMEN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="COD_GRADO" Type="Int32" />
+    <Property Name="FORMA" Type="Int32" />
+    <Property Name="EJERCICIOS_F_F_F" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ATAQUE" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="DEFENSA_PERSONAL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ROTURA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="TEORIA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_REALIZACION" Type="DateTime" Precision="3" />
+    <Property Name="COD_USUARIO" Type="Int32" />
+    <Property Name="FECHA_SUBIDA_EXAMEN" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>
