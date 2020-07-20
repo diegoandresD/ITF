@@ -167,9 +167,9 @@ const ListaCarrito = async () => {
                             </td>
                             <td class="product-count">
                                 <form action="#" class="count-inlineflex">
-                                    <div class="qtyminus">-</div>
+                                    <div class="qtyminus" onclick="Minus(this,${Item.ID})">-</div>
                                     <input type="text" name="quantity" value="${Item.QA}" class="qty">
-                                    <div class="qtyplus">+</div>
+                                    <div class="qtyplus" onclick="Plus(this,${Item.ID})">+</div>
                                 </form>
                             </td>
                             <td>
@@ -179,9 +179,7 @@ const ListaCarrito = async () => {
                             </td>
                             
                             <td>
-                              
-                                    <button class="btn btn-sm btn-danger" onclick="DeleteItem(${Item.ID})"><i class="fas fa-trash"></i></button>
-                                
+                                <button class="btn btn-sm btn-danger" onclick="DeleteItem(${Item.ID})"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>`;
         });
@@ -248,3 +246,73 @@ const Pagar = async () => {
     const Fetchs = Fetch(url, data);
     const Resultado = await Fetchs.FetchWithData();
 } 
+
+
+const Minus = async (elem, Id) => {
+    //debugger;
+    let padre = elem.parentNode;
+    var children = padre.childNodes[3];
+
+    let value = children.value;
+    if (value !== "0") {
+        value = Number(value);
+        value = value - 1;
+        children.value = value;
+
+        if (value === 0) {
+            let array = localStorage.getItem('_cart');
+            array = JSON.parse(array);
+
+            let elem = array.indexOf(array.find(item => item.ID === Id));
+            array.splice(elem, 1);
+
+            localStorage.setItem('_cart', JSON.stringify(array));
+
+        }
+        else {
+            let array = localStorage.getItem('_cart');
+
+            if (array !== undefined && array !== null) {
+                array = JSON.parse(array);
+
+                let algo = array.find(elem => elem.ID === Id);
+                if (algo !== undefined) {
+                    algo.QA = value;
+                }
+                localStorage.setItem('_cart', JSON.stringify(array));
+            }
+        }
+        
+    }
+    await ListaCarrito();
+
+    console.log(children);
+};
+
+const Plus = async (elem, Id) => {
+    //debugger;
+    let padre = elem.parentNode;
+    var children = padre.childNodes[3];
+
+    let value = children.value;
+    if (value !== "") {
+        value = Number(value);
+        value = value + 1;
+        children.value = value;
+
+
+        let array = localStorage.getItem('_cart');
+
+        if (array !== undefined && array !== null) {
+            array = JSON.parse(array);
+
+            let algo = array.find(elem => elem.ID === Id);
+            if (algo !== undefined) {
+                algo.QA = value;
+            }
+            localStorage.setItem('_cart', JSON.stringify(array));
+        }
+    }
+
+    await ListaCarrito();
+};

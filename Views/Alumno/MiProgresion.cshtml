@@ -3,6 +3,10 @@
     ViewBag.Title = "MiProgresion";
 }
 
+<link href="~/plugins/noty/lib/noty.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/relax.css" rel="stylesheet" />
+<link href="~/plugins/noty/lib/themes/sunset.css" rel="stylesheet" />
+<link href="~/plugins/swal/sweetalert2.css" rel="stylesheet" />
 
 <div class="alrazy-title title-Alumno" data-splitting>
     Mi Progresión
@@ -24,33 +28,21 @@
                     <th>Grado</th>
                     <th>Forma</th>
                     <th>Fecha</th>
-                    <th>Tipo movimiento</th>
-                    <th>Descripción</th>
+                    @*<th>Ataque</th>*@
+                    <th>Defensa personal</th>
                     <th>Ejercicios F.F.F</th>
                     <th>Rutura</th>
-                    <th colspan="3">Acciones</th>
+                    <th>Teoria</th>
                 </tr>
             </thead>
-            <tr>
-                <td>12316556-8</td>
-                <td>Diego <img src="/img/foto.jpg" width="30" height="30" class="rounded-circle img-fluid" alt=""></td>
-                <td>Fernandez</td>
-                <td>20/05/1990</td>
-                <td>Masculino</td>
-                <td>Masculino</td>
-                <td>Masculino</td>
-                <td>Masculino</td>
-                <td>Masculino</td>
-                <td colspan="3">
-                    <button class="btn btn-sm btn-success" title="Ver"><i class="fa fa-eye"></i></button>
-                </td>
-            </tr>
+            <tbody id="TbodyProgresiones">
+            </tbody>
 
 
 
         </table>
     </div>
-    
+
 
 
 
@@ -58,3 +50,4 @@
 
 
 
+<script src="~/js/Alumno/Progresion.js"></script>

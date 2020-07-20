@@ -2,6 +2,7 @@
 using Microsoft.Web.Services3.Addressing;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.DynamicData;
@@ -229,13 +230,60 @@ namespace ITF.Models
                     return new { RESPUESTA = true, TIPO = 1, DATA = _insc };
                 }
             }
-            catch(Exception Error)
+            catch (Exception Error)
             {
                 return new { RESPUESTA = true, TIPO = 3, Error = Error.Message };
             }
         }
 
         #endregion
+
+
+        #region PROGRESIONES
+
+        public static object MisProgresiones()
+        {
+            try
+            {
+                using (ITFEntities db = new ITFEntities())
+                {
+                    string user_rut = HttpContext.Current.Session["RUT"].ToString();
+                    ITF_USUARIOS _user = db.ITF_USUARIOS.Where(a => a.RUT == user_rut).FirstOrDefault();
+
+
+                    object[] data = (from er in db.ITF_EXAMEN_REALIZADOS
+                                     join f in db.ITF_FORMAS on er.FORMA equals f.ID_FORMA
+                                     join g in db.ITF_GRADOS on er.COD_GRADO equals g.ID_GRADO
+                                     join u in db.ITF_USUARIOS on er.COD_USUARIO equals u.ID_USUARIO
+                                     where er.COD_USUARIO == _user.ID_USUARIO
+                                     select new
+                                     {
+                                         NOMBRE_COMPLETO = u.NOMBRE + " " + u.APELLIDO_PATERNO + " " + u.APELLIDO_MATERNO,
+                                         er.ID_EXAMEN,
+                                         er.NOMBRE_EXAMEN,
+                                         NOMBRE_GRADO = g.NOMBRE,
+                                         f.NOMBRE_FORMA,
+                                         er.EJERCICIOS_F_F_F,
+                                         er.ATAQUE,
+                                         er.DEFENSA_PERSONAL,
+                                         er.ROTURA,
+                                         er.TEORIA,
+                                         er.FECHA_REALIZACION,
+                                         er.FECHA_SUBIDA_EXAMEN
+
+                                     }).OrderByDescending(a => a.FECHA_SUBIDA_EXAMEN).ToArray();
+
+                    return new { RESPUESTA = true, TIPO = 1, DATA = data };
+                }
+            }
+            catch (Exception Error)
+            {
+                return new { RESPUESTA = false, TIPO = 1, Error = Error.Message };
+
+            }
+        }
+        #endregion
+
 
     }
 }

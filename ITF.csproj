@@ -2125,6 +2125,7 @@
     <Content Include="js\Alumno\Carrito.js" />
     <Content Include="js\Alumno\Cartera.js" />
     <Content Include="js\Alumno\Eventos.js" />
+    <Content Include="js\Alumno\Progresion.js" />
     <Content Include="js\Alumno\Tienda.js" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />

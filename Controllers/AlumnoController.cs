@@ -188,5 +188,12 @@ namespace ITF.Controllers
             return Json(ModeloAlumno.InscribirseEvento(ID), JsonRequestBehavior.AllowGet);
         }
         #endregion
+
+        #region PROGRESION
+        public ActionResult MisProgresiones()
+        {
+            return Json(ModeloAlumno.MisProgresiones(), JsonRequestBehavior.AllowGet);
+        }
+        #endregion
     }
 }
